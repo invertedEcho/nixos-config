@@ -11,6 +11,15 @@
       [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
     kernelModules = [ "kvm-amd" ];
     supportedFilesystems = [ "ntfs" ];
+    loader = {
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        theme = pkgs.sleek-grub-theme.override { withStyle = "dark"; };
+      };
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   fileSystems = {
@@ -28,8 +37,6 @@
       options = [ "size=8G" ];
     };
   };
-
-  networking.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 

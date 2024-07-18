@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
-let
-  unstable = pkgs.unstable;
+let inherit (pkgs.unstable) ;
 in {
   environment.systemPackages = with pkgs; [
     unstable.neovim
@@ -9,7 +8,7 @@ in {
     unstable.rbw
     # TODO: Move to shell.nix file in project
     (php83.buildEnv {
-      extensions = ({ enabled, all }: enabled ++ (with all; [ imagick ]));
+      extensions = { enabled, all }: enabled ++ (with all; [ imagick ]);
     })
     rustup
     gnumake
@@ -105,5 +104,6 @@ in {
     brightnessctl
     squashfsTools
     wdisplays
+    flutter
   ];
 }

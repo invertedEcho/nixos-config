@@ -19,19 +19,11 @@
     };
 
     pointerCursor = {
-	gtk.enable = true;
-	package = pkgs.bibata-cursors;
-	name = "Bibata-Modern-Classic";
-	size = 20;
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 20;
     };
- #    xdg.desktopEntries = {
- #      obsidian = {
-	# name = "Firefox";
-	# genericName = "Note taking app";
-	# exec = "appimage-run ~/.local/bin/Obsidian-1.6.3.AppImage";
-	# terminal = false;
- #      };
- #    };
   };
 
   gtk = {
@@ -59,8 +51,8 @@
       userName = "Jakob Stechow";
       userEmail = "jakob.stechow@pm.me";
       signing = {
-	key = null;
-	signByDefault = true;
+        key = null;
+        signByDefault = true;
       };
     };
 

@@ -9,13 +9,12 @@
     ./modules/audio.nix
   ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.efi.canTouchEfiVariables = true;
-
   nixpkgs.config.allowUnfree = true;
 
-  networking.hostName = "nixos";
+  networking = {
+    hostName = "nixos-invertedecho";
+    useDHCP = lib.mkDefault true;
+  };
 
   time.timeZone = "Europe/Berlin";
 

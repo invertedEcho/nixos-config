@@ -66,34 +66,6 @@
           }
         ];
       };
-      asahi-macbook = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
-        modules = [
-          ./configuration.nix
-          ./hardware/asahi-macbook.nix
-          <apple-silicon-support/apple-silicon-support>
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.echo = import ./modules/home.nix;
-              backupFileExtension = "old.bak";
-            };
-          }
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = import nixpkgs-unstable {
-                  system = "aarch64-linux";
-                  config = { allowUnfree = true; };
-                };
-              })
-            ];
-          }
-        ];
-      };
     };
   };
 }
