@@ -24,9 +24,10 @@
         "/dev/disk/by-uuid/4e8df990-835c-4c82-b734-76c7acbaf19c";
     };
     loader.grub = {
-      device = "nodev";
       enable = true;
+      device = "nodev";
       efiSupport = true;
+      theme = pkgs.sleek-grub-theme.override { withStyle = "dark"; };
     };
   };
 

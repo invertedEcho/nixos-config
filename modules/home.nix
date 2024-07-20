@@ -10,7 +10,6 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      FLAKE = "/home/echo/dev/priv/dotfiles/nixos";
     };
 
     shellAliases = {

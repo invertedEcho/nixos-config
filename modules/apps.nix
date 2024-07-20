@@ -6,10 +6,6 @@ in {
     unstable.neovim
     # TODO: move to stable once ver 1.11.0 reaches stable
     unstable.rbw
-    # TODO: Move to shell.nix file in project
-    (php83.buildEnv {
-      extensions = { enabled, all }: enabled ++ (with all; [ imagick ]);
-    })
     rustup
     gnumake
     vim
@@ -86,9 +82,8 @@ in {
     wlogout
     polkit
     polkit_gnome
-    # .nix formatter
     nixfmt-classic
-    # onlyoffice-bin
+    onlyoffice-bin
     inetutils
     parted
     appimage-run
@@ -105,5 +100,7 @@ in {
     squashfsTools
     wdisplays
     flutter
+    glib
+    fzf
   ];
 }

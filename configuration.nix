@@ -31,7 +31,6 @@
   # TODO: document these, why are they needed and what do they do
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 
   fonts.packages = with pkgs;
