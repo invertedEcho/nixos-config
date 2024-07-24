@@ -25,8 +25,14 @@
       enable = true;
       config = { push.autoSetupRemote = true; };
     };
-    fish.enable = true;
+
+    zsh.enable = true;
 
     adb.enable = true;
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
   };
 }

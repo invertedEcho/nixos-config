@@ -48,8 +48,6 @@ in {
     playerctl
     libimobiledevice
     ifuse
-    # todo: move to home-manager
-    fishPlugins.z
     chromium
     swaybg
     util-linux

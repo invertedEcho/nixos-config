@@ -6,15 +6,10 @@
     homeDirectory = "/home/echo";
     stateVersion = "23.11";
 
-    packages = [ pkgs.fishPlugins.tide ];
+    packages = with pkgs; [ pure-prompt zoxide ];
 
     sessionVariables = {
       EDITOR = "nvim";
-    };
-
-    shellAliases = {
-      n = "nvim";
-      lg = "lazygit";
     };
 
     pointerCursor = {
@@ -23,6 +18,16 @@
       name = "Bibata-Modern-Classic";
       size = 20;
     };
+  };
+
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      n = "nvim";
+      lg = "lazygit";
+    };
+    initExtra = 
+      "autoload -U promptinit; promptinit\nprompt pure\neval \"$(zoxide init zsh)\"";
   };
 
   gtk = {
@@ -53,24 +58,6 @@
         key = null;
         signByDefault = true;
       };
-    };
-
-    fish = {
-      enable = true;
-      # Disable fish greeting
-      interactiveShellInit = ''
-                set fish_greeting
-        	set -l nix_shell_info (
-        	  if test -n "$IN_NIX_SHELL"
-        	    echo -n "<nix-shell> "
-        	  end
-        	)
-      '';
-    };
-
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
     };
 
     home-manager.enable = true;
