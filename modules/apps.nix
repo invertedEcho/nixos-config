@@ -12,6 +12,8 @@ in {
     htop
     killall
     wget
+    # required to get screen sharing to work
+    (wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true;}) {})
     firefox
     neovim
     kitty
@@ -100,5 +102,6 @@ in {
     flutter
     glib
     fzf
+    vscodium
   ];
 }
