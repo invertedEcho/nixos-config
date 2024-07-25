@@ -25,9 +25,13 @@
     shellAliases = {
       n = "nvim";
       lg = "lazygit";
+      ".." = "cd ..";
     };
     initExtra = 
-      "autoload -U promptinit; promptinit\nprompt pure\neval \"$(zoxide init zsh)\"";
+      "autoload -U promptinit; promptinit
+prompt pure
+eval \"$(zoxide init zsh)\"
+source <(fzf --zsh)";
   };
 
   gtk = {
