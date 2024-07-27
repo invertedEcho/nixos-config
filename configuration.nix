@@ -21,7 +21,7 @@
 
   users.users.echo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "kvm" ];
     shell = pkgs.zsh;
     hashedPassword =
       "$y$j9T$kSZUSuNWFeX4o6GlPHxk20$Pcc5XjIXXCYGh/B4fqRK/zLsEYpRpRsiP9p5oLiFCC2";
