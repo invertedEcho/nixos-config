@@ -31,7 +31,8 @@
       "autoload -U promptinit; promptinit
 prompt pure
 eval \"$(zoxide init zsh)\"
-source <(fzf --zsh)";
+source <(fzf --zsh)
+bindkey '^[^?' backward-kill-word";
   };
 
   gtk = {
