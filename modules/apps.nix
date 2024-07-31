@@ -103,5 +103,6 @@ in {
     glib
     fzf
     vscodium
+    pamixer
   ];
 }
