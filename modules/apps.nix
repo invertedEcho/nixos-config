@@ -4,8 +4,6 @@ let inherit (pkgs.unstable) ;
 in {
   environment.systemPackages = with pkgs; [
     unstable.neovim
-    # TODO: move to stable once ver 1.11.0 reaches stable
-    unstable.rbw
     rustup
     gnumake
     vim
@@ -63,7 +61,6 @@ in {
     openssl
     android-tools
     vulkan-tools
-    rofi-rbw-wayland
     pinentry
     wtype
     php83Packages.composer
