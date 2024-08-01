@@ -101,5 +101,7 @@ in {
     fzf
     vscodium
     pamixer
+    lazysql
+    bitwarden-cli
   ];
 }
