@@ -34,5 +34,7 @@
       enable = true;
       nix-direnv.enable = true;
     };
+
+    tmux.enable = true;
   };
 }

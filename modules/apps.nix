@@ -12,7 +12,6 @@ in {
     wget
     # required to get screen sharing to work
     (wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true;}) {})
-    firefox
     neovim
     kitty
     wl-clipboard
@@ -90,7 +89,6 @@ in {
     shellcheck
     stripe-cli
     unrar
-    tmux
     unzip
     sway
     brightnessctl
@@ -103,5 +101,13 @@ in {
     pamixer
     lazysql
     bitwarden-cli
+    cloudflared
+    inkscape
+    tidal-hifi
+    openssl
+    tmuxinator
+    ngrok
+    gedit
+    jetbrains.pycharm-community-bin
   ];
 }

@@ -27,9 +27,9 @@
       "$y$j9T$kSZUSuNWFeX4o6GlPHxk20$Pcc5XjIXXCYGh/B4fqRK/zLsEYpRpRsiP9p5oLiFCC2";
   };
 
-  # TODO: document these, why are they needed and what do they do
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = "1"; # enable ozone wayland support for electron based applications
+    PKG_CONFIG_PATH = "${pkgs.openssl}/lib/pkgconfig/"; # fix some packages not finding openssl lib
   };
 
   fonts.packages = with pkgs;

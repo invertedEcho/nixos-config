@@ -10,6 +10,7 @@
 
     sessionVariables = {
       EDITOR = "nvim";
+      VISUAL = "vi";
     };
 
     pointerCursor = {
