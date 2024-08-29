@@ -41,7 +41,6 @@ in {
     file
     grim
     slurp
-    tokyo-night-gtk
     libnotify
     gammastep
     playerctl

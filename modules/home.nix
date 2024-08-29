@@ -33,6 +33,10 @@
 prompt pure
 eval \"$(zoxide init zsh)\"
 source <(fzf --zsh)
+
+# TODO: just set visual to not VI but still get vi features for tmux
+bindkey -e
+
 bindkey '^[^?' backward-kill-word";
   };
 
