@@ -4,6 +4,8 @@ let inherit (pkgs.unstable) ;
 in {
   environment.systemPackages = with pkgs; [
     unstable.neovim
+    unstable.helix
+    unstable.jetbrains.idea-community-bin
     rustup
     gnumake
     vim
@@ -11,7 +13,8 @@ in {
     killall
     wget
     # required to get screen sharing to work
-    (wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true;}) {})
+    (wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; })
+      { })
     neovim
     kitty
     wl-clipboard
@@ -28,7 +31,7 @@ in {
     webcord
     xwayland
     lazygit
-    nodePackages.typescript-language-server
+    nodePackages_latest.typescript-language-server
     nodePackages.bash-language-server
     nodePackages.pyright
     nodePackages.eslint
@@ -46,7 +49,7 @@ in {
     playerctl
     libimobiledevice
     ifuse
-    chromium
+    # chromium -> takes forever to open
     swaybg
     util-linux
     waypaper
@@ -83,8 +86,8 @@ in {
     parted
     appimage-run
     pass
-    jetbrains.idea-community-bin
-    android-studio
+    # android-studio
+    androidStudioPackages.canary
     shellcheck
     stripe-cli
     unrar
@@ -108,5 +111,17 @@ in {
     ngrok
     gedit
     jetbrains.pycharm-community-bin
+    qemu
+    dmg2img
+    usbutils
+    pciutils
+    ranger
+    nvtopPackages.nvidia
+    virt-manager
+    libvirt
+    nil
+    teamviewer
+    rpi-imager
+    wl-color-picker
   ];
 }

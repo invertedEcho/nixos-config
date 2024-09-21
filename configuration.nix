@@ -21,15 +21,17 @@
 
   users.users.echo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "kvm" "adbusers" ];
+    extraGroups = [ "wheel" "kvm" "adbusers" "libvirtd" ];
     shell = pkgs.zsh;
     hashedPassword =
       "$y$j9T$kSZUSuNWFeX4o6GlPHxk20$Pcc5XjIXXCYGh/B4fqRK/zLsEYpRpRsiP9p5oLiFCC2";
   };
 
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # enable ozone wayland support for electron based applications
-    PKG_CONFIG_PATH = "${pkgs.openssl}/lib/pkgconfig/"; # fix some packages not finding openssl lib
+    NIXOS_OZONE_WL =
+      "1"; # enable ozone wayland support for electron based applications
+    PKG_CONFIG_PATH =
+      "${pkgs.openssl}/lib/pkgconfig/"; # fix some packages not finding openssl lib
   };
 
   fonts.packages = with pkgs;

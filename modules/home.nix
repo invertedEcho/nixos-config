@@ -28,16 +28,16 @@
       lg = "lazygit";
       ".." = "cd ..";
     };
-    initExtra = 
-      "autoload -U promptinit; promptinit
-prompt pure
-eval \"$(zoxide init zsh)\"
-source <(fzf --zsh)
+    initExtra = ''
+      autoload -U promptinit; promptinit
+      prompt pure
+      eval "$(zoxide init zsh)"
+      source <(fzf --zsh)
 
-# TODO: just set visual to not VI but still get vi features for tmux
-bindkey -e
+      # TODO: just set visual to not VI but still get vi features for tmux
+      bindkey -e
 
-bindkey '^[^?' backward-kill-word";
+      bindkey '^[^?' backward-kill-word'';
   };
 
   gtk = {
