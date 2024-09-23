@@ -15,7 +15,6 @@ in {
     # required to get screen sharing to work
     (wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; })
       { })
-    neovim
     kitty
     wl-clipboard
     loupe
