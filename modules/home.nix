@@ -21,23 +21,35 @@
     };
   };
 
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      n = "nvim";
-      lg = "lazygit";
-      ".." = "cd ..";
+  programs = {
+    home-manager.enable = true;
+    git = {
+      enable = true;
+      userName = "Jakob Stechow";
+      userEmail = "jakob.stechow@pm.me";
+      signing = {
+        key = null;
+        signByDefault = true;
+      };
     };
-    initExtra = ''
-      autoload -U promptinit; promptinit
-      prompt pure
-      eval "$(zoxide init zsh)"
-      source <(fzf --zsh)
+    zsh = {
+      enable = true;
+      shellAliases = {
+        n = "nvim";
+        lg = "lazygit";
+        ".." = "cd ..";
+      };
+      initExtra = ''
+        autoload -U promptinit; promptinit
+        prompt pure
+        eval "$(zoxide init zsh)"
+        source <(fzf --zsh)
 
-      # TODO: just set visual to not VI but still get vi features for tmux
-      bindkey -e
+        # TODO: just set visual to not VI but still get vi features for tmux
+        bindkey -e
 
-      bindkey '^[^?' backward-kill-word'';
+        bindkey '^[^?' backward-kill-word'';
+    };
   };
 
   gtk = {
@@ -57,19 +69,5 @@
       name = "Sans";
       size = 11;
     };
-  };
-
-  programs = {
-    git = {
-      enable = true;
-      userName = "Jakob Stechow";
-      userEmail = "jakob.stechow@pm.me";
-      signing = {
-        key = null;
-        signByDefault = true;
-      };
-    };
-
-    home-manager.enable = true;
   };
 }

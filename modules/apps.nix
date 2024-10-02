@@ -4,7 +4,6 @@ let inherit (pkgs.unstable) ;
 in {
   environment.systemPackages = with pkgs; [
     unstable.neovim
-    unstable.helix
     unstable.jetbrains.idea-community-bin
     rustup
     gnumake
@@ -18,7 +17,7 @@ in {
     kitty
     wl-clipboard
     loupe
-    wofi
+    rofi-wayland
     pavucontrol
     python3
     wezterm
@@ -48,7 +47,6 @@ in {
     playerctl
     libimobiledevice
     ifuse
-    # chromium -> takes forever to open
     swaybg
     util-linux
     waypaper
@@ -101,7 +99,6 @@ in {
     vscodium
     pamixer
     lazysql
-    bitwarden-cli
     cloudflared
     inkscape
     tidal-hifi
@@ -122,5 +119,12 @@ in {
     teamviewer
     rpi-imager
     wl-color-picker
+    cpulimit
+    _1password-gui
+    _1password
+    nodePackages_latest.aws-cdk
+    wev
+    dnsutils
+    cpufrequtils
   ];
 }

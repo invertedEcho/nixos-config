@@ -23,11 +23,25 @@
       luks.devices.cryptroot.device =
         "/dev/disk/by-uuid/4e8df990-835c-4c82-b734-76c7acbaf19c";
     };
+
+    # extraModprobeConfig = ''
+    #   options vfio-pci ids=10de:1fbb disable_vga=1 disable_idle_d3=1
+    #   softdep nouveau pre: vfio-pci
+    #   softdep drm pre: vfio-pci
+    # '';
+    #
+    # # macos vm gpu passthrough setup
+    # kernelParams = [ "module_blacklist=nvidia,nouveau,nvidiafb" ];
+
     loader.grub = {
       enable = true;
       device = "nodev";
       efiSupport = true;
       theme = pkgs.sleek-grub-theme.override { withStyle = "dark"; };
+      #
+      # extraConfig = ''
+      #   GRUB_CMDLINE_LINUX_DEFAULT="intel_iommu=on iommu=pt vfio-pci.ids=10de:1fbb kvm.ignore_msrs=1 video=vesafb:off,efifb:off"
+      # '';
     };
   };
 
