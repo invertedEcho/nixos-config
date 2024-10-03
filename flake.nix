@@ -17,6 +17,7 @@
         modules = [
           ./configuration.nix
           ./hardware/home-pc.nix
+	  ./modules/game.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -59,6 +60,33 @@
               (final: prev: {
                 unstable = import nixpkgs-unstable {
                   system = "x86_64-linux";
+                  config = { allowUnfree = true; };
+                };
+              })
+            ];
+          }
+        ];
+      };
+      macbook-vm = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./configuration.nix
+          ./hardware/macbook-vm.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.echo = import ./modules/home.nix;
+              backupFileExtension = "old.bak";
+            };
+          }
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                unstable = import nixpkgs-unstable {
+                  system = "aarch64-linux";
                   config = { allowUnfree = true; };
                 };
               })

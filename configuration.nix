@@ -3,7 +3,6 @@
 {
   imports = [
     ./modules/apps.nix
-    ./modules/game.nix
     ./modules/services.nix
     ./modules/programs.nix
   ];
