@@ -17,7 +17,7 @@
         modules = [
           ./configuration.nix
           ./hardware/home-pc.nix
-	  ./modules/game.nix
+          ./modules/game.nix
 
           home-manager.nixosModules.home-manager
           {

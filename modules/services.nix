@@ -40,6 +40,6 @@
         CPU_MAX_PERF_ON_BAT = 50;
       };
     };
-    teamviewer.enable = true;
+    teamviewer.enable = pkgs.system != "aarch64-linux";
   };
 }
