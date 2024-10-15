@@ -9,8 +9,8 @@
     packages = with pkgs; [ pure-prompt zoxide ];
 
     sessionVariables = {
-      EDITOR = "nvim";
-      VISUAL = "vi";
+      # EDITOR = "nvim";
+      # VISUAL = "vi";
     };
 
     pointerCursor = {
@@ -39,16 +39,17 @@
         lg = "lazygit";
         ".." = "cd ..";
       };
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      oh-my-zsh = {
+	enable = true;
+      };
       initExtra = ''
         autoload -U promptinit; promptinit
         prompt pure
         eval "$(zoxide init zsh)"
         source <(fzf --zsh)
-
-        # TODO: just set visual to not VI but still get vi features for tmux
-        bindkey -e
-
-        bindkey '^[^?' backward-kill-word'';
+      '';
     };
   };
 
