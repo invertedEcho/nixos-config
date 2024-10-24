@@ -1,12 +1,14 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home = {
     username = "echo";
     homeDirectory = "/home/echo";
     stateVersion = "23.11";
 
-    packages = with pkgs; [ pure-prompt zoxide ];
+    packages = with pkgs; [pure-prompt zoxide];
 
     sessionVariables = {
       # EDITOR = "nvim";
@@ -42,7 +44,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
-	enable = true;
+        enable = true;
       };
       initExtra = ''
         autoload -U promptinit; promptinit

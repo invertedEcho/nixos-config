@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   virtualisation.docker = {
     enable = true;
     rootless = {
@@ -41,7 +39,7 @@
 
     git = {
       enable = true;
-      config = { push.autoSetupRemote = true; };
+      config = {push.autoSetupRemote = true;};
     };
 
     zsh.enable = true;

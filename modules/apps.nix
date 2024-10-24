@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-
-let inherit (pkgs.unstable) ;
+{pkgs, ...}: let
+  inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs;
     [
@@ -13,8 +12,8 @@ in {
       killall
       wget
       # required to get screen sharing to work
-      (wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; })
-        { })
+      (wrapFirefox (pkgs.firefox-unwrapped.override {pipewireSupport = true;})
+        {})
       kitty
       wl-clipboard
       loupe
@@ -121,7 +120,11 @@ in {
       nodePackages_latest.aws-cdk
       wev
       dnsutils
-    ] ++ lib.optionals (pkgs.system != "aarch64-linux") [
+      foot
+      nixd
+      alejandra
+    ]
+    ++ lib.optionals (pkgs.system != "aarch64-linux") [
       cpufrequtils
       nvtopPackages.nvidia
       teamviewer

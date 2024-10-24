@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   hardware = {
     opengl = {
       enable = true;
@@ -21,5 +19,4 @@
     wineWow64Packages.base
     wineWow64Packages.waylandFull
   ];
-
 }

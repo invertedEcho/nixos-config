@@ -10,7 +10,12 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, ... }: {
+  outputs = inputs @ {
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    ...
+  }: {
     nixosConfigurations = {
       home-pc = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";
@@ -33,7 +38,7 @@
               (final: prev: {
                 unstable = import nixpkgs-unstable {
                   system = "x86_64-linux";
-                  config = { allowUnfree = true; };
+                  config = {allowUnfree = true;};
                 };
               })
             ];
@@ -60,7 +65,7 @@
               (final: prev: {
                 unstable = import nixpkgs-unstable {
                   system = "x86_64-linux";
-                  config = { allowUnfree = true; };
+                  config = {allowUnfree = true;};
                 };
               })
             ];
@@ -87,7 +92,7 @@
               (final: prev: {
                 unstable = import nixpkgs-unstable {
                   system = "aarch64-linux";
-                  config = { allowUnfree = true; };
+                  config = {allowUnfree = true;};
                 };
               })
             ];
