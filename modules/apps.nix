@@ -37,7 +37,6 @@ in {
       tailwindcss-language-server
       prettierd
       ripgrep
-      vscode-langservers-extracted
       iwgtk
       file
       grim
@@ -123,6 +122,9 @@ in {
       foot
       nixd
       alejandra
+      multipass
+      gnome.gnome-characters
+      lsof
     ]
     ++ lib.optionals (pkgs.system != "aarch64-linux") [
       cpufrequtils

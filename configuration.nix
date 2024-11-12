@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  inputs,
   ...
 }: {
   imports = [./modules/apps.nix ./modules/services.nix ./modules/programs.nix];
@@ -55,8 +54,6 @@
       };
     };
   };
-
-  nix.nixPath = ["nixpgks=${inputs.nixpkgs}"];
 
   system.stateVersion = "23.11";
 }
