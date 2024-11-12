@@ -122,7 +122,6 @@ in {
       foot
       nixd
       alejandra
-      multipass
       gnome.gnome-characters
       lsof
     ]
@@ -132,5 +131,6 @@ in {
       teamviewer
       onlyoffice-bin
       androidStudioPackages.canary
+      multipass
     ];
 }
