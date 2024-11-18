@@ -46,6 +46,8 @@
       #   GRUB_CMDLINE_LINUX_DEFAULT="intel_iommu=on iommu=pt vfio-pci.ids=10de:1fbb kvm.ignore_msrs=1 video=vesafb:off,efifb:off"
       # '';
     };
+
+    binfmt.preferStaticEmulators = true;
   };
 
   fileSystems = {
