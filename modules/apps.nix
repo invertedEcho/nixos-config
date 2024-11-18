@@ -12,8 +12,9 @@ in {
       killall
       wget
       # required to get screen sharing to work
-      (wrapFirefox (pkgs.firefox-unwrapped.override {pipewireSupport = true;})
-        {})
+      # (wrapFirefox (pkgs.firefox.override {pipewireSupport = true;})
+      #   {})
+      firefox
       kitty
       wl-clipboard
       loupe
@@ -23,15 +24,15 @@ in {
       wezterm
       gcc13
       mpv
-      gnome.nautilus
-      gnome.gnome-disk-utility
+      nautilus
+      gnome-disk-utility
       waybar
       webcord
       xwayland
       lazygit
       nodePackages_latest.typescript-language-server
       nodePackages.bash-language-server
-      nodePackages.pyright
+      pyright
       nodePackages.eslint
       python311Packages.jedi-language-server
       tailwindcss-language-server
@@ -115,14 +116,15 @@ in {
       wl-color-picker
       cpulimit
       _1password-gui
-      _1password
+      _1password-cli
       nodePackages_latest.aws-cdk
       wev
       dnsutils
       foot
       nixd
       alejandra
-      gnome.gnome-characters
+      multipass
+      gnome-characters
       lsof
     ]
     ++ lib.optionals (pkgs.system != "aarch64-linux") [
