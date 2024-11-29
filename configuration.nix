@@ -55,8 +55,13 @@
     };
   };
 
-  boot.binfmt.preferStaticEmulators = true;
-  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+  boot.binfmt =
+    if (pkgs.system != "aarch64-linux")
+    then {
+      preferStaticEmulators = true;
+      emulatedSystems = ["aarch64-linux"];
+    }
+    else {};
 
   system.stateVersion = "23.11";
 }

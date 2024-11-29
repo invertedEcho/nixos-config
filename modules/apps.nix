@@ -61,12 +61,7 @@ in {
       vulkan-tools
       pinentry
       wtype
-      php83Packages.composer
-      nh
       hyprlock
-      protonmail-bridge-gui
-      thunderbird
-      statix
       swaynotificationcenter
       kooha
       openjdk17-bootstrap
@@ -123,10 +118,14 @@ in {
       foot
       nixd
       alejandra
-      multipass
       gnome-characters
       lsof
     ]
+    # apps only for macbook vm
+    ++ lib.optionals (pkgs.system == "aarch64-linux") [
+      libreoffice
+    ]
+    # apps only for everything else except macbook vm
     ++ lib.optionals (pkgs.system != "aarch64-linux") [
       cpufrequtils
       nvtopPackages.nvidia
