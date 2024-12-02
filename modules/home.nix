@@ -11,8 +11,8 @@
     packages = with pkgs; [pure-prompt zoxide];
 
     sessionVariables = {
-      # EDITOR = "nvim";
-      # VISUAL = "vi";
+      EDITOR = "nvim";
+      VISUAL = "vi";
     };
 
     pointerCursor = {
@@ -40,6 +40,7 @@
         n = "nvim";
         lg = "lazygit";
         ".." = "cd ..";
+        rm = "trash";
       };
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;

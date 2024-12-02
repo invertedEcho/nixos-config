@@ -120,6 +120,7 @@ in {
       alejandra
       gnome-characters
       lsof
+      trash-cli
     ]
     # apps only for macbook vm
     ++ lib.optionals (pkgs.system == "aarch64-linux") [
