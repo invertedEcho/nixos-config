@@ -11,9 +11,10 @@
   ];
 
   boot = {
-    initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
     kernelModules = ["kvm-amd"];
-    supportedFilesystems = ["ntfs"];
+    initrd = {
+      availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
+    };
     loader = {
       grub = {
         enable = true;
@@ -27,24 +28,18 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/16ffa14e-4ca3-44c8-b1c3-b086a5ec27f1";
+      device = "/dev/disk/by-uuid/cd0aedc2-aa1c-4752-97bd-b57ef4ea3d55";
       fsType = "ext4";
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/FA09-CCA4";
+      device = "/dev/disk/by-uuid/4CAA-7796";
       fsType = "vfat";
-    };
-    "/tmp" = {
-      device = "tmpfs";
-      fsType = "tmpfs";
-      options = ["size=8G"];
+      options = ["fmask=0077" "dmask=0077"];
     };
   };
 
+  networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  hardware = {
-    cpu.amd.updateMicrocode =
-      lib.mkDefault config.hardware.enableRedistributableFirmware;
-  };
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
