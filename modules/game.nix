@@ -1,9 +1,7 @@
 {pkgs, ...}: {
   hardware = {
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
     };
   };
 
@@ -18,5 +16,7 @@
     lutris
     wineWow64Packages.base
     wineWow64Packages.waylandFull
+    cemu
+    ryujinx
   ];
 }
