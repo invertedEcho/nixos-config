@@ -12,8 +12,7 @@
         wayland = true;
       };
       desktopManager = {
-        xterm.enable = true;
-        xfce.enable = true;
+        gnome.enable = true;
       };
     };
     pipewire = {
@@ -22,6 +21,9 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
+    # comes from gdm, conflicts with tlp.
+    power-profiles-daemon.enable = false;
 
     tlp = {
       enable = true;

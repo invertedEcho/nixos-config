@@ -1,8 +1,13 @@
 {pkgs, ...}: let
   inherit (pkgs.unstable);
 in {
+  environment.gnome.excludePackages = with pkgs; [geary epiphany gnome-music];
+
+  # TODO: split this list into multiple and categorize
   environment.systemPackages = with pkgs;
     [
+      gnomeExtensions.dash-to-panel
+      gnomeExtensions.blur-my-shell
       unstable.neovim
       unstable.jetbrains.idea-community-bin
       rustup
@@ -11,9 +16,6 @@ in {
       htop
       killall
       wget
-      # required to get screen sharing to work
-      # (wrapFirefox (pkgs.firefox.override {pipewireSupport = true;})
-      #   {})
       firefox
       kitty
       wl-clipboard
@@ -21,7 +23,6 @@ in {
       rofi-wayland
       pavucontrol
       python3
-      wezterm
       gcc13
       mpv
       nautilus
@@ -92,7 +93,6 @@ in {
       pamixer
       lazysql
       cloudflared
-      inkscape
       tidal-hifi
       openssl
       tmuxinator
@@ -115,7 +115,6 @@ in {
       nodePackages_latest.aws-cdk
       wev
       dnsutils
-      foot
       nixd
       alejandra
       gnome-characters
@@ -125,6 +124,7 @@ in {
     # apps only for macbook vm
     ++ lib.optionals (pkgs.system == "aarch64-linux") [
       libreoffice
+      foot
     ]
     # apps only for everything else except macbook vm
     ++ lib.optionals (pkgs.system != "aarch64-linux") [
