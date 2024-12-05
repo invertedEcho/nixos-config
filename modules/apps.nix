@@ -7,7 +7,6 @@ in {
   environment.systemPackages = with pkgs;
     [
       gnomeExtensions.dash-to-panel
-      gnomeExtensions.blur-my-shell
       unstable.neovim
       unstable.jetbrains.idea-community-bin
       rustup

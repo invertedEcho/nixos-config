@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ../modules/dconf.nix
+  ];
+
   home = {
     username = "echo";
     homeDirectory = "/home/echo";
@@ -20,15 +24,6 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
       size = 20;
-    };
-  };
-
-  dconf.settings = {
-    "org/gnome/shell" = {
-      enabled-extensions = [
-        "blur-my-shell@aunetx"
-        "dash-to-panel@jderose9.github.com"
-      ];
     };
   };
 
