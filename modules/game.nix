@@ -18,5 +18,6 @@
     wineWow64Packages.waylandFull
     cemu
     ryujinx
+    winetricks
   ];
 }
