@@ -119,6 +119,7 @@ in {
       gnome-characters
       lsof
       trash-cli
+      gnome-calculator
     ]
     # apps only for macbook vm
     ++ lib.optionals (pkgs.system == "aarch64-linux") [
