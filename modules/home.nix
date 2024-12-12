@@ -21,9 +21,8 @@
 
     pointerCursor = {
       gtk.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 20;
+      package = pkgs.vimix-cursor-theme;
+      name = "Vimix-Cursors";
     };
   };
 
