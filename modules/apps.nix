@@ -1,7 +1,20 @@
 {pkgs, ...}: let
   inherit (pkgs.unstable);
 in {
-  environment.gnome.excludePackages = with pkgs; [geary epiphany gnome-music];
+  environment.gnome.excludePackages = with pkgs; [
+    geary
+    epiphany
+    gnome-music
+    gnome-contacts
+    gnome-maps
+    gnome-weather
+    gnome-text-editor
+    gnome-console
+    gnome-connections
+    gnome-calendar
+    gnome-tour
+    gnome-passwordsafe
+  ];
 
   # TODO: split this list into multiple and categorize
   environment.systemPackages = with pkgs;
