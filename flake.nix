@@ -8,14 +8,26 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
+    self,
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    nix-darwin,
     ...
   }: {
+    darwinConfigurations = {
+      macbook = nix-darwin.lib.darwinSystem {
+        modules = [./modules/darwin.nix];
+      };
+    };
+
     nixosConfigurations = {
       home-pc = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";

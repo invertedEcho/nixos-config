@@ -42,14 +42,11 @@
       shellAliases = {
         n = "nvim";
         lg = "lazygit";
-        ".." = "cd ..";
         rm = "trash";
       };
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
-      oh-my-zsh = {
-        enable = true;
-      };
+      oh-my-zsh.enable = true;
       initExtra = ''
         autoload -U promptinit; promptinit
         prompt pure
