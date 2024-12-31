@@ -24,7 +24,7 @@
   }: {
     darwinConfigurations = {
       macbook = nix-darwin.lib.darwinSystem {
-        modules = [./modules/darwin.nix];
+        modules = [./modules/darwin/index.nix ./modules/darwin/apps.nix];
       };
     };
 

@@ -1,24 +1,6 @@
 {pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    neovim
-    aerospace
-    nixd
-    alejandra
-    kitty
-    raycast
-    # _1password-gui -> broken
-    zoxide
-    fzf
-    ripgrep
-    oh-my-zsh
-    pure-prompt
-    lazygit
-    trash-cli
-    gnupg1
-  ];
-
   environment.shellAliases = {
     n = "nvim";
     lg = "lazygit";
