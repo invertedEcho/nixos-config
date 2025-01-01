@@ -15,10 +15,11 @@
     trash-cli
     gnupg1
     kitty
+    cloudflared
   ];
 
   homebrew = {
     enable = true;
-    casks = ["notion" "1password" "android-studio" "whatsapp"];
+    casks = ["notion" "1password" "android-studio" "whatsapp" "vmware-fusion"];
   };
 }

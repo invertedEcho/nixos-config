@@ -27,6 +27,11 @@
         source ${pkgs.oh-my-zsh}/share/oh-my-zsh/oh-my-zsh.sh
       '';
     };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
   };
 
   system = {
