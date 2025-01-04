@@ -9,17 +9,17 @@
     zoxide
     fzf
     ripgrep
-    oh-my-zsh
     pure-prompt
     lazygit
     trash-cli
     gnupg1
     kitty
     cloudflared
+    zsh-autosuggestions
   ];
 
   homebrew = {
     enable = true;
-    casks = ["notion" "1password" "android-studio" "whatsapp" "vmware-fusion"];
+    casks = ["notion" "1password" "android-studio" "whatsapp" "vmware-fusion" "flutter"];
   };
 }

@@ -5,6 +5,7 @@
     n = "nvim";
     lg = "lazygit";
     rm = "trash";
+    ".." = "cd ..";
   };
 
   # Auto upgrade nix package and the daemon service.
@@ -19,19 +20,21 @@
     zsh = {
       enable = true;
       enableSyntaxHighlighting = true;
+      enableFzfHistory = true;
+      enableFzfCompletion = true;
 
       promptInit = ''
         autoload -U promptinit && promptinit && prompt pure
         eval "$(zoxide init zsh)"
-        source <(fzf --zsh)
-        source ${pkgs.oh-my-zsh}/share/oh-my-zsh/oh-my-zsh.sh
+        # source <(fzf --zsh)
+        source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       '';
     };
 
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
+    # direnv = {
+    #   enable = true;
+    #   nix-direnv.enable = true;
+    # };
   };
 
   system = {
@@ -49,9 +52,10 @@
       };
       finder = {
         AppleShowAllExtensions = true;
-        FXPreferredViewStyle = "Nlsv"; # default list view
+        FXPreferredViewStyle = "Nlsv";
         _FXShowPosixPathInTitle = true;
       };
+      screencapture.type = "jpg";
     };
   };
 

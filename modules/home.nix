@@ -46,10 +46,11 @@
       };
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
+
+      # get rid of oh-my-zsh the startup times are insane
       oh-my-zsh.enable = true;
       initExtra = ''
-        autoload -U promptinit; promptinit
-        prompt pure
+        autoload -U promptinit && promptinit && prompt pure
         eval "$(zoxide init zsh)"
         source <(fzf --zsh)
       '';
