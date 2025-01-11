@@ -26,8 +26,8 @@
       promptInit = ''
         autoload -U promptinit && promptinit && prompt pure
         eval "$(zoxide init zsh)"
-        # source <(fzf --zsh)
         source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+        export PATH=$PATH:/opt/homebrew/bin/
       '';
     };
 
