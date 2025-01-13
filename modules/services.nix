@@ -41,5 +41,7 @@
       };
     };
     teamviewer.enable = pkgs.system != "aarch64-linux";
+
+    blueman.enable = true;
   };
 }
