@@ -98,7 +98,6 @@ in {
       brightnessctl
       squashfsTools
       wdisplays
-      flutter
       glib
       fzf
       vscodium
@@ -107,7 +106,6 @@ in {
       cloudflared
       tidal-hifi
       openssl
-      tmuxinator
       ngrok
       gedit
       jetbrains.pycharm-community-bin
@@ -133,13 +131,16 @@ in {
       lsof
       trash-cli
       gnome-calculator
+      python312Packages.flake8
+      zathura
+      bat
     ]
-    # apps only for macbook vm
+    # apps only for macbook vm -> use something else than system arch
     ++ lib.optionals (pkgs.system == "aarch64-linux") [
       libreoffice
       foot
     ]
-    # apps only for everything else except macbook vm
+    # apps only for everything else except macbook vm -> use something else than system arch
     ++ lib.optionals (pkgs.system != "aarch64-linux") [
       cpufrequtils
       nvtopPackages.nvidia
