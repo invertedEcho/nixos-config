@@ -16,10 +16,20 @@
     kitty
     cloudflared
     zsh-autosuggestions
+    pdftk
+    mariadb
   ];
 
   homebrew = {
     enable = true;
-    casks = ["notion" "1password" "android-studio" "whatsapp" "vmware-fusion" "flutter"];
+    casks = [
+      "notion"
+      "1password"
+      "android-studio"
+      "whatsapp"
+      "vmware-fusion"
+      "flutter"
+      "steam"
+    ];
   };
 }
