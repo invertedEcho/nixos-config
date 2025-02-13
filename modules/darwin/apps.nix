@@ -4,7 +4,6 @@
     aerospace
     nixd
     alejandra
-    kitty
     raycast
     zoxide
     fzf
@@ -14,22 +13,30 @@
     trash-cli
     gnupg1
     kitty
-    cloudflared
     zsh-autosuggestions
     pdftk
     mariadb
+    rustup
+    nodejs
+    lua-language-server
+    flutter
   ];
 
   homebrew = {
     enable = true;
+    brews = [
+      "docker"
+      "colima"
+      "docker-compose"
+      "ruby"
+    ];
     casks = [
-      "notion"
       "1password"
       "android-studio"
-      "whatsapp"
       "vmware-fusion"
-      "flutter"
-      "steam"
+      # "flutter"
+      "firefox"
+      "font-jetbrains-mono-nerd-font"
     ];
   };
 }
