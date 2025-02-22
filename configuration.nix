@@ -28,7 +28,10 @@
     PKG_CONFIG_PATH = "${pkgs.openssl}/lib/pkgconfig/"; # fix some packages not finding openssl lib
   };
 
-  fonts.packages = with pkgs; [(nerdfonts.override {fonts = ["JetBrainsMono"];})];
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    terminus-nerdfont
+  ];
 
   nixpkgs.config.permittedInsecurePackages = ["electron-24.8.6"];
 
