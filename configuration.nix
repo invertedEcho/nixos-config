@@ -20,7 +20,7 @@
     isNormalUser = true;
     extraGroups = ["wheel" "kvm" "adbusers" "libvirtd" "gamemode"];
     shell = pkgs.zsh;
-    hashedPassword = "$y$j9T$kSZUSuNWFeX4o6GlPHxk20$Pcc5XjIXXCYGh/B4fqRK/zLsEYpRpRsiP9p5oLiFCC2";
+    hashedPassword = "$y$j9T$.hLn6L5LbKZMtv1xvzkJS0$xMp9N3vCFRp6KgIV2HcH9aXxEQzRVARk09.inWoiLl5";
   };
 
   environment.sessionVariables = {
