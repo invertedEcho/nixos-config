@@ -134,6 +134,7 @@ in {
       python312Packages.flake8
       zathura
       bat
+      ntfs3g
     ]
     # apps only for macbook vm -> use something else than system arch
     ++ lib.optionals (pkgs.system == "aarch64-linux") [
