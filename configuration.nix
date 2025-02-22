@@ -35,8 +35,7 @@
 
   nixpkgs.config.permittedInsecurePackages = ["electron-24.8.6"];
 
-  # enabling gnome pulls in networkmanager so we cant use iwd anymore. gnome probably plays more nicely with NetworkManager.
-  networking.wireless.iwd.enable = false;
+  networking.wireless.iwd.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
