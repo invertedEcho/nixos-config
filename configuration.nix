@@ -58,13 +58,19 @@
     };
   };
 
-  boot.binfmt =
-    if (pkgs.system != "aarch64-linux")
-    then {
-      preferStaticEmulators = true;
-      emulatedSystems = ["aarch64-linux"];
-    }
-    else {};
+  boot = {
+    kernelParams = ["quiet" "loglevel=3"];
+    binfmt =
+      if (pkgs.system != "aarch64-linux")
+      then {
+        preferStaticEmulators = true;
+        emulatedSystems = ["aarch64-linux"];
+      }
+      else {};
+    loader.grub = {
+      theme = pkgs.sleek-grub-theme.override {withStyle = "dark";};
+    };
+  };
 
   time.hardwareClockInLocalTime = true;
   system.stateVersion = "23.11";
