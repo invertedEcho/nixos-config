@@ -3,10 +3,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ../modules/dconf.nix
-  ];
-
   home = {
     username = "echo";
     homeDirectory = "/home/echo";
