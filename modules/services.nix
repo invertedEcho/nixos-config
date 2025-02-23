@@ -8,15 +8,21 @@
     xserver = {
       enable = true;
     };
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+          user = "greeter";
+        };
+      };
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-
-    # comes from gdm, conflicts with tlp.
-    power-profiles-daemon.enable = false;
 
     tlp = {
       enable = true;
