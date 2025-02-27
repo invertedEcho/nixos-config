@@ -19,6 +19,7 @@ in {
   # TODO: split this list into multiple and categorize
   environment.systemPackages = with pkgs;
     [
+      poppler_utils
       gnomeExtensions.dash-to-panel
       unstable.neovim
       unstable.jetbrains.idea-community-bin

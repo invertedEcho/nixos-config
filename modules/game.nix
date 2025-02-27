@@ -6,9 +6,6 @@
   };
 
   programs = {
-    steam.enable = true;
-    steam.gamescopeSession.enable = true;
-
     gamemode = {
       enable = true;
       enableRenice = true;
@@ -26,11 +23,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    lutris
-    wineWow64Packages.base
-    wineWow64Packages.waylandFull
     cemu
     ryujinx
-    winetricks
   ];
 }
