@@ -16,6 +16,8 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
+  fonts.packages = with pkgs; [terminus-nerdfont];
+
   programs = {
     zsh = {
       enable = true;

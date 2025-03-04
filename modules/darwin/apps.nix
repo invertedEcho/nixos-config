@@ -20,6 +20,8 @@
     nodejs
     lua-language-server
     flutter
+    pnpm
+    stylua
   ];
 
   homebrew = {
@@ -37,6 +39,7 @@
       # "flutter"
       "firefox"
       "font-jetbrains-mono-nerd-font"
+      "microsoft-excel"
     ];
   };
 }
