@@ -36,9 +36,13 @@
       home-pc = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";
         modules = [
-          ./modules/linux/configuration.nix
           ./hosts/home-pc.nix
+          ./modules/linux/apps.nix
+          ./modules/linux/configuration.nix
           ./modules/linux/game.nix
+          ./modules/linux/programs.nix
+          ./modules/linux/services.nix
+          ./modules/linux/xdg.nix
           ./modules/common/apps.nix
 
           home-manager.nixosModules.home-manager
@@ -65,8 +69,13 @@
       work-laptop = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";
         modules = [
-          ./modules/linux/configuration.nix
           ./hosts/work-laptop.nix
+          ./modules/linux/apps.nix
+          ./modules/linux/configuration.nix
+          ./modules/linux/game.nix
+          ./modules/linux/programs.nix
+          ./modules/linux/services.nix
+          ./modules/linux/xdg.nix
           ./modules/common/apps.nix
 
           home-manager.nixosModules.home-manager
@@ -93,8 +102,13 @@
       macbook-vm = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
-          ./modules/linux/configuration.nix
           ./hosts/macbook-vm.nix
+          ./modules/linux/apps.nix
+          ./modules/linux/configuration.nix
+          ./modules/linux/game.nix
+          ./modules/linux/programs.nix
+          ./modules/linux/services.nix
+          ./modules/linux/xdg.nix
           ./modules/common/apps.nix
 
           home-manager.nixosModules.home-manager

@@ -7,7 +7,7 @@
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ../modules/nvidia.nix
+    ../linux/modules/nvidia.nix
   ];
 
   boot = {
@@ -31,6 +31,7 @@
       enable = true;
       device = "nodev";
       efiSupport = true;
+      theme = pkgs.sleek-grub-theme.override {withStyle = "dark";};
     };
 
     binfmt.preferStaticEmulators = true;

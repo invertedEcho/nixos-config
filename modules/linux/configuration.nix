@@ -3,8 +3,6 @@
   pkgs,
   ...
 }: {
-  imports = [./modules/apps.nix ./modules/services.nix ./modules/programs.nix];
-
   nixpkgs.config.allowUnfree = true;
 
   networking = {

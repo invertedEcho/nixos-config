@@ -7,7 +7,7 @@
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ../modules/nvidia.nix
+    ../modules/linux/nvidia.nix
   ];
 
   # graphical corruption bcs nvidia after resume from suspend
