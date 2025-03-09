@@ -5,16 +5,13 @@ in {
   environment.systemPackages = with pkgs;
     [
       poppler_utils
-      unstable.neovim
       unstable.jetbrains.idea-community-bin
-      rustup
       gnumake
       vim
       htop
       killall
       wget
       firefox
-      kitty
       wl-clipboard
       loupe
       rofi-wayland
@@ -51,7 +48,6 @@ in {
       jq
       lua-language-server
       stylua
-      nodejs_22
       corepack_22
       pkg-config
       openssl

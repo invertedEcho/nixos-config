@@ -1,5 +1,5 @@
 {
-  description = "NixOS config flake";
+  description = "invertedEcho's NixOS Configuration flake";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
@@ -24,7 +24,11 @@
   }: {
     darwinConfigurations = {
       macbook = nix-darwin.lib.darwinSystem {
-        modules = [./modules/darwin/index.nix ./modules/darwin/apps.nix];
+        modules = [
+          ./modules/common/apps.nix
+          ./modules/darwin/index.nix
+          ./modules/darwin/apps.nix
+        ];
       };
     };
 
@@ -32,16 +36,17 @@
       home-pc = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";
         modules = [
-          ./configuration.nix
-          ./hardware/home-pc.nix
-          ./modules/game.nix
+          ./modules/linux/configuration.nix
+          ./hosts/home-pc.nix
+          ./modules/linux/game.nix
+          ./modules/common/apps.nix
 
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.echo = import ./modules/home.nix;
+              users.echo = import ./modules/linux/home.nix;
               backupFileExtension = "old.bak";
             };
           }
@@ -60,8 +65,9 @@
       work-laptop = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";
         modules = [
-          ./configuration.nix
-          ./hardware/work-laptop.nix
+          ./modules/linux/configuration.nix
+          ./hosts/work-laptop.nix
+          ./modules/common/apps.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -87,8 +93,9 @@
       macbook-vm = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
-          ./configuration.nix
-          ./hardware/macbook-vm.nix
+          ./modules/linux/configuration.nix
+          ./hosts/macbook-vm.nix
+          ./modules/common/apps.nix
 
           home-manager.nixosModules.home-manager
           {
