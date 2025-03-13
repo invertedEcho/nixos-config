@@ -11,7 +11,6 @@ in {
       htop
       killall
       wget
-      firefox
       wl-clipboard
       loupe
       rofi-wayland
