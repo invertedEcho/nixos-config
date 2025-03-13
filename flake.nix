@@ -72,7 +72,6 @@
           ./hosts/work-laptop.nix
           ./modules/linux/apps.nix
           ./modules/linux/configuration.nix
-          ./modules/linux/game.nix
           ./modules/linux/programs.nix
           ./modules/linux/services.nix
           ./modules/linux/xdg.nix
@@ -83,7 +82,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.echo = import ./modules/home.nix;
+              users.echo = import ./modules/linux/home.nix;
               backupFileExtension = "old.bak";
             };
           }
@@ -105,7 +104,6 @@
           ./hosts/macbook-vm.nix
           ./modules/linux/apps.nix
           ./modules/linux/configuration.nix
-          # ./modules/linux/game.nix
           ./modules/linux/programs.nix
           ./modules/linux/services.nix
           ./modules/linux/xdg.nix
