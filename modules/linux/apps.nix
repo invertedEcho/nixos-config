@@ -43,7 +43,6 @@ in {
       ifuse
       swaybg
       util-linux
-      waypaper
       jq
       lua-language-server
       stylua

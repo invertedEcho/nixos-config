@@ -30,6 +30,11 @@
       source = ../../dotfiles/scripts;
       recursive = true;
     };
+
+    file."pics" = {
+      source = ../../media;
+      recursive = true;
+    };
   };
 
   programs = {
