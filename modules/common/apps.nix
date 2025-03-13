@@ -7,7 +7,6 @@
     lua-language-server
     stylua
     android-tools
-    notesnook
     fzf
     ripgrep
     rustup

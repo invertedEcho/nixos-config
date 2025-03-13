@@ -1,6 +1,6 @@
 {
-  config,
   pkgs,
+  config,
   ...
 }: {
   home = {
@@ -19,6 +19,16 @@
       gtk.enable = true;
       package = pkgs.vimix-cursor-theme;
       name = "Vimix-Cursors";
+    };
+
+    file."${config.xdg.configHome}" = {
+      source = ../../dotfiles;
+      recursive = true;
+    };
+
+    file.".local/bin/" = {
+      source = ../../dotfiles/scripts;
+      recursive = true;
     };
   };
 
