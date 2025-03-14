@@ -1,0 +1,13 @@
+[user]
+  name = "Jakob Stechow"
+  email = "jakob.stechow@pm.me"
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLD5PZ6t/dA+pUXHdnkJJy4hbyCngMhQmCKaG4oLdT7
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/run/current-system/sw/bin/op-ssh-sign"
+
+[commit]
+  gpgsign = true

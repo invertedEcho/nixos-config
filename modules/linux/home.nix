@@ -43,10 +43,6 @@
       enable = true;
       userName = "Jakob Stechow";
       userEmail = "jakob.stechow@pm.me";
-      signing = {
-        key = null;
-        signByDefault = true;
-      };
     };
     zsh = {
       enable = true;
