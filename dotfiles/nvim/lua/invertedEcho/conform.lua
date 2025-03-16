@@ -12,5 +12,6 @@ require('conform').setup({
     -- to be used with the prettier php plugin -> requires setup in your php project
     php = { 'prettierd' },
     nix = { 'alejandra' },
+    rust = { 'rustfmt' },
   },
 })

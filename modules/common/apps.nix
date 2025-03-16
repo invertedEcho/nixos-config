@@ -1,6 +1,8 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  inherit (pkgs.unstable);
+in {
   environment.systemPackages = with pkgs; [
-    neovim
+    unstable.neovim
     nixd
     lazygit
     wezterm
