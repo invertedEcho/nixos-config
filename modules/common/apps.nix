@@ -13,5 +13,6 @@ in {
     ripgrep
     rustup
     nodejs
+    go
   ];
 }

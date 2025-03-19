@@ -28,6 +28,17 @@
           ./modules/common/apps.nix
           ./modules/darwin/index.nix
           ./modules/darwin/apps.nix
+
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                unstable = import nixpkgs-unstable {
+                  system = "aarch64-darwin";
+                  config = {allowUnfree = true;};
+                };
+              })
+            ];
+          }
         ];
       };
     };
