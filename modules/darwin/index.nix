@@ -16,6 +16,7 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
+  # TODO: switch to jetbrains nerd font again
   fonts.packages = with pkgs; [terminus-nerdfont];
 
   programs = {

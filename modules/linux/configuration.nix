@@ -28,7 +28,6 @@
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
-    terminus-nerdfont
   ];
 
   nixpkgs.config.permittedInsecurePackages = ["electron-24.8.6"];
