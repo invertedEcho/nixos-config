@@ -17,6 +17,21 @@
         };
         recursive = true;
       };
+"${config.xdg.configHome}/nvim" = {
+  source = pkgs.runCommand "nvim-config" {} ''
+    src=${pkgs.fetchFromGitHub {
+      owner = "invertedEcho";
+      repo = "nvim-config";
+      rev = "88f622e70bd0d3cb110cac5996db893bb7214061";
+      hash = "sha256-hpJ+BuWUzxcjyRAHJA8vIDEbeSQKHY+lwWa+qckztf0=";
+    }}
+
+    mkdir -p $out
+    cp -r $src/nvim/* $out/
+  '';
+  recursive = true;
+};
+
     };
   };
 
