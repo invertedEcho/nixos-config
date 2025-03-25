@@ -22,27 +22,6 @@
     nix-darwin,
     ...
   }: {
-    darwinConfigurations = {
-      macbook = nix-darwin.lib.darwinSystem {
-        modules = [
-          ./modules/common/apps.nix
-          ./modules/darwin/index.nix
-          ./modules/darwin/apps.nix
-
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = import nixpkgs-unstable {
-                  system = "aarch64-darwin";
-                  config = {allowUnfree = true;};
-                };
-              })
-            ];
-          }
-        ];
-      };
-    };
-
     nixosConfigurations = {
       home-pc = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";
@@ -134,6 +113,33 @@
               (final: prev: {
                 unstable = import nixpkgs-unstable {
                   system = "aarch64-linux";
+                  config = {allowUnfree = true;};
+                };
+              })
+            ];
+          }
+        ];
+      };
+    };
+    darwinConfigurations = {
+      macbook = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./modules/common/apps.nix
+          ./modules/darwin/index.nix
+          ./modules/darwin/apps.nix
+
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              users.invertedecho = import ./modules/darwin/home.nix;
+            };
+            users.users.invertedecho.home = "/Users/invertedecho";
+          }
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                unstable = import nixpkgs-unstable {
+                  system = "aarch64-darwin";
                   config = {allowUnfree = true;};
                 };
               })

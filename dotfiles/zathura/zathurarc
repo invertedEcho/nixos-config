@@ -1,8 +1,0 @@
-set selection-clipboard clipboard
-set recolor-keephue true
-set default-bg                  "#101020"
-set default-fg                  "#a9b1d6"
-
-set statusbar-fg                "#a9b1d6"
-set statusbar-bg                "#24283b"
-set recolor-lightcolor          "#1a1b26"
