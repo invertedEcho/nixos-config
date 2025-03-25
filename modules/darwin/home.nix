@@ -12,26 +12,25 @@
         source = pkgs.fetchFromGitHub {
           owner = "invertedEcho";
           repo = "dotfiles";
-          rev = "515835a4e93734d77173bd4fcb631c28cddd79f2";
-          hash = "sha256-fV6H6pr2UKW+JybVP+qUi/rtS8G1X1TBvFNc2BvdmrM=";
+          rev = "c1ab8f86bef41d995acda3311a5519a99698d603";
+          hash = "sha256-wxYc5LyLu+d4H4mdBG/zxv9GBd6uLG2inUvpvrjUwyw";
         };
         recursive = true;
       };
-"${config.xdg.configHome}/nvim" = {
-  source = pkgs.runCommand "nvim-config" {} ''
-    src=${pkgs.fetchFromGitHub {
-      owner = "invertedEcho";
-      repo = "nvim-config";
-      rev = "88f622e70bd0d3cb110cac5996db893bb7214061";
-      hash = "sha256-hpJ+BuWUzxcjyRAHJA8vIDEbeSQKHY+lwWa+qckztf0=";
-    }}
+      "${config.xdg.configHome}/nvim" = {
+        source = pkgs.runCommand "nvim-config" {} ''
+          src=${pkgs.fetchFromGitHub {
+            owner = "invertedEcho";
+            repo = "nvim-config";
+            rev = "88f622e70bd0d3cb110cac5996db893bb7214061";
+            hash = "sha256-hpJ+BuWUzxcjyRAHJA8vIDEbeSQKHY+lwWa+qckztf0=";
+          }}
 
-    mkdir -p $out
-    cp -r $src/nvim/* $out/
-  '';
-  recursive = true;
-};
-
+          mkdir -p $out
+          cp -r $src/nvim/* $out/
+        '';
+        recursive = true;
+      };
     };
   };
 
