@@ -26,8 +26,8 @@
         source = pkgs.fetchFromGitHub {
           owner = "invertedEcho";
           repo = "dotfiles";
-          rev = "c1ab8f86bef41d995acda3311a5519a99698d603";
-          hash = "sha256-wxYc5LyLu+d4H4mdBG/zxv9GBd6uLG2inUvpvrjUwyw";
+          rev = "40cc792ca34865114ab98e20577779479729bc2e";
+          hash = "sha256-obGWYLGEeVRgbozkWyKtR2DpjejvsNFsuI3JMQv8KWI=";
         };
         recursive = true;
       };
