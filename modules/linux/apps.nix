@@ -118,7 +118,9 @@ in {
     # apps only for macbook vm -> use something else than system arch
     ++ lib.optionals (pkgs.system == "aarch64-linux") [
       libreoffice
-      foot
+      xorg.xinit
+      xclip
+      kitty
     ]
     # apps only for everything else except macbook vm -> use something else than system arch
     ++ lib.optionals (pkgs.system != "aarch64-linux") [

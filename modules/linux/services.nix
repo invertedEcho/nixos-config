@@ -5,11 +5,8 @@
     gvfs.enable = true;
     usbmuxd.enable = true;
     gnome.gnome-keyring.enable = true;
-    xserver = {
-      enable = true;
-    };
     greetd = {
-      enable = true;
+      enable = pkgs.system != "aarch64-linux";
       settings = {
         default_session = {
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
