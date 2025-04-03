@@ -27,7 +27,7 @@
           owner = "invertedEcho";
           repo = "dotfiles";
           rev = "633a85c08433";
-          hash = "sha256-yCcOHmnP9eRhKI0AVfe6YoFbBtC0Op6AB2yismhHg1k=";
+          hash = "sha256-qWcudXIxvq7iQkF9TU0y7k+U9D6pia3S0tE9D8KZPWY=";
         };
         recursive = true;
       };
@@ -36,8 +36,8 @@
           src=${pkgs.fetchFromGitHub {
             owner = "invertedEcho";
             repo = "nvim-config";
-            rev = "88f622e70bd0d3cb110cac5996db893bb7214061";
-            hash = "sha256-hpJ+BuWUzxcjyRAHJA8vIDEbeSQKHY+lwWa+qckztf0=";
+            rev = "12e069e80366";
+            hash = "sha256-EchJFaPFHQoDbk/aAu6bnol7XcMBeb0ZwizSPcDEf8w=";
           }}
 
           mkdir -p $out
