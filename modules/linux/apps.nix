@@ -115,14 +115,16 @@ in {
       bat
       ntfs3g
     ]
-    # apps only for macbook vm -> use something else than system arch
+    # apps only for macbook vm
+    # TODO: use hostname instead of system architecture
     ++ lib.optionals (pkgs.system == "aarch64-linux") [
       libreoffice
       xorg.xinit
       xclip
       kitty
     ]
-    # apps only for everything else except macbook vm -> use something else than system arch
+    # apps only for everything else except macbook vm
+    # TODO: use hostname instead of system architecture
     ++ lib.optionals (pkgs.system != "aarch64-linux") [
       cpufrequtils
       nvtopPackages.nvidia

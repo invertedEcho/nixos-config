@@ -18,7 +18,12 @@
     isNormalUser = true;
     extraGroups = ["wheel" "kvm" "adbusers" "libvirtd" "gamemode"];
     shell = pkgs.zsh;
-    hashedPassword = "$y$j9T$.hLn6L5LbKZMtv1xvzkJS0$xMp9N3vCFRp6KgIV2HcH9aXxEQzRVARk09.inWoiLl5";
+    # we dont need a password in a vm guest since host already has a password.
+    # TODO: use hostname instead of system architecture
+    hashedPassword =
+      if pkgs.system != "aarch64-linux"
+      then "$y$j9T$.hLn6L5LbKZMtv1xvzkJS0$xMp9N3vCFRp6KgIV2HcH9aXxEQzRVARk09.inWoiLl5"
+      else "";
   };
 
   environment.sessionVariables = {
