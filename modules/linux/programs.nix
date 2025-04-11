@@ -35,6 +35,10 @@ Host homeserver
             install_url = "https://addons.mozilla.org/firefox/downloads/file/3595905/gruvbox_dark_theme-1.1.xpi";
             installation_mode = "force_installed";
           };
+          "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/4458679/vimium_ff-2.2.1.xpi";
+            installation_mode = "force_installed";
+          };
         };
       };
     };
