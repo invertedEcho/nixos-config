@@ -12,6 +12,7 @@
     mariadb
     flutter
     pnpm
+    protonmail-desktop
   ];
 
   homebrew = {
@@ -29,6 +30,7 @@
       "firefox"
       "font-jetbrains-mono-nerd-font"
       "microsoft-excel"
+      "alt-tab"
     ];
   };
 }

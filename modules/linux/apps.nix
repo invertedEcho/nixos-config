@@ -132,6 +132,5 @@ in {
       onlyoffice-bin
       androidStudioPackages.canary
       multipass
-      notesnook
     ];
 }
