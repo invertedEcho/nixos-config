@@ -36,8 +36,8 @@
           src=${pkgs.fetchFromGitHub {
             owner = "invertedEcho";
             repo = "nvim-config";
-            rev = "12e069e80366";
-            hash = "sha256-EchJFaPFHQoDbk/aAu6bnol7XcMBeb0ZwizSPcDEf8w=";
+            rev = "3b5c72be137dcd867ec48f8dd4c59a5723e2631a";
+            hash = "sha256-8l+IP46MLMq2MsiHx4T7niTwfMdz+YQD0645/fmaB8M=";
           }}
 
           mkdir -p $out
