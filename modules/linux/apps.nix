@@ -114,6 +114,8 @@ in {
       zathura
       bat
       ntfs3g
+      jellyfin-media-player
+      spotify
     ]
     # apps only for macbook vm
     # TODO: use hostname instead of system architecture
