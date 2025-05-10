@@ -116,6 +116,7 @@ in {
       ntfs3g
       jellyfin-media-player
       spotify
+      notesnook
     ]
     # apps only for macbook vm
     # TODO: use hostname instead of system architecture
