@@ -39,8 +39,8 @@
           src=${pkgs.fetchFromGitHub {
             owner = "invertedEcho";
             repo = "nvim-config";
-            rev = "3b5c72be137d";
-            hash = "sha256-8l+IP46MLMq2MsiHx4T7niTwfMdz+YQD0645/fmaB8M=";
+            rev = "727de4797e82";
+            hash = "sha256-+RB2/ATxIXogK/5HqL6warxspDpAErxX+r8syWeBabI=";
           }}
 
           mkdir -p $out
@@ -70,6 +70,8 @@
         lg = "lazygit";
         rm = "trash";
         ".." = "cd ..";
+        gp = "git pull";
+        gP = "git push";
       };
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
