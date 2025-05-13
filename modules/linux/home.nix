@@ -72,6 +72,7 @@
         ".." = "cd ..";
         gp = "git pull";
         gP = "git push";
+        cr = "cargo run";
       };
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
