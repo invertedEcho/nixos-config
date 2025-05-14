@@ -2,7 +2,6 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
-    unstable.neovim
     nixd
     lazygit
     wezterm

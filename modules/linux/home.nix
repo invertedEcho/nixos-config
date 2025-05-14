@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+inputs,
   ...
 }: {
   home = {
@@ -8,7 +9,7 @@
     homeDirectory = "/home/echo";
     stateVersion = "23.11";
 
-    packages = with pkgs; [pure-prompt zoxide];
+    packages = with pkgs; [pure-prompt zoxide inputs.nixvim-config.packages.${pkgs.system}.default];
 
     sessionVariables = {
       EDITOR = "nvim";
@@ -34,20 +35,20 @@
       "Pictures/Wallpapers" = {
         source = ../../media/wallpapers;
       };
-      "${config.xdg.configHome}/nvim" = {
-        source = pkgs.runCommand "nvim-config" {} ''
-          src=${pkgs.fetchFromGitHub {
-            owner = "invertedEcho";
-            repo = "nvim-config";
-            rev = "727de4797e82";
-            hash = "sha256-+RB2/ATxIXogK/5HqL6warxspDpAErxX+r8syWeBabI=";
-          }}
-
-          mkdir -p $out
-          cp -r $src/nvim/* $out/
-        '';
-        recursive = true;
-      };
+      # "${config.xdg.configHome}/nvim" = {
+      #   source = pkgs.runCommand "nvim-config" {} ''
+      #     src=${pkgs.fetchFromGitHub {
+      #       owner = "invertedEcho";
+      #       repo = "nvim-config";
+      #       rev = "727de4797e82";
+      #       hash = "sha256-+RB2/ATxIXogK/5HqL6warxspDpAErxX+r8syWeBabI=";
+      #     }}
+      #
+      #     mkdir -p $out
+      #     cp -r $src/nvim/* $out/
+      #   '';
+      #   recursive = true;
+      # };
     };
   };
 

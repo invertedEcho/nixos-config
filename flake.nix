@@ -12,6 +12,7 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim-config.url = "github:invertedEcho/nvim-config";
   };
 
   outputs = inputs @ {
@@ -23,8 +24,9 @@
     ...
   }: {
     nixosConfigurations = {
-      home-pc = nixpkgs.lib.nixosSystem {
+      home-pc = nixpkgs.lib.nixosSystem rec {
         system = "x86-64-linux";
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/home-pc.nix
           ./modules/linux/apps.nix
@@ -42,38 +44,7 @@
               useUserPackages = true;
               users.echo = import ./modules/linux/home.nix;
               backupFileExtension = "old.bak";
-            };
-          }
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = import nixpkgs-unstable {
-                  system = "x86_64-linux";
-                  config = {allowUnfree = true;};
-                };
-              })
-            ];
-          }
-        ];
-      };
-      work-laptop = nixpkgs.lib.nixosSystem {
-        system = "x86-64-linux";
-        modules = [
-          ./hosts/work-laptop.nix
-          ./modules/linux/apps.nix
-          ./modules/linux/configuration.nix
-          ./modules/linux/programs.nix
-          ./modules/linux/services.nix
-          ./modules/linux/xdg.nix
-          ./modules/common/apps.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.echo = import ./modules/linux/home.nix;
-              backupFileExtension = "old.bak";
+              extraSpecialArgs = specialArgs;
             };
           }
           {
