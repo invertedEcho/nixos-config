@@ -117,6 +117,7 @@ in {
       jellyfin-media-player
       spotify
       notesnook
+discord
     ]
     # apps only for macbook vm
     # TODO: use hostname instead of system architecture
