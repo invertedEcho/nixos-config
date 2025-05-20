@@ -36,6 +36,7 @@
           ./modules/linux/services.nix
           ./modules/linux/xdg.nix
           ./modules/common/apps.nix
+          ./modules/linux/x11.nix
 
           home-manager.nixosModules.home-manager
           {

@@ -117,13 +117,13 @@ in {
       jellyfin-media-player
       spotify
       notesnook
-discord
+      discord
+      baobab
     ]
     # apps only for macbook vm
     # TODO: use hostname instead of system architecture
     ++ lib.optionals (pkgs.system == "aarch64-linux") [
       libreoffice
-      xorg.xinit
       xclip
       kitty
     ]
