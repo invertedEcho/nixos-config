@@ -136,5 +136,7 @@ in {
       onlyoffice-bin
       androidStudioPackages.canary
       multipass
+      ddcutil
+      ddcui
     ];
 }

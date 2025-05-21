@@ -36,7 +36,7 @@
           ./modules/linux/services.nix
           ./modules/linux/xdg.nix
           ./modules/common/apps.nix
-          ./modules/linux/x11.nix
+          ./modules/linux/plasma.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -70,7 +70,7 @@
           ./modules/linux/services.nix
           ./modules/linux/xdg.nix
           ./modules/common/apps.nix
-          ./modules/linux/x11.nix
+          ./modules/linux/i3.nix
 
           home-manager.nixosModules.home-manager
           {
