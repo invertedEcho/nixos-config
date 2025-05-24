@@ -22,7 +22,7 @@
 
     pointerCursor = {
       gtk.enable = true;
-      package = pkgs.vimix-cursor-theme;
+      package = pkgs.vimix-cursors;
       name = "Vimix-Cursors";
     };
 
@@ -68,7 +68,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      initExtra = ''
+      initContent = ''
         prompt pure
         eval "$(zoxide init zsh)"
         source <(fzf --zsh)
