@@ -32,7 +32,7 @@
   };
 
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
   nixpkgs.config.permittedInsecurePackages = ["electron-24.8.6"];
