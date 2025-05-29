@@ -7,7 +7,6 @@ in {
     wezterm
     lua-language-server
     stylua
-    android-tools
     fzf
     ripgrep
     rustup

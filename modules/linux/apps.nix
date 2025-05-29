@@ -5,11 +5,9 @@ in {
   environment.systemPackages = with pkgs;
     [
       poppler_utils
-      unstable.jetbrains.idea-community-bin
       gnumake
       vim
       htop
-      killall
       wget
       wl-clipboard
       loupe
@@ -21,14 +19,11 @@ in {
       nautilus
       gnome-disk-utility
       waybar
-      webcord
       xwayland
       lazygit
       nodePackages_latest.typescript-language-server
       nodePackages.bash-language-server
-      pyright
       nodePackages.eslint
-      python311Packages.jedi-language-server
       tailwindcss-language-server
       prettierd
       ripgrep
@@ -49,8 +44,6 @@ in {
       corepack_22
       pkg-config
       openssl
-      android-tools
-      vulkan-tools
       pinentry
       wtype
       hyprlock
@@ -83,11 +76,9 @@ in {
       pamixer
       lazysql
       cloudflared
-      tidal-hifi
       openssl
       ngrok
       gedit
-      jetbrains.pycharm-community-bin
       qemu
       dmg2img
       usbutils
@@ -100,8 +91,6 @@ in {
       wl-color-picker
       cpulimit
       _1password-gui
-      _1password-cli
-      nodePackages_latest.aws-cdk
       wev
       dnsutils
       nixd
@@ -110,31 +99,22 @@ in {
       lsof
       trash-cli
       gnome-calculator
-      python312Packages.flake8
       zathura
       bat
       ntfs3g
-      jellyfin-media-player
-      spotify
       notesnook
-      discord
       baobab
     ]
     # apps only for macbook vm
     # TODO: use hostname instead of system architecture
     ++ lib.optionals (pkgs.system == "aarch64-linux") [
       libreoffice
-      xclip
-      kitty
     ]
     # apps only for everything else except macbook vm
     # TODO: use hostname instead of system architecture
     ++ lib.optionals (pkgs.system != "aarch64-linux") [
       cpufrequtils
-      nvtopPackages.nvidia
-      teamviewer
       onlyoffice-bin
-      androidStudioPackages.canary
       multipass
       ddcutil
       ddcui

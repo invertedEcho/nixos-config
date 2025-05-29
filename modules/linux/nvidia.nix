@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   hardware = {
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -8,4 +12,8 @@
   };
 
   services.xserver.videoDrivers = ["nvidia"];
+
+  environment.defaultPackages = with pkgs; [
+    nvtopPackages.nvidia
+  ];
 }

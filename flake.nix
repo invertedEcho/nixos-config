@@ -36,7 +36,11 @@
           ./modules/linux/services.nix
           ./modules/linux/xdg.nix
           ./modules/common/apps.nix
-          ./modules/linux/plasma.nix
+          ./modules/linux/desktop-environments/plasma.nix
+          ./modules/linux/hamachi.nix
+          ./modules/linux/apps/communication.nix
+          ./modules/linux/apps/entertainment.nix
+          ./modules/linux/audio.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -70,7 +74,7 @@
           ./modules/linux/services.nix
           ./modules/linux/xdg.nix
           ./modules/common/apps.nix
-          ./modules/linux/i3.nix
+          ./modules/linux/window-managers/i3.nix
 
           home-manager.nixosModules.home-manager
           {

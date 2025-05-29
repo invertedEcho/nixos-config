@@ -31,5 +31,6 @@
   environment.systemPackages = with pkgs; [
     cemu
     ryujinx
+    steamtinkerlaunch
   ];
 }

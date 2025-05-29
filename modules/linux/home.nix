@@ -37,7 +37,7 @@
         recursive = true;
       };
       "Pictures/Wallpapers" = {
-        source = ../../media/wallpapers;
+        source = ../../assets/wallpapers;
       };
     };
   };
