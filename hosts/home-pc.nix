@@ -42,6 +42,13 @@
       fsType = "vfat";
       options = ["fmask=0077" "dmask=0077"];
     };
+    "/mnt/500GB" = {
+      device = "/dev/disk/by-label/500GB";
+      fsType = "ntfs";
+      options = [
+        "nofail"
+      ];
+    };
   };
 
   networking.useDHCP = lib.mkDefault true;
