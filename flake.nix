@@ -13,6 +13,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim-config.url = "github:invertedEcho/nvim-config";
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = inputs @ {
@@ -21,6 +26,7 @@
     nixpkgs-unstable,
     home-manager,
     nix-darwin,
+    plasma-manager,
     ...
   }: {
     nixosConfigurations = {
@@ -50,6 +56,7 @@
               users.echo = import ./modules/linux/home.nix;
               backupFileExtension = "old.bak";
               extraSpecialArgs = specialArgs;
+              sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
             };
           }
           {

@@ -83,10 +83,8 @@ in {
       dmg2img
       usbutils
       pciutils
-      ranger
       virt-manager
       libvirt
-      nil
       rpi-imager
       wl-color-picker
       cpulimit
