@@ -83,7 +83,6 @@ in {
       dmg2img
       usbutils
       pciutils
-      virt-manager
       libvirt
       rpi-imager
       wl-color-picker

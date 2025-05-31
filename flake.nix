@@ -40,6 +40,7 @@
           ./modules/linux/game.nix
           ./modules/linux/programs.nix
           ./modules/linux/services.nix
+          ./modules/linux/virtualisation.nix
           ./modules/linux/xdg.nix
           ./modules/common/apps.nix
           ./modules/linux/desktop-environments/plasma.nix
