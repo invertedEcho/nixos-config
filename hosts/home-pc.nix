@@ -10,7 +10,7 @@
     ../modules/linux/nvidia.nix
   ];
 
-  # graphical corruption bcs nvidia after resume from suspend
+  # Fixes graphical corruption after resume from suspend and sddm non-functional (only cursor shown with wallpaper/clock)
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;
