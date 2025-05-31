@@ -117,6 +117,11 @@
           location = "bottom";
           widgets = [
             {
+              kickoff = {
+                icon = "nix-snowflake-white";
+              };
+            }
+            {
               iconTasks = {
                 launchers = [
                   "applications:kdesystemsettings.desktop"
