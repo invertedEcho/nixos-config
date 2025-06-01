@@ -4,6 +4,17 @@
   inputs,
   ...
 }: {
+  xdg.autostart = {
+    enable = true;
+    entries = [
+      "${pkgs.spotify}/share/applications/spotify.desktop"
+      "${pkgs.steam}/share/applications/steam.desktop"
+      "${pkgs._1password-gui}/share/applications/1password.desktop"
+    ];
+    # Can't set this to true because of plasma-manager
+    readOnly = false;
+  };
+
   home = {
     username = "echo";
     homeDirectory = "/home/echo";
@@ -22,7 +33,7 @@
 
     pointerCursor = {
       gtk.enable = true;
-      package = pkgs.vimix-cursor-theme;
+      package = pkgs.vimix-cursors;
       name = "Vimix-Cursors";
     };
 
@@ -96,7 +107,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      initExtra = ''
+      initContent = ''
         prompt pure
         eval "$(zoxide init zsh)"
         source <(fzf --zsh)
