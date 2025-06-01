@@ -18,6 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = inputs @ {
@@ -48,6 +49,8 @@
           ./modules/linux/apps/communication.nix
           ./modules/linux/apps/entertainment.nix
           ./modules/linux/audio.nix
+          inputs.spicetify-nix.nixosModules.default
+          ./modules/linux/apps/spicetify.nix
 
           home-manager.nixosModules.home-manager
           {
