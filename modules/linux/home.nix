@@ -122,6 +122,8 @@
         lookAndFeel = "com.github.vinceliuice.Layan";
         # Forest path wallpaper
         wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Path/contents/images/1920x1080.jpg";
+        # Needed because of https://github.com/nix-community/plasma-manager/issues/472#issuecomment-2708939721
+        iconTheme = "Tela";
       };
       panels = [
         {
