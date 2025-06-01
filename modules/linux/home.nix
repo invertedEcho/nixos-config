@@ -15,6 +15,14 @@
     readOnly = false;
   };
 
+  # TODO: I want this in a seperate home file
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
+    };
+  };
+
   home = {
     username = "echo";
     homeDirectory = "/home/echo";
@@ -51,15 +59,6 @@
         source = ../../assets/wallpapers;
       };
     };
-
-    # TODO: I want this in a seperate home file
-    # FIXME: doesnt work
-    # dconf.settings = {
-    #   "org/virt-manager/virt-manager/connections" = {
-    #     autoconnect = ["qemu:///system"];
-    #     uris = ["qemu:///system"];
-    #   };
-    # };
   };
 
   gtk = {
