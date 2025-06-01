@@ -44,6 +44,7 @@
   security.polkit.enable = true;
   # TODO: i think starting hyprland manually does not trigger the graphical-session.target
   # also starting manually from hyprland exec-once, so this is probably stupid
+  # TODO: check if this is even needed anymore for screenshare to work
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";

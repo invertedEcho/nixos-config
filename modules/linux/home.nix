@@ -135,6 +135,35 @@
                 ];
               };
             }
+            {
+              panelSpacer = {
+                expanding = true;
+              };
+            }
+            {
+              systemTray.items = {
+                shown = [
+                  "org.kde.plasma.networkmanagement"
+                  "org.kde.plasma.volume"
+                ];
+                # We explicitly show bluetooth and battery
+                # shown = [
+                #   "org.kde.plasma.battery"
+                #   "org.kde.plasma.bluetooth"
+                # ];
+                # And explicitly hide networkmanagement and volume
+                # hidden = [
+                #   "org.kde.plasma.networkmanagement"
+                #   "org.kde.plasma.volume"
+                # ];
+              };
+            }
+            {
+              digitalClock = {
+                calendar.firstDayOfWeek = "monday";
+                time.format = "24h";
+              };
+            }
           ];
         }
       ];
