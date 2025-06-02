@@ -4,6 +4,7 @@ in {
   # TODO: split this list into multiple and categorize
   environment.systemPackages = with pkgs;
     [
+      activitywatch
       poppler_utils
       gnumake
       vim

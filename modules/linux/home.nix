@@ -10,6 +10,7 @@
       "${pkgs.spotify}/share/applications/spotify.desktop"
       "${pkgs.steam}/share/applications/steam.desktop"
       "${pkgs._1password-gui}/share/applications/1password.desktop"
+      "${pkgs.activitywatch}/share/applications/aw-qt.desktop"
     ];
     # Can't set this to true because of plasma-manager
     readOnly = false;
