@@ -51,6 +51,7 @@
           ./modules/linux/audio.nix
           inputs.spicetify-nix.nixosModules.default
           ./modules/linux/apps/spicetify.nix
+          ./modules/linux/wine.nix
 
           home-manager.nixosModules.home-manager
           {
