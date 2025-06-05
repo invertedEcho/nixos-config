@@ -8,7 +8,6 @@
     enable = true;
     entries = [
       "${pkgs.spotify}/share/applications/spotify.desktop"
-      "${pkgs.steam}/share/applications/steam.desktop"
       "${pkgs._1password-gui}/share/applications/1password.desktop"
       "${pkgs.activitywatch}/share/applications/aw-qt.desktop"
     ];
@@ -183,13 +182,10 @@
         }
       ];
       shortcuts = {
-        # Switch to next keyboard layout
         "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = "Meta+Alt+K";
-        # Suspend Compositing (useful for gaming)
         "kwin"."Suspend Compositing" = ["Alt+Shift+F10"];
-        # Maximize window
         "kwin"."Window Maximize" = ["Meta+M"];
-        # Launch wezterm with Meta+Return
+        "kwin"."Window Minimize" = ["Meta+H"];
         "services/org.wezfurlong.wezterm.desktop"."_launch" = "Meta+Return";
       };
     };
