@@ -12,6 +12,7 @@
 
   environment.defaultPackages = with pkgs; [
     sddm-sugar-dark
+    xsel
   ];
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
