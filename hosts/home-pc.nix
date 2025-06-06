@@ -5,6 +5,7 @@
   modulesPath,
   ...
 }: {
+  swapDevices = lib.mkForce [];
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ../modules/linux/nvidia.nix
