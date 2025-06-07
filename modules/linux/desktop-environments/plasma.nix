@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   services = {
+    # I could disable this, but I still need Plasma (X11) for spotify equalizer dropdown to work ):
     xserver.enable = true;
     displayManager.sddm = {
       enable = true;
@@ -16,6 +17,7 @@
   ];
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    # TODO: Why is dolpin still installed ):
     dolphin
     ark
     plasma-browser-integration
