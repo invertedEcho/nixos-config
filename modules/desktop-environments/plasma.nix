@@ -18,6 +18,7 @@
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     # TODO: Why is dolpin still installed ):
+    # Its even in optionalPackages: https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/desktop-managers/plasma6.nix#L168
     dolphin
     ark
     plasma-browser-integration
