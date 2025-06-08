@@ -1,6 +1,4 @@
-{pkgs, ...}: let
-  inherit (pkgs.unstable);
-in {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     nixd
     lazygit

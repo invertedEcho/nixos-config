@@ -8,7 +8,7 @@
   swapDevices = lib.mkForce [];
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ../modules/linux/nvidia.nix
+    ../modules/nvidia.nix
   ];
 
   # Fixes graphical corruption after resume from suspend and sddm non-functional (only cursor shown with wallpaper/clock)
