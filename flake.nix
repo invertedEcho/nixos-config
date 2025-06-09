@@ -50,7 +50,6 @@
               users.echo = import ./modules/home.nix;
               backupFileExtension = "old.bak";
               extraSpecialArgs = specialArgs;
-              # sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
             };
           }
           {
