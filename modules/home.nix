@@ -7,6 +7,7 @@
   imports = [
     ./home/dconf.nix
     ./home/xdg.nix
+    ./home/gtk.nix
   ];
 
   home = {
