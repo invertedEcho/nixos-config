@@ -18,12 +18,7 @@
     isNormalUser = true;
     extraGroups = ["wheel" "kvm" "adbusers" "libvirtd" "gamemode"];
     shell = pkgs.zsh;
-    # we dont need a password in a vm guest since host already has a password.
-    # TODO: use hostname instead of system architecture
-    hashedPassword =
-      if pkgs.system != "aarch64-linux"
-      then "$y$j9T$.hLn6L5LbKZMtv1xvzkJS0$xMp9N3vCFRp6KgIV2HcH9aXxEQzRVARk09.inWoiLl5"
-      else "";
+    hashedPassword = "$y$j9T$.hLn6L5LbKZMtv1xvzkJS0$xMp9N3vCFRp6KgIV2HcH9aXxEQzRVARk09.inWoiLl5";
   };
 
   environment.sessionVariables = {
@@ -42,24 +37,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   security.polkit.enable = true;
-  # TODO: i think starting hyprland manually does not trigger the graphical-session.target
-  # also starting manually from hyprland exec-once, so this is probably stupid
-  # TODO: check if this is even needed anymore for screenshare to work
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = ["graphical-session.target"];
-      wants = ["graphical-session.target"];
-      after = ["graphical-session.target"];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
 
   boot = {
     kernelParams = ["quiet" "loglevel=3"];
