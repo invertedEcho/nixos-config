@@ -11,8 +11,6 @@
       "${pkgs._1password-gui}/share/applications/1password.desktop"
       "${pkgs.activitywatch}/share/applications/aw-qt.desktop"
     ];
-    # Can't set this to true because of plasma-manager
-    readOnly = false;
   };
 
   # TODO: I want this in a seperate home file
@@ -20,6 +18,33 @@
     "org/virt-manager/virt-manager/connections" = {
       autoconnect = ["qemu:///system"];
       uris = ["qemu:///system"];
+    };
+    "org/gnome/desktop/wm/preferences" = {
+      resize-with-right-button = true;
+    };
+    "org/gnome/shell/extensions/paperwm" = {
+      horizontal-margin = 15;
+      selection-border-radius-bottom = 10;
+      selection-border-radius-top = 10;
+      selection-border-size = 5;
+      # Top margin
+      vertical-margin = 15;
+      # Bottom margin
+      vertical-margin-bottom = 15;
+      window-gap = 10;
+    };
+    "org/gnome/shell/extensions/paperwm/keybindings" = {
+      new-window = [""];
+      switch-down = [""];
+      switch-left = [""];
+      switch-right = [""];
+      switch-up = [""];
+      switch-global-left = ["<Super>h"];
+      switch-global-right = ["<Super>l"];
+      switch-global-up = ["<Super>k"];
+      switch-global-down = ["<Super>j"];
+      switch-monitor-left = ["<Shift><Super>h"];
+      switch-monitor-right = ["<Shift><Super>l"];
     };
   };
 
@@ -44,8 +69,8 @@
         source = pkgs.fetchFromGitHub {
           owner = "invertedEcho";
           repo = "dotfiles";
-          rev = "3b2f290030de";
-          hash = "sha256-lJx8VBr3+eDWYrgyVG+i+CZuYnKgvEZLARidsV+k5MY=";
+          rev = "f37749a0daaa";
+          hash = "sha256-xxXjkZbgZqtXIYzqWGYYVX+XhSNadH2fhO6fyIhsyc8=";
         };
         recursive = true;
       };
@@ -72,10 +97,6 @@
       name = "Sans";
       size = 11;
     };
-    # workaround https://github.com/nix-community/plasma-manager/issues/472
-    # This errors
-    # home.file.".gtkrc-2.0".force = true;
-    gtk2.configLocation = "${config.home.homeDirectory}/.config/.gtkrc-2.0";
   };
 
   programs = {
@@ -110,78 +131,6 @@
         source <(fzf --zsh)
         bindkey -e
       '';
-    };
-    # TODO: I want this in a seperate home file
-    plasma = {
-      enable = true;
-      workspace = {
-        # Layan as global theme
-        lookAndFeel = "com.github.vinceliuice.Layan";
-        # Forest path wallpaper
-        wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Path/contents/images/1920x1080.jpg";
-      };
-      panels = [
-        {
-          location = "bottom";
-          widgets = [
-            {
-              kickoff = {
-                icon = "nix-snowflake-white";
-              };
-            }
-            {
-              iconTasks = {
-                launchers = [
-                  "applications:kdesystemsettings.desktop"
-                  "applications:firefox.desktop"
-                  "applications:org.gnome.Nautilus.desktop"
-                  "applications:org.wezfurlong.wezterm.desktop"
-                  "applications:discord.desktop"
-                  "applications:steam.desktop"
-                  "applications:spotify.desktop"
-                  "applications:1password.desktop"
-                ];
-              };
-            }
-            {
-              panelSpacer = {
-                expanding = true;
-              };
-            }
-            {
-              systemTray.items = {
-                shown = [
-                  "org.kde.plasma.networkmanagement"
-                  "org.kde.plasma.volume"
-                ];
-                # We explicitly show bluetooth and battery
-                # shown = [
-                #   "org.kde.plasma.battery"
-                #   "org.kde.plasma.bluetooth"
-                # ];
-                # And explicitly hide networkmanagement and volume
-                # hidden = [
-                #   "org.kde.plasma.networkmanagement"
-                #   "org.kde.plasma.volume"
-                # ];
-              };
-            }
-            {
-              digitalClock = {
-                calendar.firstDayOfWeek = "monday";
-                time.format = "24h";
-              };
-            }
-          ];
-        }
-      ];
-      shortcuts = {
-        "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = "Meta+Alt+K";
-        "kwin"."Suspend Compositing" = ["Alt+Shift+F10"];
-        "kwin"."Window Maximize" = ["Meta+M"];
-        "kwin"."Window Minimize" = ["Meta+H"];
-        "services/org.wezfurlong.wezterm.desktop"."_launch" = "Meta+Return";
-      };
     };
   };
 }

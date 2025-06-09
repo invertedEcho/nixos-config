@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim-config.url = "github:invertedEcho/nvim-config";
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
@@ -22,7 +17,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    plasma-manager,
     ...
   }: {
     nixosConfigurations = {
@@ -40,7 +34,7 @@
           ./modules/services.nix
           ./modules/virtualisation.nix
           ./modules/xdg.nix
-          ./modules/desktop-environments/plasma.nix
+          ./modules/desktop-environments/gnome.nix
           ./modules/hamachi.nix
           ./modules/dev/apps.nix
           ./modules/audio.nix
@@ -56,7 +50,7 @@
               users.echo = import ./modules/home.nix;
               backupFileExtension = "old.bak";
               extraSpecialArgs = specialArgs;
-              sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
+              # sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
             };
           }
           {
