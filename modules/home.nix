@@ -39,12 +39,6 @@
       VISUAL = "vi";
     };
 
-    pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.vimix-cursors;
-      name = "Vimix-Cursors";
-    };
-
     file = {
       "${config.xdg.configHome}" = {
         source = pkgs.fetchFromGitHub {
