@@ -1,5 +1,15 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    gnumake
+    python3
+    pkg-config
+    openjdk17-bootstrap
+    shellcheck
+    glib
+    alejandra
+    openssl
+    ngrok
+    gcc13
     nixd
     lazygit
     wezterm
@@ -10,5 +20,13 @@
     rustup
     nodejs
     go
+    nodePackages_latest.typescript-language-server
+    nodePackages.bash-language-server
+    nodePackages.eslint
+    tailwindcss-language-server
+    prettierd
+    lua-language-server
+    stylua
+    corepack_22
   ];
 }

@@ -1,28 +1,20 @@
 {pkgs, ...}: let
   inherit (pkgs.unstable);
 in {
-  # TODO: split this list into multiple and categorize
+  # TODO: split this list into multiple modules and categorize
   environment.systemPackages = with pkgs; [
     activitywatch
     poppler_utils
-    gnumake
+    cloudflared
     vim
     htop
     wget
     wl-clipboard
     loupe
     pavucontrol
-    python3
-    gcc13
     nautilus
     gnome-disk-utility
     lazygit
-    # TODO: Move to dev
-    nodePackages_latest.typescript-language-server
-    nodePackages.bash-language-server
-    nodePackages.eslint
-    tailwindcss-language-server
-    prettierd
     ripgrep
     file
     playerctl
@@ -30,14 +22,8 @@ in {
     ifuse
     util-linux
     jq
-    lua-language-server
-    stylua
-    corepack_22
-    pkg-config
-    openssl
     pinentry
     kooha
-    openjdk17-bootstrap
     rclone
     act
     solaar
@@ -45,27 +31,18 @@ in {
     polkit_gnome
     nixfmt-classic
     inetutils
-    shellcheck
     unrar
     unzip
     squashfsTools
-    glib
     fzf
     pamixer
-    cloudflared
-    openssl
-    ngrok
-    qemu
     dmg2img
     usbutils
     pciutils
-    libvirt
     rpi-imager
     _1password-gui
     wev
     dnsutils
-    nixd
-    alejandra
     gnome-characters
     lsof
     trash-cli
