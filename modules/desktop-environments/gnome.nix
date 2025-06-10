@@ -21,5 +21,8 @@
     gnome-tour
     decibels
     gnome-console
+    geary
+    epiphany
+    gnome-music
   ];
 }

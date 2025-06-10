@@ -40,7 +40,6 @@
           ./modules/audio.nix
           inputs.spicetify-nix.nixosModules.default
           ./modules/apps/spicetify.nix
-          ./modules/wine.nix
 
           home-manager.nixosModules.home-manager
           {

@@ -32,5 +32,7 @@
     cemu
     ryujinx
     steamtinkerlaunch
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
   ];
 }
