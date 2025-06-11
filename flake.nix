@@ -63,6 +63,47 @@
           }
         ];
       };
+      thinkpad = nixpkgs.lib.nixosSystem rec {
+        system = "x86-64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/thinkpad.nix
+          ./modules/apps/all.nix
+          ./modules/apps/communication.nix
+          ./modules/apps/entertainment.nix
+          ./modules/configuration.nix
+          ./modules/programs.nix
+          ./modules/services.nix
+          ./modules/virtualisation.nix
+          ./modules/xdg.nix
+          ./modules/desktop-environments/gnome.nix
+          ./modules/dev/apps.nix
+          ./modules/audio.nix
+          inputs.spicetify-nix.nixosModules.default
+          ./modules/apps/spicetify.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.echo = import ./modules/home.nix;
+              backupFileExtension = "old.bak";
+              extraSpecialArgs = specialArgs;
+            };
+          }
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                unstable = import nixpkgs-unstable {
+                  system = "x86_64-linux";
+                  config = {allowUnfree = true;};
+                };
+              })
+            ];
+          }
+        ];
+      };
     };
   };
 }

@@ -68,4 +68,5 @@
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     i2c.enable = true;
   };
+  system.stateVersion = "23.11";
 }

@@ -53,5 +53,4 @@
   };
 
   time.hardwareClockInLocalTime = true;
-  system.stateVersion = "23.11";
 }
