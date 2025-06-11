@@ -4,6 +4,9 @@
       autoconnect = ["qemu:///system"];
       uris = ["qemu:///system"];
     };
+    "org/gnome/shell" = {
+      enabled-extensions = ["paperwm@paperwm.github.com" "appindicatorsupport@rgcjonas.gmail.com"];
+    };
     "org/gnome/desktop/wm/preferences" = {
       resize-with-right-button = true;
     };
@@ -30,6 +33,11 @@
       switch-global-down = ["<Super>j"];
       switch-monitor-left = ["<Shift><Super>h"];
       switch-monitor-right = ["<Shift><Super>l"];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "wezterm";
+      name = "Launch wezterm";
     };
   };
 }
