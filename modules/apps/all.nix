@@ -3,13 +3,11 @@
 in {
   # TODO: split this list into multiple modules and categorize
   environment.systemPackages = with pkgs; [
-    activitywatch
     poppler_utils
     cloudflared
     vim
     htop
     wget
-    wl-clipboard
     loupe
     pavucontrol
     nautilus

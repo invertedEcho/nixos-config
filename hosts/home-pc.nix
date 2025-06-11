@@ -17,6 +17,8 @@
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
 
+  services.teamviewer.enable = true;
+
   # TODO: Fix this gigantic string oneday to read from a file located in the rpeo instead,
   # but I kinda don't care, this works fine
   systemd.tmpfiles.rules = [

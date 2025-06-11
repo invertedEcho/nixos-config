@@ -32,7 +32,8 @@
           ./modules/game.nix
           ./modules/programs.nix
           ./modules/services.nix
-          ./modules/virtualisation.nix
+          ./modules/docker.nix
+          ./modules/vm.nix
           ./modules/xdg.nix
           ./modules/desktop-environments/gnome.nix
           ./modules/hamachi.nix
@@ -74,7 +75,7 @@
           ./modules/configuration.nix
           ./modules/programs.nix
           ./modules/services.nix
-          ./modules/virtualisation.nix
+          ./modules/docker.nix
           ./modules/xdg.nix
           ./modules/desktop-environments/gnome.nix
           ./modules/dev/apps.nix
