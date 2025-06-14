@@ -11,5 +11,6 @@
     libnotify
     wl-clipboard
     swaynotificationcenter
+    swaybg
   ];
 }
