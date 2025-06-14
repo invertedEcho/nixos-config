@@ -40,11 +40,6 @@ Host homeserver
       pinentryPackage = pkgs.pinentry-gnome3;
     };
 
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-
     git = {
       enable = true;
       config = {push.autoSetupRemote = true;};

@@ -36,6 +36,7 @@
           ./modules/vm.nix
           ./modules/xdg.nix
           ./modules/desktop-environments/gnome.nix
+          ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
           ./modules/dev/apps.nix
           ./modules/audio.nix
