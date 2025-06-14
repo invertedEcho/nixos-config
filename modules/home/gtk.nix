@@ -12,6 +12,12 @@
       name = "Tela";
     };
 
+    cursorTheme = {
+      name = "volantes_cursors";
+      package = pkgs.volantes-cursors;
+      size = 30;
+    };
+
     font = {
       name = "Sans";
       size = 11;

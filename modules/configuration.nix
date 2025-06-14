@@ -24,6 +24,8 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # enable ozone wayland support for electron based applications
     PKG_CONFIG_PATH = "${pkgs.openssl}/lib/pkgconfig/"; # fix some packages not finding openssl lib
+    XCURSOR_THEME = "volantes_cursors";
+    XCURSOR_SIZE = 30;
   };
 
   fonts.packages = with pkgs; [
