@@ -3,6 +3,7 @@
 in {
   # TODO: split this list into multiple modules and categorize
   environment.systemPackages = with pkgs; [
+    gimp3
     poppler_utils
     cloudflared
     vim

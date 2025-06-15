@@ -17,6 +17,7 @@
     slurp
     hyprlock
     wl-color-picker
+    gammastep
   ];
   systemd.user.targets.hyprland-session = {
     description = "Hyprland session target";
