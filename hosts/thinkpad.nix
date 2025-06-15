@@ -61,7 +61,7 @@
   };
   services.power-profiles-daemon.enable = true;
   systemd.sleep.extraConfig = ''
-    HibernateDelaySec=5m
+    HibernateDelaySec=15m
     SuspendState=mem
   '';
   hardware.bluetooth.powerOnBoot = false;
