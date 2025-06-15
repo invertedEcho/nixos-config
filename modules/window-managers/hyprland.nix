@@ -12,5 +12,15 @@
     wl-clipboard
     swaynotificationcenter
     swaybg
+    wlogout
+    grim
+    slurp
+    hyprlock
+    wl-color-picker
   ];
+  systemd.user.targets.hyprland-session = {
+    description = "Hyprland session target";
+    bindsTo = ["graphical-session.target"];
+    wants = ["xdg-desktop-autostart.target"];
+  };
 }
