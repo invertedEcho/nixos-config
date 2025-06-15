@@ -20,8 +20,7 @@
   };
 
   services.fprintd.enable = true;
-  services.power-profiles-daemon.enable = false;
-  services.tlp.enable = true;
+  networking.firewall.enable = false;
 
   boot = {
     loader = {
@@ -45,7 +44,27 @@
     options = ["fmask=0022" "dmask=0022"];
   };
 
-  swapDevices = [];
+  # Swap and suspend-then-hibernate
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 32 * 1024;
+    }
+  ];
+  boot.kernelParams = ["resume_offset=102739968" "mem_sleep_default=s2idle"];
+  boot.resumeDevice = "/dev/disk/by-label/NIXROOT";
+  powerManagement.enable = true;
+  services.logind = {
+    lidSwitch = "suspend-then-hibernate";
+    powerKey = "hibernate";
+    powerKeyLongPress = "poweroff";
+  };
+  services.power-profiles-daemon.enable = true;
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=5m
+    SuspendState=mem
+  '';
+  hardware.bluetooth.powerOnBoot = false;
 
   networking.useDHCP = lib.mkDefault true;
 
