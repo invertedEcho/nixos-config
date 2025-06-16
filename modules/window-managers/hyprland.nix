@@ -4,6 +4,7 @@
       enable = true;
       xwayland.enable = true;
     };
+    hyprlock.enable = true;
   };
   environment.defaultPackages = with pkgs; [
     waybar
@@ -15,9 +16,9 @@
     wlogout
     grim
     slurp
-    hyprlock
     wl-color-picker
     gammastep
+    brightnessctl
   ];
   systemd.user.targets.hyprland-session = {
     description = "Hyprland session target";

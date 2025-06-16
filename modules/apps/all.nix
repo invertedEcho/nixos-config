@@ -46,7 +46,6 @@ in {
     lsof
     trash-cli
     gnome-calculator
-    zathura
     bat
     ntfs3g
     notesnook

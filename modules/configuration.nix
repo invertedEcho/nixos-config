@@ -22,7 +22,9 @@
   };
 
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # enable ozone wayland support for electron based applications
+    # Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
+    # TODO: Should also include previous PKG_CONFIG_PATH, if any set
     PKG_CONFIG_PATH = "${pkgs.openssl}/lib/pkgconfig/"; # fix some packages not finding openssl lib
     XCURSOR_THEME = "volantes_cursors";
     XCURSOR_SIZE = 30;
@@ -31,8 +33,6 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
-
-  nixpkgs.config.permittedInsecurePackages = ["electron-24.8.6"];
 
   networking.wireless.iwd.enable = true;
 

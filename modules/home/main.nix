@@ -1,13 +1,19 @@
 {
   pkgs,
-  config,
   inputs,
   ...
 }: {
   imports = [
-    ./home/dconf.nix
-    ./home/xdg.nix
-    ./home/gtk.nix
+    ./dconf.nix
+    ./xdg.nix
+    ./gtk.nix
+    ./hyprland.nix
+    ./hyprlock.nix
+    ./git.nix
+    ./wezterm.nix
+    ./rofi.nix
+    ./waybar.nix
+    ./scripts.nix
   ];
 
   home = {
@@ -27,17 +33,8 @@
     };
 
     file = {
-      "${config.xdg.configHome}" = {
-        source = pkgs.fetchFromGitHub {
-          owner = "invertedEcho";
-          repo = "dotfiles";
-          rev = "737c5bcd3b9e";
-          hash = "sha256-rRfB+nJ/847RWpWzJYgVsQ6n5Gfcf6+1wEnCClPuBq8=";
-        };
-        recursive = true;
-      };
       "Pictures/Wallpapers" = {
-        source = ../assets/wallpapers;
+        source = ../../assets/wallpapers;
       };
     };
   };

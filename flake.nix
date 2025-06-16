@@ -48,7 +48,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.echo = import ./modules/home.nix;
+              users.echo = import ./modules/home/main.nix;
               backupFileExtension = "old.bak";
               extraSpecialArgs = specialArgs;
             };
@@ -90,7 +90,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.echo = import ./modules/home.nix;
+              users.echo = import ./modules/home/main.nix;
               backupFileExtension = "old.bak";
               extraSpecialArgs = specialArgs;
             };
