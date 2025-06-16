@@ -8,7 +8,6 @@
     udev.packages = with pkgs; [gnome-settings-daemon];
   };
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.paperwm
     gnomeExtensions.appindicator
   ];
   environment.gnome.excludePackages = with pkgs; [
