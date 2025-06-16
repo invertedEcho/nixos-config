@@ -79,6 +79,7 @@
           ./modules/docker.nix
           ./modules/xdg.nix
           ./modules/desktop-environments/gnome.nix
+          ./modules/window-managers/hyprland.nix
           ./modules/dev/apps.nix
           ./modules/audio.nix
           inputs.spicetify-nix.nixosModules.default
