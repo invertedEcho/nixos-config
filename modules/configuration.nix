@@ -16,9 +16,13 @@
 
   users.users.echo = {
     isNormalUser = true;
-    extraGroups = ["wheel" "kvm" "adbusers" "libvirtd" "gamemode"];
+    extraGroups = ["wheel" "kvm" "adbusers" "libvirtd" "gamemode" "networkmanager"];
     shell = pkgs.zsh;
     hashedPassword = "$y$j9T$.hLn6L5LbKZMtv1xvzkJS0$xMp9N3vCFRp6KgIV2HcH9aXxEQzRVARk09.inWoiLl5";
+  };
+  networking.networkmanager = {
+    enable = true;
+    wifi.powersave = true;
   };
 
   environment.sessionVariables = {
