@@ -93,10 +93,8 @@
         "WLR_NO_HARDWARE_CURSORS,1"
         "_JAVA_AWT_WM_NONPARENTING,1"
       ];
-      # TODO: Remove monitors script, should have monitor setup by host.
       exec-once = [
-        "python3 ~/.config/scripts/monitors.py setup"
-        "~/.config/scripts/toggle-bar.sh"
+        "~/.local/bin/toggle-bar.sh"
         "swaybg -i ~/Pictures/Wallpapers/gruvbox-girl.png -m fill"
         "swaync"
         # TODO: Still needed?
