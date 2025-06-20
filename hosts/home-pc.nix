@@ -38,6 +38,14 @@
         device = "nodev";
         efiSupport = true;
         theme = pkgs.sleek-grub-theme.override {withStyle = "dark";};
+        extraEntries = ''
+          menuentry "Windows 11" {
+              insmod part_gpt
+              insmod fat
+              set root=(hd0,gpt2)
+              chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+          }
+        '';
       };
       efi.canTouchEfiVariables = true;
     };
