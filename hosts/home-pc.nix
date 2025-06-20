@@ -37,7 +37,7 @@
         enable = true;
         device = "nodev";
         efiSupport = true;
-        theme = pkgs.sleek-grub-theme.override {withStyle = "dark";};
+        gfxmodeEfi = "1280x1024";
         extraEntries = ''
           menuentry "Windows 11" {
               insmod part_gpt
