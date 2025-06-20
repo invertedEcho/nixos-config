@@ -45,11 +45,11 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/cd0aedc2-aa1c-4752-97bd-b57ef4ea3d55";
+      device = "/dev/disk/by-label/NIXROOT";
       fsType = "ext4";
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/4CAA-7796";
+      device = "/dev/disk/by-label/NIXBOOT";
       fsType = "vfat";
       options = ["fmask=0077" "dmask=0077"];
     };
