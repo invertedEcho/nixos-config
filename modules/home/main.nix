@@ -1,20 +1,25 @@
 {
   pkgs,
   inputs,
+  lib,
+  hostId,
   ...
 }: {
-  imports = [
-    ./dconf.nix
-    ./xdg.nix
-    ./gtk.nix
-    ./hyprland.nix
-    ./hyprlock.nix
-    ./git.nix
-    ./wezterm.nix
-    ./rofi.nix
-    ./waybar.nix
-    ./scripts.nix
-  ];
+  imports =
+    [
+      ./dconf.nix
+      ./xdg.nix
+      ./gtk.nix
+      ./hypr/hyprland.nix
+      ./hypr/hyprlock.nix
+      ./git.nix
+      ./wezterm.nix
+      ./rofi.nix
+      ./waybar.nix
+      ./scripts.nix
+    ]
+    ++ lib.optionals (hostId
+      == "thinkpad") [./hypr/hypridle.nix];
 
   home = {
     username = "echo";

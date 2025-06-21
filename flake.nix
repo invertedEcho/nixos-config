@@ -22,7 +22,10 @@
     nixosConfigurations = {
       home-pc = nixpkgs.lib.nixosSystem rec {
         system = "x86-64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          hostId = "home-pc";
+        };
         modules = [
           ./hosts/home-pc.nix
           ./modules/apps/all.nix
@@ -67,7 +70,10 @@
       };
       thinkpad = nixpkgs.lib.nixosSystem rec {
         system = "x86-64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          hostId = "thinkpad";
+        };
         modules = [
           ./hosts/thinkpad.nix
           ./modules/apps/all.nix
