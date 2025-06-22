@@ -61,8 +61,15 @@
       fsType = "vfat";
       options = ["fmask=0077" "dmask=0077"];
     };
-    "/mnt/500GB" = {
-      device = "/dev/disk/by-label/500GB";
+    "/mnt/500GB_SATA" = {
+      device = "/dev/disk/by-label/500GB_SATA";
+      fsType = "ntfs";
+      options = [
+        "nofail"
+      ];
+    };
+    "/mnt/500GB_NVME" = {
+      device = "/dev/disk/by-label/500GB_NVME";
       fsType = "ntfs";
       options = [
         "nofail"
