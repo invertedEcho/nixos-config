@@ -11,10 +11,8 @@
       -- disable ligatures
       harfbuzz_features = { "calt=0", "clig0", "liga=" },
       }),
-      font_size = 11,
-      front_end = "WebGpu",
+      font_size = 13,
       hide_tab_bar_if_only_one_tab = true,
-      enable_wayland = false,
       audible_bell = "Disabled",
       -- I need this keybind in neovim for resizing buffer
       keys = {
