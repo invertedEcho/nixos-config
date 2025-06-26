@@ -90,6 +90,7 @@
           ./modules/audio.nix
           inputs.spicetify-nix.nixosModules.default
           ./modules/apps/spicetify.nix
+          ./modules/game.nix
 
           home-manager.nixosModules.home-manager
           {
