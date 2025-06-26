@@ -56,10 +56,10 @@
           " , 173, exec, playerctl previous"
           " , 171, exec, playerctl next"
           " , 172, exec, playerctl play-pause"
-          " , 232, exec, brightnessctl set 10%-"
-          " , 233, exec, brightnessctl set 10%+"
+          " , 232, exec, brightnessctl set 5%-"
+          " , 233, exec, brightnessctl set 5%+"
 
-          # Scratchpad -> TODO: What is this code:20 key?
+          # Scratchpad -> code:20 => - (minus)
           "$modWithShift,code:20,movetoworkspace,special"
           "$mod,code:20,togglespecialworkspace"
         ]
@@ -88,6 +88,7 @@
         "float, class:^(iwgtk)$"
         "size 60%, class:^(org.gnome.Nautilus)"
         "workspace 6, class:^(spotify)$"
+        "float, class:endless-scroller-bevy"
       ];
       env = [
         "WLR_NO_HARDWARE_CURSORS,1"
@@ -108,7 +109,7 @@
       ];
       input = {
         kb_layout = "us,de";
-        kb_options = "ctrl:nocaps";
+        kb_options = "grp:caps_toggle";
         follow_mouse = 1;
         touchpad = {
           natural_scroll = false;
