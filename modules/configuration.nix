@@ -41,6 +41,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   security.polkit.enable = true;
+  security.pam.services.hyprlock = {};
 
   boot = {
     kernelParams = ["quiet" "loglevel=3"];
