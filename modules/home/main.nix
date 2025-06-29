@@ -17,6 +17,7 @@
       ./rofi.nix
       ./waybar.nix
       ./scripts.nix
+      ./tmux.nix
     ]
     ++ lib.optionals (hostId
       == "thinkpad") [./hypr/hypridle.nix];
@@ -58,6 +59,7 @@
         lg = "lazygit";
         rm = "trash";
         ".." = "cd ..";
+        ga = "git add .";
         gp = "git pull";
         gP = "git push";
         cr = "cargo run";

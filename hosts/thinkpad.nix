@@ -20,7 +20,7 @@
   };
 
   services.fprintd.enable = true;
-  networking.firewall.enable = false;
+  networking.firewall.enable = true;
 
   boot = {
     loader = {
