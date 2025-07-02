@@ -1,4 +1,4 @@
-{
+{hostId, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -8,10 +8,18 @@
         layout = "dwindle";
         border_size = 2;
       };
-      monitor = [
-        ",preferred,auto,1"
-        "eDP-1,preferred,auto-left,1"
-      ];
+      monitor =
+        if hostId == "thinkpad"
+        then [
+          ",preferred,auto,1"
+          "eDP-1,preferred,auto-left,1"
+        ]
+        else if hostId == "home-pc"
+        then [
+          "DP-2,1920x1080@144.00,auto-left,1"
+          "DP-3,1920x1200@59.95,auto-right,1,transform,1"
+        ]
+        else [",preferred,auto,1"];
       "$mod" = "SUPER";
       "$modWithShift" = "SUPER_SHIFT";
       "$modWithAlt" = "SUPER_ALT";
@@ -96,6 +104,7 @@
       ];
       exec-once = [
         "~/.local/bin/toggle-bar.sh"
+        "~/.local/bin/toggle-night-mode.sh"
         "swaybg -i ~/Pictures/Wallpapers/gruvbox-girl.png -m fill"
         "swaync"
         # TODO: Still needed?
