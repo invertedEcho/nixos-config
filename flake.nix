@@ -28,9 +28,7 @@
         };
         modules = [
           ./hosts/home-pc.nix
-          ./modules/apps/all.nix
-          ./modules/apps/communication.nix
-          ./modules/apps/entertainment.nix
+          ./modules/apps.nix
           ./modules/configuration.nix
           ./modules/game.nix
           ./modules/programs.nix
@@ -41,17 +39,16 @@
           ./modules/desktop-environments/gnome.nix
           ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
-          ./modules/dev/apps.nix
           ./modules/audio.nix
           inputs.spicetify-nix.nixosModules.default
-          ./modules/apps/spicetify.nix
+          ./modules/spicetify.nix
 
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.echo = import ./modules/home/main.nix;
+              users.echo = import ./modules/home-manager/main.nix;
               backupFileExtension = "old.bak";
               extraSpecialArgs = specialArgs;
             };
@@ -76,9 +73,7 @@
         };
         modules = [
           ./hosts/thinkpad.nix
-          ./modules/apps/all.nix
-          ./modules/apps/communication.nix
-          ./modules/apps/entertainment.nix
+          ./modules/apps.nix
           ./modules/configuration.nix
           ./modules/programs.nix
           ./modules/services.nix
@@ -86,10 +81,9 @@
           ./modules/xdg.nix
           ./modules/desktop-environments/gnome.nix
           ./modules/window-managers/hyprland.nix
-          ./modules/dev/apps.nix
           ./modules/audio.nix
           inputs.spicetify-nix.nixosModules.default
-          ./modules/apps/spicetify.nix
+          ./modules/spicetify.nix
           ./modules/game.nix
 
           home-manager.nixosModules.home-manager
@@ -97,7 +91,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.echo = import ./modules/home/main.nix;
+              users.echo = import ./modules/home-manager/main.nix;
               backupFileExtension = "old.bak";
               extraSpecialArgs = specialArgs;
             };

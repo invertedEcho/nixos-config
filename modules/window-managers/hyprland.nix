@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  services.displayManager.defaultSession = "hyprland";
   programs = {
     hyprland = {
       enable = true;

@@ -31,7 +31,7 @@
             "6" = " music";
             "7" = " study";
             "8" = " game";
-            "9" = "9 minimized";
+            "9" = "9 other";
           };
         };
 

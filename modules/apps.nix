@@ -3,6 +3,42 @@
 in {
   # TODO: split this list into multiple modules and categorize
   environment.systemPackages = with pkgs; [
+    spotify
+    jellyfin-media-player
+    vlc
+    discord
+    jetbrains.pycharm-community-bin
+    ldtk
+    tmuxinator
+    gnumake
+    python3
+    pkg-config
+    openjdk17-bootstrap
+    shellcheck
+    glib
+    alejandra
+    openssl
+    ngrok
+    gcc13
+    nixd
+    lazygit
+    wezterm
+    lua-language-server
+    stylua
+    fzf
+    ripgrep
+    rustup
+    nodejs
+    go
+    nodePackages_latest.typescript-language-server
+    nodePackages.bash-language-server
+    nodePackages.eslint
+    tailwindcss-language-server
+    prettierd
+    lua-language-server
+    stylua
+    corepack_22
+    android-tools
     gimp3
     poppler_utils
     cloudflared

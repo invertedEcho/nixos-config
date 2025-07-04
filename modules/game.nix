@@ -28,6 +28,11 @@
     };
   };
 
+  services.samba = {
+    enable = true;
+    winbindd.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     cemu
     ryujinx

@@ -42,6 +42,7 @@
 
           # Application and script keybindings
           "$mod, F, exec, firefox"
+          "$mod, E, exec, nautilus"
           "$mod, Return, exec, wezterm"
           "$mod, D, exec, ~/.config/rofi/launchers/type-6/launcher.sh"
           "$mod, P, exec, wlogout"
@@ -97,6 +98,7 @@
         "size 60%, class:^(org.gnome.Nautilus)"
         "workspace 6, class:^(spotify)$"
         "float, class:endless-scroller-bevy"
+        "float, class:ddcui"
       ];
       env = [
         "WLR_NO_HARDWARE_CURSORS,1"
