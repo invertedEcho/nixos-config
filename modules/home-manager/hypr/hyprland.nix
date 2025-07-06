@@ -49,8 +49,8 @@
           "$mod, N, exec, notesnook"
           "$modWithAlt, L, exec, hyprlock"
           # TODO: Two below lines should be one script accepting arguments
-          # "$mod, S, exec, grim -g '$(slurp)' - | wl-copy && notify-send 'Copied selected region to clipboard.'"
-          # bind = $mainModWithShift, S, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/screenshot-$(date +'%Y%m%d-%H%M%S').png && notify-send "Saved selected region to ~/Pictures/Screenshots"
+          ''$mod, S, exec, grim -g "$(slurp)" - | wl-copy && notify-send "Copied selected region to clipboard."''
+          ''$modWithShift, S, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/screenshot-$(date +'%Y%m%d-%H%M%S').png && notify-send "Saved selected region to ~/Pictures/Screenshots"''
           "$mod, B, exec, ~/.local/bin/toggle-bar.sh"
           "$modWithShift, N, exec, ~/.local/bin/toggle-night-mode.sh"
           "$modWithAlt, N, exec, swaync-client -t"
@@ -99,6 +99,8 @@
         "workspace 6, class:^(spotify)$"
         "float, class:endless-scroller-bevy"
         "float, class:ddcui"
+        "float, class:platformer-bevy-ldtk"
+        "float, class:org.gnome.Loupe"
       ];
       env = [
         "WLR_NO_HARDWARE_CURSORS,1"
