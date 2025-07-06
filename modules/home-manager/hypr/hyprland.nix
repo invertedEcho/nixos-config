@@ -107,7 +107,7 @@
       exec-once = [
         "~/.local/bin/toggle-bar.sh"
         "~/.local/bin/toggle-night-mode.sh"
-        "swaybg -i ~/Pictures/Wallpapers/gruvbox-girl.png -m fill"
+        "swaybg -i ~/Pictures/Wallpapers/planets-space-colorful.jpg -m fill"
         "swaync"
         # TODO: Still needed?
         "gnome-keyring-daemon"
