@@ -23,15 +23,15 @@
           on-click = "activate";
           format = "{icon}";
           format-icons = {
-            "1" = " dev";
-            "2" = " web";
-            "3" = " term";
-            "4" = "󱞁 notes";
-            "5" = " chat";
-            "6" = " music";
-            "7" = " study";
-            "8" = " game";
-            "9" = "9 other";
+            "1" = "1 main";
+            "2" = "2 web";
+            "3" = "3 misc";
+            "4" = "4 notes";
+            "5" = "5 chat";
+            "6" = "6 music";
+            "7" = "7";
+            "8" = "8 game";
+            "9" = "9 other big apps";
           };
         };
 
@@ -49,13 +49,13 @@
 
         "clock#time" = {
           interval = 1;
-          format = "  {:%H:%M}";
+          format = " {:%H:%M}";
           tooltip = false;
         };
 
         "clock#date" = {
           interval = 10;
-          format = "󰃶  {:%e %b %Y}";
+          format = "󰃶 {:%e %b}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
             mode = "year";
