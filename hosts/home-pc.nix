@@ -403,6 +403,9 @@
       fsType = "ntfs";
       options = [
         "nofail"
+        "uid=1000"
+        "gid=100"
+        "umask=0022"
       ];
     };
     "/mnt/500GB_NVME" = {
@@ -410,6 +413,9 @@
       fsType = "ntfs";
       options = [
         "nofail"
+        "uid=1000"
+        "gid=100"
+        "umask=0022"
       ];
     };
   };
