@@ -9,7 +9,6 @@
         modules-left = ["hyprland/workspaces"];
         modules-center = ["mpris"];
         modules-right = [
-          "network"
           "memory"
           "cpu"
           "backlight"
@@ -94,15 +93,6 @@
         backlight = {
           format = "{icon} {percent}% ";
           format-icons = ["󰃠"];
-        };
-
-        network = {
-          interval = 5;
-          format-wifi = "  {essid}";
-          format-ethernet = "󰈀  {ifname}";
-          format-disconnected = "⚠  Disconnected";
-          tooltip-format = "{ifname}: {ipaddr}/{cidr}";
-          on-click = "iwgtk";
         };
 
         "hyprland/window" = {
@@ -205,7 +195,6 @@
       #custom-keyboard-layout,
       #memory,
       #mode,
-      #network,
       #pulseaudio,
       #temperature,
       #backlight,
@@ -273,10 +262,6 @@
           color: #fb4934;
           animation-name: blink-critical;
           animation-duration: 2s;
-      }
-
-      #network.disconnected {
-          color: #fabd2f;
       }
 
       #custom-spotify {

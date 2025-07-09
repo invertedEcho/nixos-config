@@ -13,7 +13,7 @@
 
   services.xserver.videoDrivers = ["nvidia"];
 
-  environment.defaultPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     nvtopPackages.nvidia
   ];
 }

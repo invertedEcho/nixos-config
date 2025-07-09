@@ -40,6 +40,7 @@
           ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
           ./modules/audio.nix
+          ./modules/networking.nix
           inputs.spicetify-nix.nixosModules.default
           ./modules/spicetify.nix
 
@@ -82,6 +83,7 @@
           ./modules/desktop-environments/gnome.nix
           ./modules/window-managers/hyprland.nix
           ./modules/audio.nix
+          ./modules/networking.nix
           inputs.spicetify-nix.nixosModules.default
           ./modules/spicetify.nix
           ./modules/game.nix

@@ -8,7 +8,6 @@
   imports =
     [
       ./dconf.nix
-      ./xdg.nix
       ./gtk.nix
       ./hypr/hyprland.nix
       ./hypr/hyprlock.nix

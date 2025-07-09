@@ -5,11 +5,6 @@
 }: {
   nixpkgs.config.allowUnfree = true;
 
-  networking = {
-    hostName = "nixos-invertedecho";
-    useDHCP = lib.mkDefault true;
-  };
-
   time.timeZone = "Europe/Berlin";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -19,10 +14,6 @@
     extraGroups = ["wheel" "kvm" "adbusers" "libvirtd" "gamemode" "networkmanager"];
     shell = pkgs.zsh;
     hashedPassword = "$y$j9T$.hLn6L5LbKZMtv1xvzkJS0$xMp9N3vCFRp6KgIV2HcH9aXxEQzRVARk09.inWoiLl5";
-  };
-  networking.networkmanager = {
-    enable = true;
-    wifi.powersave = true;
   };
 
   environment.sessionVariables = {

@@ -91,22 +91,22 @@
       ];
       windowrule = [
         "float, class:^(org.gnome.Nautilus)$"
-        # iwgtk application itself
-        "float, class:^(org.twosheds.iwgtk)$"
-        # iwgtk wifi password prompt
-        "float, class:^(iwgtk)$"
-        "size 60%, class:^(org.gnome.Nautilus)"
-        "workspace 6, class:^(spotify)$"
         "float, class:endless-scroller-bevy"
         "float, class:ddcui"
         "float, class:platformer-bevy-ldtk"
         "float, class:org.gnome.Loupe"
+        "workspace 6, class:^(spotify)$"
+        "workspace 3, class:1Password"
+        "size 60%, class:^(org.gnome.Nautilus)"
       ];
       env = [
         "WLR_NO_HARDWARE_CURSORS,1"
         "_JAVA_AWT_WM_NONPARENTING,1"
       ];
       exec-once = [
+        "nm-applet"
+        "spotify"
+        "1password"
         "~/.local/bin/toggle-bar.sh"
         "~/.local/bin/toggle-night-mode.sh"
         "swaybg -i ~/Pictures/Wallpapers/planets-space-colorful.jpg -m fill"
