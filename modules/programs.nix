@@ -31,6 +31,10 @@ Host homeserver
             install_url = "https://addons.mozilla.org/firefox/downloads/file/4458679/vimium_ff-2.2.1.xpi";
             installation_mode = "force_installed";
           };
+          "addon@darkreader.org" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/4488139/darkreader-4.9.106.xpi";
+            installation_mode = "force_installed";
+          };
         };
       };
     };
