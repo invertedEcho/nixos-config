@@ -1,8 +1,8 @@
 {pkgs, ...}: let
   inherit (pkgs.unstable);
 in {
-  # TODO: split this list into multiple modules and categorize
   environment.systemPackages = with pkgs; [
+    obsidian
     spotify
     jellyfin-media-player
     vlc

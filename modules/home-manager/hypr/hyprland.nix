@@ -22,7 +22,7 @@
         else [",preferred,auto,1"];
       "$mod" = "SUPER";
       "$modWithShift" = "SUPER_SHIFT";
-      "$modWithAlt" = "SUPER_ALT";
+      "$modWithCtrl" = "SUPER_CTRL";
       bind =
         [
           # Window control keybindings
@@ -46,14 +46,13 @@
           "$mod, Return, exec, wezterm"
           "$mod, D, exec, ~/.config/rofi/launchers/type-6/launcher.sh"
           "$mod, P, exec, wlogout"
-          "$mod, N, exec, notesnook"
-          "$modWithAlt, L, exec, hyprlock"
+          "$modWithCtrl, L, exec, hyprlock"
           # TODO: Two below lines should be one script accepting arguments
           ''$mod, S, exec, grim -g "$(slurp)" - | wl-copy && notify-send "Copied selected region to clipboard."''
           ''$modWithShift, S, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/screenshot-$(date +'%Y%m%d-%H%M%S').png && notify-send "Saved selected region to ~/Pictures/Screenshots"''
           "$mod, B, exec, ~/.local/bin/toggle-bar.sh"
-          "$modWithShift, N, exec, ~/.local/bin/toggle-night-mode.sh"
-          "$modWithAlt, N, exec, swaync-client -t"
+          "$mod, N, exec, ~/.local/bin/toggle-night-mode.sh"
+          "$modWithShift, N, exec, swaync-client -t"
           "$modWithShift, C, exec, wl-color-picker"
           # TODO: Think about this once migrated away from monitors setup script
           "$modWithShift, T, exec, python3 ~/.config/scripts/monitors.py toggle_third_monitor"
@@ -95,10 +94,21 @@
         "float, class:ddcui"
         "float, class:platformer-bevy-ldtk"
         "float, class:org.gnome.Loupe"
-        "workspace 6, class:^(spotify)$"
         "workspace 3, class:1Password"
+        "workspace 4, class:obsidian"
+        "workspace 6, class:^(spotify)$"
+        "workspace 8, class:steam"
+        "workspace 9, class:gimp-3.0"
         "size 60%, class:^(org.gnome.Nautilus)"
       ];
+      workspace =
+        if hostId == "home-pc"
+        then [
+          "1, monitor:DP-2"
+          "6, monitor:DP-3"
+          "9, monitor:DP-2"
+        ]
+        else [];
       env = [
         "WLR_NO_HARDWARE_CURSORS,1"
         "_JAVA_AWT_WM_NONPARENTING,1"
