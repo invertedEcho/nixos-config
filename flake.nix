@@ -86,7 +86,6 @@
           ./modules/networking.nix
           inputs.spicetify-nix.nixosModules.default
           ./modules/spicetify.nix
-          ./modules/game.nix
 
           home-manager.nixosModules.home-manager
           {
