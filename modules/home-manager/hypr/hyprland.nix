@@ -18,6 +18,7 @@
         then [
           "DP-2,1920x1080@144.00,auto-left,1"
           "DP-3,1920x1200@59.95,auto-right,1,transform,1"
+          "HDMI-A-1,disabled"
         ]
         else [",preferred,auto,1"];
       "$mod" = "SUPER";
@@ -54,8 +55,7 @@
           "$mod, N, exec, ~/.local/bin/toggle-night-mode.sh"
           "$modWithShift, N, exec, swaync-client -t"
           "$modWithShift, C, exec, wl-color-picker"
-          # TODO: Think about this once migrated away from monitors setup script
-          "$modWithShift, T, exec, python3 ~/.config/scripts/monitors.py toggle_third_monitor"
+          "$modWithShift, T, exec, python3 ~/.local/bin/toggle-external-monitor.py"
 
           # Multimedia keybindings
           " , 122, exec, pamixer -d 2"

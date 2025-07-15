@@ -2,6 +2,7 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    black
     obsidian
     spotify
     jellyfin-media-player
@@ -84,7 +85,6 @@ in {
     gnome-calculator
     bat
     ntfs3g
-    notesnook
     baobab
     cpufrequtils
     onlyoffice-bin
