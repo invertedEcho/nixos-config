@@ -95,11 +95,13 @@
         "float, class:platformer-bevy-ldtk"
         "float, class:org.gnome.Loupe"
         "float, class:org.gnome.Calculator"
+        "float, class:org.pulseaudio.pavucontrol"
         "workspace 3, class:1Password"
         "workspace 4, class:obsidian"
         "workspace 6, class:^(spotify)$"
         "workspace 8, class:steam"
         "workspace 9, class:gimp-3.0"
+        "workspace 9, class:LDtk"
         "size 60%, class:^(org.gnome.Nautilus)"
       ];
       workspace =
