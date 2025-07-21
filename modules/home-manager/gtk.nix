@@ -3,8 +3,11 @@
     enable = true;
 
     theme = {
-      package = pkgs.orchis-theme;
-      name = "Orchis-Dark";
+      package = pkgs.gruvbox-gtk-theme.override {
+        colorVariants = ["dark"];
+        iconVariants = ["Dark"];
+      };
+      name = "Gruvbox-Dark";
     };
 
     iconTheme = {
