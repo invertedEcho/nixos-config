@@ -8,5 +8,6 @@
   in {
     enable = true;
     theme = spicePkgs.themes.text;
+    colorScheme = "Gruvbox";
   };
 }
