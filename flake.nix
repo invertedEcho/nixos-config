@@ -28,10 +28,12 @@
         };
         modules = [
           ./hosts/home-pc.nix
-          ./modules/apps.nix
           ./modules/configuration.nix
+          ./modules/applications/all.nix
+          ./modules/applications/programs.nix
+          ./modules/applications/spicetify.nix
+          ./modules/applications/firefox.nix
           ./modules/game.nix
-          ./modules/programs.nix
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/vm.nix
@@ -42,7 +44,6 @@
           ./modules/audio.nix
           ./modules/networking.nix
           inputs.spicetify-nix.nixosModules.default
-          ./modules/spicetify.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -74,9 +75,11 @@
         };
         modules = [
           ./hosts/thinkpad.nix
-          ./modules/apps.nix
           ./modules/configuration.nix
-          ./modules/programs.nix
+          ./modules/applications/all.nix
+          ./modules/applications/programs.nix
+          ./modules/applications/spicetify.nix
+          ./modules/applications/firefox.nix
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/xdg.nix
@@ -85,7 +88,6 @@
           ./modules/audio.nix
           ./modules/networking.nix
           inputs.spicetify-nix.nixosModules.default
-          ./modules/spicetify.nix
 
           home-manager.nixosModules.home-manager
           {
