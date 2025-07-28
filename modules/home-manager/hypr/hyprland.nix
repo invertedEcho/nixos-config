@@ -96,6 +96,8 @@
         "float, class:org.gnome.Loupe"
         "float, class:org.gnome.Calculator"
         "float, class:org.pulseaudio.pavucontrol"
+        # export dialog from gimp
+        "float, title:Export Image as PNG"
         "workspace 3, class:1Password"
         "workspace 4, class:obsidian"
         "workspace 6, class:^(spotify)$"
@@ -132,7 +134,6 @@
         # TODO: Still needed?
         "polkit-agent-helper-1"
         "systemctl start --user polkit-gnome-authentication-agent-1"
-        "watch -n 300 ~/.local/bin/audio_safety_notify.sh"
       ];
       input = {
         kb_layout = "us,de";

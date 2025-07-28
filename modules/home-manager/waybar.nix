@@ -9,6 +9,7 @@
         modules-left = ["hyprland/workspaces"];
         modules-center = ["mpris"];
         modules-right = [
+          "custom/keyboard_layout"
           "memory"
           "cpu"
           "backlight"
@@ -18,6 +19,11 @@
           "clock#date"
           "clock#time"
         ];
+        "custom/keyboard_layout" = {
+          exec = "~/.local/bin/print-keyboard-layout.sh";
+          interval = 1;
+          format = "󰌌 {}";
+        };
         "hyprland/workspaces" = {
           on-click = "activate";
           format = "{icon}";
@@ -192,7 +198,7 @@
       #date,
       #clock,
       #cpu,
-      #custom-keyboard-layout,
+      #custom-keyboard_layout,
       #memory,
       #mode,
       #pulseaudio,
