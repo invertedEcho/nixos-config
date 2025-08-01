@@ -4,6 +4,9 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    vscode-fhs
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
     pinta
     dotnetCorePackages.sdk_8_0_3xx-bin
     geteduroam-cli

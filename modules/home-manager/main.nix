@@ -46,10 +46,6 @@
   };
 
   programs = {
-    vscode = {
-      enable = true;
-      package = pkgs.vscode.fhs;
-    };
     home-manager.enable = true;
     git = {
       enable = true;
