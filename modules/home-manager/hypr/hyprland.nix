@@ -3,8 +3,14 @@
     enable = true;
     settings = {
       general = {
-        gaps_in = 0;
-        gaps_out = 0;
+        gaps_in =
+          if hostId == "thinkad"
+          then 0
+          else 3;
+        gaps_out =
+          if hostId == "thinkad"
+          then 0
+          else 5;
         layout = "dwindle";
         border_size = 2;
       };
