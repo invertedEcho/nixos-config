@@ -4,6 +4,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    eww
     vscode-fhs
     wineWowPackages.stable
     wineWowPackages.waylandFull
@@ -11,7 +12,6 @@
     dotnetCorePackages.sdk_8_0_3xx-bin
     geteduroam-cli
     godot-mono
-    inputs.zen-browser.packages."${system}".default
     black
     obsidian
     spotify
