@@ -22,10 +22,8 @@
         ]
         else if hostId == "home-pc"
         then [
-          # Try out single monitor bcs could be more cozy
           "DP-2,1920x1080@144.00,auto-left,1"
-          "DP-3,disabled"
-          # "DP-3,1920x1200@59.95,auto-right,1,transform,1"
+          "DP-3,1920x1200@59.95,auto-right,1,transform,1"
           "HDMI-A-1,disabled"
         ]
         else [",preferred,auto,1"];
