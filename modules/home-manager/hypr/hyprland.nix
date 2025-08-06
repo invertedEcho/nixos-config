@@ -106,6 +106,7 @@
         "float, title:Export Image as PNG"
         "workspace 3, class:1Password"
         "workspace 4, class:obsidian"
+        "workspace 5, class:discord"
         "workspace 6, class:^(spotify)$"
         "workspace 8, class:steam"
         "workspace 9, class:gimp-3.0"

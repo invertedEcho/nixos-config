@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
 
   time.timeZone = "Europe/Berlin";
@@ -17,10 +13,6 @@
   };
 
   environment.sessionVariables = {
-    # Hint electron apps to use wayland
-    NIXOS_OZONE_WL = "1";
-    # TODO: Should also include previous PKG_CONFIG_PATH, if any set
-    PKG_CONFIG_PATH = "${pkgs.openssl}/lib/pkgconfig/"; # fix some packages not finding openssl lib
     XCURSOR_THEME = "volantes_cursors";
     XCURSOR_SIZE = 30;
   };
