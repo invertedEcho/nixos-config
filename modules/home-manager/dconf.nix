@@ -8,7 +8,10 @@
       uris = ["qemu:///system"];
     };
     "org/gnome/shell" = {
-      enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
+      enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com"];
+    };
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "Gruvbox-Dark";
     };
     "org/gnome/desktop/wm/preferences" = {
       resize-with-right-button = true;

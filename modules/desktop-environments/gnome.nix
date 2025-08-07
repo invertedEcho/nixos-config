@@ -9,6 +9,7 @@
   };
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
+    gnomeExtensions.user-themes
   ];
   environment.gnome.excludePackages = with pkgs; [
     gnome-contacts
