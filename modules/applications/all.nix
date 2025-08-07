@@ -33,7 +33,7 @@
     gcc13
     nixd
     lazygit
-    wezterm
+    kitty
     lua-language-server
     stylua
     fzf

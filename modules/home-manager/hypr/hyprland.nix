@@ -50,7 +50,7 @@
           # Application and script keybindings
           "$mod, F, exec, firefox"
           "$mod, E, exec, nautilus"
-          "$mod, Return, exec, wezterm"
+          "$mod, Return, exec, kitty"
           "$mod, D, exec, ~/.config/rofi/launchers/type-6/launcher.sh"
           "$mod, P, exec, wlogout"
           "$modWithCtrl, L, exec, hyprlock"
