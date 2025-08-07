@@ -8,6 +8,7 @@
       uris = ["qemu:///system"];
     };
     "org/gnome/shell" = {
+      favorite-apps = ["org.gnome.Calendar.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Settings.desktop" "firefox.desktop" "code.desktop" "spotify.desktop" "kitty.desktop" "obsidian.desktop"];
       enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com"];
     };
     "org/gnome/shell/extensions/user-theme" = {
