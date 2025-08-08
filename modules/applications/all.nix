@@ -4,7 +4,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    eww
     vscode-fhs
     wineWowPackages.stable
     wineWowPackages.waylandFull
