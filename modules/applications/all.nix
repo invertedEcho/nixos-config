@@ -4,6 +4,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    neovim
     vscode-fhs
     wineWowPackages.stable
     wineWowPackages.waylandFull

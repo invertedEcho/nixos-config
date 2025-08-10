@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim-config.url = "github:invertedEcho/nvim-config";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 

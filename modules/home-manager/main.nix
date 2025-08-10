@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   lib,
   hostId,
   ...
@@ -30,7 +29,6 @@
     packages = with pkgs; [
       pure-prompt
       zoxide
-      inputs.nixvim-config.packages.${pkgs.system}.default
     ];
 
     sessionVariables = {
