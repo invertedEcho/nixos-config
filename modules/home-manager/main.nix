@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   hostId,
@@ -39,6 +40,14 @@
     file = {
       "Pictures/Wallpapers" = {
         source = ../../assets/wallpapers;
+      };
+      "${config.xdg.configHome}/nvim" = {
+        source = pkgs.fetchFromGitHub {
+          owner = "invertedEcho";
+          repo = "nvim-config";
+          rev = "e363a643e1533c36fd9148db201514f240758d42";
+          hash = "sha256-YQryvm/hi4NeNYhKISuNxlixsWFD1xhC7Xo4SdEM5Q8=";
+        };
       };
     };
   };
