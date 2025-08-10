@@ -41,12 +41,11 @@
       "Pictures/Wallpapers" = {
         source = ../../assets/wallpapers;
       };
+      # I really dont care that this will cause impurity
       "${config.xdg.configHome}/nvim" = {
-        source = pkgs.fetchFromGitHub {
-          owner = "invertedEcho";
-          repo = "nvim-config";
-          rev = "e363a643e1533c36fd9148db201514f240758d42";
-          hash = "sha256-YQryvm/hi4NeNYhKISuNxlixsWFD1xhC7Xo4SdEM5Q8=";
+        source = builtins.fetchGit {
+          url = "https://github.com/invertedEcho/nvim-config";
+          ref = "master";
         };
       };
     };
