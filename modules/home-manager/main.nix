@@ -69,6 +69,7 @@
         gp = "git pull";
         gP = "git push";
         cr = "cargo run";
+        update = "cd ~/dev/nixos-config && sudo nixos-rebuild switch --flake .#${hostId} --impure && cd -";
       };
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
