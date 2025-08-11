@@ -4,6 +4,7 @@
       enable = true;
       xwayland.enable = true;
     };
+    # enabling hyprlock also enables hypridle
     hyprlock.enable = true;
   };
   environment.systemPackages = with pkgs; [

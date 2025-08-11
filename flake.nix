@@ -8,12 +8,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    dotfiles = {
+      url = "github:invertedEcho/dotfiles";
+      flake = false;
+    };
+    nvim-config = {
+      url = "github:invertedEcho/nvim-config";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
+    dotfiles,
+    nvim-config,
     ...
   }: {
     nixosConfigurations = {
@@ -22,6 +32,8 @@
         specialArgs = {
           inherit inputs;
           hostId = "home-pc";
+          dotfiles = dotfiles;
+          nvim-config = nvim-config;
         };
         modules = [
           ./hosts/home-pc.nix
@@ -59,6 +71,8 @@
         specialArgs = {
           inherit inputs;
           hostId = "thinkpad";
+          dotfiles = dotfiles;
+          nvim-config = nvim-config;
         };
         modules = [
           ./hosts/thinkpad.nix

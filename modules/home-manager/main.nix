@@ -3,18 +3,14 @@
   pkgs,
   lib,
   hostId,
+  dotfiles,
+  nvim-config,
   ...
 }: {
   imports =
     [
       ./dconf.nix
       ./gtk.nix
-      ./hypr/hyprland.nix
-      ./hypr/hyprlock.nix
-      ./git.nix
-      ./wezterm.nix
-      ./rofi.nix
-      ./waybar.nix
       ./scripts.nix
       ./tmux.nix
       ./tmuxinator.nix
@@ -43,10 +39,11 @@
       };
       # I really dont care that this will cause impurity
       "${config.xdg.configHome}/nvim" = {
-        source = builtins.fetchGit {
-          url = "https://github.com/invertedEcho/nvim-config";
-          ref = "master";
-        };
+        source = nvim-config;
+      };
+      "${config.xdg.configHome}" = {
+        source = dotfiles;
+        recursive = true;
       };
     };
   };

@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1754900431,
+        "narHash": "sha256-dkmcVa9kgCVNblxKMs7LCKLT0+peobDD7S1VDavziXo=",
+        "owner": "invertedEcho",
+        "repo": "dotfiles",
+        "rev": "3a6891b5f0c248db377fa8dc5296a6cdbc518535",
+        "type": "github"
+      },
+      "original": {
+        "owner": "invertedEcho",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -52,10 +68,28 @@
         "type": "github"
       }
     },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1754900071,
+        "narHash": "sha256-QW71ouL3eg3Ofx5aaDKCh/JlEONPhUyhu10DOwVipMY=",
+        "owner": "invertedEcho",
+        "repo": "nvim-config",
+        "rev": "7ede7c0daf71b2e91abe3367164dd7031ea0796b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "invertedEcho",
+        "repo": "nvim-config",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nvim-config": "nvim-config",
         "spicetify-nix": "spicetify-nix"
       }
     },
