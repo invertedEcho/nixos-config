@@ -46,7 +46,6 @@
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/vm.nix
-          ./modules/xdg.nix
           ./modules/desktop-environments/gnome.nix
           ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
@@ -83,7 +82,6 @@
           ./modules/applications/firefox.nix
           ./modules/services.nix
           ./modules/docker.nix
-          ./modules/xdg.nix
           ./modules/desktop-environments/gnome.nix
           ./modules/window-managers/hyprland.nix
           ./modules/audio.nix

@@ -26,4 +26,10 @@
     bindsTo = ["graphical-session.target"];
     wants = ["xdg-desktop-autostart.target"];
   };
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
+    };
+  };
 }

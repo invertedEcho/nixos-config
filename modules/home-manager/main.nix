@@ -37,7 +37,6 @@
       "Pictures/Wallpapers" = {
         source = ../../assets/wallpapers;
       };
-      # I really dont care that this will cause impurity
       "${config.xdg.configHome}/nvim" = {
         source = nvim-config;
       };
@@ -66,7 +65,7 @@
         gp = "git pull";
         gP = "git push";
         cr = "cargo run";
-        update = "cd ~/dev/nixos-config && sudo nixos-rebuild switch --flake .#${hostId} --impure && cd -";
+        update = "cd ~/dev/nixos-config && sudo nixos-rebuild switch --flake .#${hostId} && cd -";
       };
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
