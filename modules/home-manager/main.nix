@@ -14,6 +14,7 @@
       ./scripts.nix
       ./tmux.nix
       ./tmuxinator.nix
+      ./xdg.nix
     ]
     ++ lib.optionals (hostId
       == "thinkpad") [./hypr/hypridle.nix];
