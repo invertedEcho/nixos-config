@@ -27,32 +27,9 @@
         <configuration>
           <layoutmode>physical</layoutmode>
           <logicalmonitor>
-            <x>0</x>
-            <y>358</y>
-            <scale>1</scale>
-            <primary>yes</primary>
-            <monitor>
-              <monitorspec>
-                <connector>DP-2</connector>
-                <vendor>ACR</vendor>
-                <product>Acer KG271 C</product>
-                <serial>0x9231f806</serial>
-              </monitorspec>
-              <mode>
-                <width>1920</width>
-                <height>1080</height>
-                <rate>60.000</rate>
-              </mode>
-            </monitor>
-          </logicalmonitor>
-          <logicalmonitor>
             <x>1920</x>
             <y>0</y>
             <scale>1</scale>
-            <transform>
-              <rotation>left</rotation>
-              <flipped>no</flipped>
-            </transform>
             <monitor>
               <monitorspec>
                 <connector>DP-3</connector>
@@ -67,6 +44,25 @@
               </mode>
             </monitor>
           </logicalmonitor>
+          <logicalmonitor>
+            <x>0</x>
+            <y>0</y>
+            <scale>1</scale>
+            <primary>yes</primary>
+            <monitor>
+              <monitorspec>
+                <connector>DP-2</connector>
+                <vendor>ACR</vendor>
+                <product>Acer KG271 C</product>
+                <serial>0x9231f806</serial>
+              </monitorspec>
+              <mode>
+                <width>1920</width>
+                <height>1080</height>
+                <rate>144.001</rate>
+              </mode>
+            </monitor>
+          </logicalmonitor>
           <disabled>
             <monitorspec>
               <connector>HDMI-1</connector>
@@ -75,6 +71,68 @@
               <serial>0x00010000</serial>
             </monitorspec>
           </disabled>
+        </configuration>
+        <configuration>
+          <layoutmode>physical</layoutmode>
+          <logicalmonitor>
+            <x>3120</x>
+            <y>0</y>
+            <scale>1</scale>
+            <monitor>
+              <monitorspec>
+                <connector>HDMI-0</connector>
+                <vendor>XXX</vendor>
+                <product>Beyond TV</product>
+                <serial>0x00010000</serial>
+              </monitorspec>
+              <mode>
+                <width>3840</width>
+                <height>2160</height>
+                <rate>60.000</rate>
+              </mode>
+            </monitor>
+          </logicalmonitor>
+          <logicalmonitor>
+            <x>1920</x>
+            <y>0</y>
+            <scale>1</scale>
+            <transform>
+              <rotation>left</rotation>
+              <flipped>no</flipped>
+            </transform>
+            <monitor>
+              <monitorspec>
+                <connector>DP-4</connector>
+                <vendor>DEL</vendor>
+                <product>DELL U2415</product>
+                <serial>7MT0177A2T2S</serial>
+              </monitorspec>
+              <mode>
+                <width>1920</width>
+                <height>1200</height>
+                <rate>59.950</rate>
+              </mode>
+            </monitor>
+          </logicalmonitor>
+          <logicalmonitor>
+            <x>0</x>
+            <y>0</y>
+            <scale>1</scale>
+            <primary>yes</primary>
+            <monitor>
+              <monitorspec>
+                <connector>DP-2</connector>
+                <vendor>ACR</vendor>
+                <product>Acer KG271 C</product>
+                <serial>0x9231f806</serial>
+              </monitorspec>
+              <mode>
+                <width>1920</width>
+                <height>1080</height>
+                <rate>144.001</rate>
+              </mode>
+            </monitor>
+          </logicalmonitor>
         </configuration>
         <configuration>
           <layoutmode>physical</layoutmode>
@@ -116,6 +174,50 @@
                 <width>1920</width>
                 <height>1200</height>
                 <rate>59.950</rate>
+              </mode>
+            </monitor>
+          </logicalmonitor>
+        </configuration>
+        <configuration>
+          <layoutmode>physical</layoutmode>
+          <logicalmonitor>
+            <x>1920</x>
+            <y>0</y>
+            <scale>1</scale>
+            <transform>
+              <rotation>left</rotation>
+              <flipped>no</flipped>
+            </transform>
+            <monitor>
+              <monitorspec>
+                <connector>DP-3</connector>
+                <vendor>DEL</vendor>
+                <product>DELL U2415</product>
+                <serial>7MT0177A2T2S</serial>
+              </monitorspec>
+              <mode>
+                <width>1920</width>
+                <height>1200</height>
+                <rate>59.950</rate>
+              </mode>
+            </monitor>
+          </logicalmonitor>
+          <logicalmonitor>
+            <x>0</x>
+            <y>0</y>
+            <scale>1</scale>
+            <primary>yes</primary>
+            <monitor>
+              <monitorspec>
+                <connector>DP-2</connector>
+                <vendor>ACR</vendor>
+                <product>Acer KG271 C</product>
+                <serial>0x9231f806</serial>
+              </monitorspec>
+              <mode>
+                <width>1920</width>
+                <height>1080</height>
+                <rate>144.001</rate>
               </mode>
             </monitor>
           </logicalmonitor>
