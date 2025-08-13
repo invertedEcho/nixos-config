@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    pyright
     thunderbird
     protonmail-bridge-gui
     neovim
