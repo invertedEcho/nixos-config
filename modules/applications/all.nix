@@ -1,9 +1,7 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    thunderbird
+    protonmail-bridge-gui
     neovim
     vscode-fhs
     wineWowPackages.stable
