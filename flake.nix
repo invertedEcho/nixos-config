@@ -40,6 +40,7 @@
           ./hosts/home-pc.nix
           ./modules/configuration.nix
           ./modules/applications/all.nix
+          ./modules/applications/desktop-apps.nix
           ./modules/applications/programs.nix
           ./modules/applications/firefox.nix
           ./modules/game.nix
@@ -133,7 +134,6 @@
           ./modules/applications/firefox.nix
           ./modules/services.nix
           ./modules/docker.nix
-          ./modules/desktop-environments/gnome.nix
           ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
           ./modules/audio.nix

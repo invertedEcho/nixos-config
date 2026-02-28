@@ -2,12 +2,8 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
-    # Big desktop apps
-    # jellyfin-media-player
-    # jetbrains.pycharm-community-bin
-    # onlyoffice-bin
-    # vscode-fhs
     unstable.proton-pass
+    # Tools
     pyright
     neovim
     wineWowPackages.stable
@@ -17,7 +13,6 @@ in {
     black
     obsidian
     vlc
-    discord
     # ldtk
     gnumake
     python3
@@ -48,7 +43,6 @@ in {
     stylua
     corepack_22
     android-tools
-    gimp3
     poppler-utils
     cloudflared
     vim
