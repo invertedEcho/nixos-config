@@ -1,25 +1,24 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  inherit (pkgs.unstable);
+in {
   environment.systemPackages = with pkgs; [
+    # Big desktop apps
+    # jellyfin-media-player
+    # jetbrains.pycharm-community-bin
+    # onlyoffice-bin
+    # vscode-fhs
+    unstable.proton-pass
     pyright
-    thunderbird
-    protonmail-bridge-gui
     neovim
-    vscode-fhs
     wineWowPackages.stable
     wineWowPackages.waylandFull
     pinta
-    dotnetCorePackages.sdk_8_0_3xx-bin
     geteduroam-cli
-    godot-mono
     black
     obsidian
-    spotify
-    jellyfin-media-player
     vlc
     discord
-    jetbrains.pycharm-community-bin
-    ldtk
-    tmuxinator
+    # ldtk
     gnumake
     python3
     pkg-config
@@ -50,7 +49,7 @@
     corepack_22
     android-tools
     gimp3
-    poppler_utils
+    poppler-utils
     cloudflared
     vim
     htop
@@ -67,7 +66,6 @@
     ifuse
     util-linux
     jq
-    pinentry
     kooha
     rclone
     act
@@ -85,7 +83,6 @@
     usbutils
     pciutils
     rpi-imager
-    _1password-gui
     wev
     dnsutils
     gnome-characters
@@ -96,7 +93,6 @@
     ntfs3g
     baobab
     cpufrequtils
-    onlyoffice-bin
     ddcutil
     ddcui
   ];

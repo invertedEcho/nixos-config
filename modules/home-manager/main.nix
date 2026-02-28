@@ -12,8 +12,6 @@
       ./dconf.nix
       ./gtk.nix
       ./scripts.nix
-      ./tmux.nix
-      ./tmuxinator.nix
       ./xdg.nix
     ]
     ++ lib.optionals (hostId
@@ -52,8 +50,6 @@
     home-manager.enable = true;
     git = {
       enable = true;
-      userName = "Jakob Stechow";
-      userEmail = "jakob.stechow@pm.me";
     };
     zsh = {
       enable = true;
