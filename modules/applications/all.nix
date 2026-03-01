@@ -2,18 +2,15 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    waypaper
     unstable.proton-pass
     # Tools
     pyright
     neovim
-    wineWowPackages.stable
-    wineWowPackages.waylandFull
-    pinta
+    # wineWowPackages.stable
+    # wineWowPackages.waylandFull
     geteduroam-cli
     black
-    obsidian
-    vlc
-    # ldtk
     gnumake
     python3
     pkg-config
@@ -51,7 +48,6 @@ in {
     loupe
     pavucontrol
     nautilus
-    gnome-disk-utility
     lazygit
     ripgrep
     file

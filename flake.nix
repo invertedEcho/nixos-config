@@ -52,6 +52,7 @@
           ./modules/hamachi.nix
           ./modules/audio.nix
           ./modules/networking.nix
+          ./modules/easier-life-on-nix.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -95,6 +96,7 @@
           ./modules/window-managers/hyprland.nix
           ./modules/audio.nix
           ./modules/networking.nix
+          ./modules/easier-life-on-nix.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -138,6 +140,7 @@
           ./modules/hamachi.nix
           ./modules/audio.nix
           ./modules/networking.nix
+          ./modules/easier-life-on-nix.nix
 
           home-manager.nixosModules.home-manager
           {

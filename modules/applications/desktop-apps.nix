@@ -11,5 +11,10 @@ in {
     gimp3
     blender
     feishin
+    pinta
+    obsidian
+    vlc
+    ldtk
+    gnome-disk-utility
   ];
 }

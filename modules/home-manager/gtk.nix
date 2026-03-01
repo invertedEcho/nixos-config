@@ -3,11 +3,12 @@
     enable = true;
 
     theme = {
-      package = pkgs.gruvbox-gtk-theme.override {
+      package = pkgs.tokyonight-gtk-theme.override {
         colorVariants = ["dark"];
         iconVariants = ["Dark"];
+        tweakVariants = ["storm"];
       };
-      name = "Gruvbox-Dark";
+      name = "Tokyonight-Dark-Storm";
     };
 
     iconTheme = {
