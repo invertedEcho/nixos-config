@@ -47,7 +47,7 @@
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/vm.nix
-          ./modules/desktop-environments/gnome.nix
+          # ./modules/desktop-environments/gnome.nix
           ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
           ./modules/audio.nix

@@ -4,9 +4,7 @@ in {
   environment.systemPackages = with pkgs; [
     # Big desktop apps
     jellyfin-media-player
-    jetbrains.pycharm-community-bin
-    onlyoffice-bin
-    vscode-fhs
+    onlyoffice-desktopeditors
     discord
     gimp3
     blender

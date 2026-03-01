@@ -2,6 +2,7 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    git
     waypaper
     unstable.proton-pass
     # Tools

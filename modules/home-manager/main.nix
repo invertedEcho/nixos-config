@@ -13,6 +13,7 @@
       ./gtk.nix
       ./scripts.nix
       ./xdg.nix
+      # ./git.nix
     ]
     ++ lib.optionals (hostId
       == "thinkpad") [./hypr/hypridle.nix];
@@ -48,9 +49,6 @@
 
   programs = {
     home-manager.enable = true;
-    git = {
-      enable = true;
-    };
     zsh = {
       enable = true;
       shellAliases = {
