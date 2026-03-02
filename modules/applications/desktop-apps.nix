@@ -14,5 +14,6 @@ in {
     vlc
     ldtk
     gnome-disk-utility
+    obs-studio
   ];
 }
