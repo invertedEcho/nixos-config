@@ -7,16 +7,15 @@
   nvim-config,
   ...
 }: {
-  imports =
-    [
-      ./dconf.nix
-      ./gtk.nix
-      ./scripts.nix
-      ./xdg.nix
-      # ./git.nix
-    ]
-    ++ lib.optionals (hostId
-      == "thinkpad") [./hypr/hypridle.nix];
+  imports = [
+    ./dconf.nix
+    ./gtk.nix
+    ./scripts.nix
+    ./xdg.nix
+    ./hypr.nix
+  ];
+  # ++ lib.optionals (hostId
+  #   == "thinkpad") [./hypr/hypridle.nix];
 
   home = {
     username = "echo";
