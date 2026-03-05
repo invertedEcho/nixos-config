@@ -2,6 +2,13 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    findutils.locate
+
+    # required for nvidia nsight graphics
+    libxcb-util
+
+    vscode-json-languageserver
+    tombi
     git
     waypaper
     unstable.proton-pass
