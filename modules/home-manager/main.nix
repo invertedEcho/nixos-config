@@ -10,7 +10,6 @@
   imports = [
     ./dconf.nix
     ./gtk.nix
-    ./scripts.nix
     ./xdg.nix
     ./hypr.nix
   ];
@@ -41,6 +40,10 @@
       };
       "${config.xdg.configHome}" = {
         source = dotfiles;
+        recursive = true;
+      };
+      ".local/bin/" = {
+        source = dotfiles + "/scripts";
         recursive = true;
       };
     };
