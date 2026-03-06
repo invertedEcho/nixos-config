@@ -19,7 +19,8 @@
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-amd"];
+  boot.kernelModules = ["kvm-amd" "i2c-dev"];
+  hardware.i2c.enable = true;
   boot.extraModulePackages = [];
 
   boot.loader.systemd-boot.enable = true;

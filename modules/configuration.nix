@@ -12,7 +12,7 @@
 
   users.users.echo = {
     isNormalUser = true;
-    extraGroups = ["wheel" "kvm" "adbusers" "libvirtd" "gamemode" "networkmanager"];
+    extraGroups = ["wheel" "kvm" "adbusers" "libvirtd" "gamemode" "networkmanager" "i2c"];
     shell = pkgs.zsh;
     hashedPassword = "$y$j9T$.hLn6L5LbKZMtv1xvzkJS0$xMp9N3vCFRp6KgIV2HcH9aXxEQzRVARk09.inWoiLl5";
   };
