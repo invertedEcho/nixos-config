@@ -32,4 +32,5 @@
       extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
     };
   };
+  services.displayManager.ly.enable = true;
 }
