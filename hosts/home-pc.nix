@@ -26,15 +26,21 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/24362ffb-825c-4c67-acd4-c763972563cf";
-    fsType = "ext4";
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/348E-BBD6";
-    fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-label/NIXROOT";
+      fsType = "ext4";
+    };
+    "/boot" = {
+      device = "/dev/disk/by-label/NIXBOOT";
+      fsType = "vfat";
+      options = ["fmask=0022" "dmask=0022"];
+    };
+    "/mnt/512GB_NVME" = {
+      device = "/dev/disk/by-label/5125GB_NVME";
+      fsType = "ntfs";
+      options = ["uid=1000" "nofail"];
+    };
   };
 
   swapDevices = [];
