@@ -1,10 +1,7 @@
 {
   config,
   pkgs,
-  lib,
   hostId,
-  dotfiles,
-  nvim-config,
   ...
 }: {
   imports = [
@@ -29,23 +26,6 @@
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "vi";
-    };
-
-    file = {
-      "Pictures/Wallpapers" = {
-        source = ../../assets/wallpapers;
-      };
-      "${config.xdg.configHome}/nvim" = {
-        source = nvim-config;
-      };
-      "${config.xdg.configHome}" = {
-        source = dotfiles;
-        recursive = true;
-      };
-      ".local/bin/" = {
-        source = dotfiles + "/scripts";
-        recursive = true;
-      };
     };
   };
 

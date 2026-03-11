@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "dotfiles": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1772630011,
-        "narHash": "sha256-jtEoh/UkulX6Czx5viIPsxmHTBv83Ckz50UqmMW3MSo=",
-        "owner": "invertedEcho",
-        "repo": "dotfiles",
-        "rev": "1a5df9a26f704b3c144229e5d3430ad52180a309",
-        "type": "github"
-      },
-      "original": {
-        "owner": "invertedEcho",
-        "repo": "dotfiles",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -67,29 +51,11 @@
         "type": "indirect"
       }
     },
-    "nvim-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1772637117,
-        "narHash": "sha256-TQtR05fT4I4d344XFCxP8TirVI1n+jed5fzyUFfLRqo=",
-        "owner": "invertedEcho",
-        "repo": "nvim-config",
-        "rev": "cf09642c426aed18d6a8b0b957b596349dbb6370",
-        "type": "github"
-      },
-      "original": {
-        "owner": "invertedEcho",
-        "repo": "nvim-config",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable",
-        "nvim-config": "nvim-config"
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
   },

@@ -8,14 +8,6 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dotfiles = {
-      url = "github:invertedEcho/dotfiles";
-      flake = false;
-    };
-    nvim-config = {
-      url = "github:invertedEcho/nvim-config";
-      flake = false;
-    };
   };
 
   outputs = inputs @ {
@@ -23,8 +15,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    dotfiles,
-    nvim-config,
     ...
   }: {
     nixosConfigurations = {
@@ -33,8 +23,6 @@
         specialArgs = {
           inherit inputs;
           hostId = "home-pc";
-          dotfiles = dotfiles;
-          nvim-config = nvim-config;
         };
         modules = [
           ./hosts/home-pc.nix
@@ -90,8 +78,6 @@
         specialArgs = {
           inherit inputs;
           hostId = "thinkpad";
-          dotfiles = dotfiles;
-          nvim-config = nvim-config;
         };
         modules = [
           ./hosts/thinkpad.nix
@@ -134,8 +120,6 @@
         specialArgs = {
           inherit inputs;
           hostId = "vm";
-          dotfiles = dotfiles;
-          nvim-config = nvim-config;
         };
         modules = [
           ./hosts/vm.nix
