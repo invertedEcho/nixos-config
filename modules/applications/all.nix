@@ -2,6 +2,8 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    zoxide
+    pure-prompt
     findutils.locate
 
     # required for nvidia nsight graphics

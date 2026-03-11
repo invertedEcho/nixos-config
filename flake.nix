@@ -42,16 +42,6 @@
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.echo = import ./modules/home-manager/main.nix;
-              backupFileExtension = "old.bak";
-              extraSpecialArgs = specialArgs;
-            };
-          }
           {
             nixpkgs.overlays = [
               (final: prev: {
@@ -93,16 +83,6 @@
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.echo = import ./modules/home-manager/main.nix;
-              backupFileExtension = "old.bak";
-              extraSpecialArgs = specialArgs;
-            };
-          }
           {
             nixpkgs.overlays = [
               (final: prev: {
@@ -135,16 +115,6 @@
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.echo = import ./modules/home-manager/main.nix;
-              backupFileExtension = "old.bak";
-              extraSpecialArgs = specialArgs;
-            };
-          }
           {
             nixpkgs.overlays = [
               (final: prev: {

@@ -1,6 +1,10 @@
 {
   programs = {
-    zsh.enable = true;
+    zsh = {
+      enable = true;
+      syntaxHighlighting.enable = true;
+      autosuggestions.enable = true;
+    };
 
     adb.enable = true;
 
