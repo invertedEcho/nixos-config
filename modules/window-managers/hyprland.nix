@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  hostId,
+  ...
+}: {
   programs = {
     hyprland = {
       enable = true;
@@ -7,6 +12,11 @@
     # enabling hyprlock also enables hypridle
     hyprlock.enable = true;
   };
+  # Disable hypridle for home-pc because the wake up doesnt seem to work
+  services.hypridle.enable =
+    if hostId == "home-pc"
+    then lib.mkForce false
+    else true;
   environment.systemPackages = with pkgs; [
     waybar
     rofi
@@ -32,5 +42,5 @@
       extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
     };
   };
-  services.displayManager.ly.enable = true;
+  # services.displayManager.ly.enable = true;
 }

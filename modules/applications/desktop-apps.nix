@@ -2,18 +2,22 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
-    # Big desktop apps
+    libreoffice-qt
+    ausweisapp
+    oversteer
+    f3d
     jellyfin-media-player
     onlyoffice-desktopeditors
     discord
     gimp3
     blender
-    feishin
+    unstable.feishin
     pinta
     obsidian
     vlc
     ldtk
     gnome-disk-utility
     obs-studio
+    spek
   ];
 }

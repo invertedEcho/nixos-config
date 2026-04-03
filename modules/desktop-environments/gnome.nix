@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
     gnomeExtensions.user-themes
+    gnomeExtensions.launch-new-instance
   ];
   environment.gnome.excludePackages = with pkgs; [
     gnome-contacts

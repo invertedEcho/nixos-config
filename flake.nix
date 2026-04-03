@@ -4,21 +4,16 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     nixpkgs-unstable,
-    home-manager,
     ...
   }: {
     nixosConfigurations = {
-      home-pc = nixpkgs.lib.nixosSystem rec {
+      home-pc = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";
         specialArgs = {
           inherit inputs;
@@ -34,8 +29,8 @@
           ./modules/game.nix
           ./modules/services.nix
           ./modules/docker.nix
-          ./modules/vm.nix
-          # ./modules/desktop-environments/gnome.nix
+          ./modules/virtualisation.nix
+          ./modules/desktop-environments/gnome.nix
           ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
           ./modules/audio.nix
@@ -63,7 +58,7 @@
           }
         ];
       };
-      thinkpad = nixpkgs.lib.nixosSystem rec {
+      thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";
         specialArgs = {
           inherit inputs;
@@ -95,7 +90,7 @@
           }
         ];
       };
-      vm = nixpkgs.lib.nixosSystem rec {
+      vm = nixpkgs.lib.nixosSystem {
         system = "x86-64-linux";
         specialArgs = {
           inherit inputs;

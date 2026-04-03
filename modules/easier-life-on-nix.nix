@@ -6,7 +6,8 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
-      # List by default
+      wayland
+
       zlib
       zstd
       stdenv.cc.cc
@@ -22,7 +23,6 @@
       xz
       systemd
 
-      # My own additions
       xorg.libXcomposite
       xorg.libXtst
       xorg.libXrandr
@@ -38,7 +38,6 @@
       xorg.libXxf86vm
       libelf
 
-      # Required
       glib
       gtk2
 
@@ -54,7 +53,7 @@
       zenity
       # glibc_multi.bin # Seems to cause issue in ARM
 
-      # # Without these it silently fails
+      # Without these it silently fails
       xorg.libXinerama
       xorg.libXcursor
       xorg.libXrender

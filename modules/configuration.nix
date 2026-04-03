@@ -34,7 +34,7 @@
   boot = {
     kernelParams = ["quiet" "loglevel=3"];
     binfmt =
-      if (pkgs.system != "aarch64-linux")
+      if (pkgs.stdenv.hostPlatform.system != "aarch64-linux")
       then {
         preferStaticEmulators = true;
         emulatedSystems = ["aarch64-linux"];

@@ -2,9 +2,15 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    appimage-run
+    mpv
+    protonvpn-gui
+    volantes-cursors
+    gedit
     zoxide
     pure-prompt
     findutils.locate
+    tela-icon-theme
 
     # required for nvidia nsight graphics
     libxcb-util
