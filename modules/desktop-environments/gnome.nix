@@ -11,6 +11,9 @@
     gnomeExtensions.appindicator
     gnomeExtensions.user-themes
     gnomeExtensions.launch-new-instance
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.brightness-control-using-ddcutil
+    gnomeExtensions.dash-to-panel
   ];
   environment.gnome.excludePackages = with pkgs; [
     gnome-contacts
@@ -25,5 +28,6 @@
     geary
     epiphany
     gnome-music
+    yelp
   ];
 }

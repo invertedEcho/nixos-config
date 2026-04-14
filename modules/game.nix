@@ -38,5 +38,8 @@
     ryubing
     steamtinkerlaunch
     prismlauncher
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
+    winetricks
   ];
 }

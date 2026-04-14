@@ -2,6 +2,10 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    cmake-language-server
+    glsl_analyzer
+    clang-tools
+    cmake
     appimage-run
     mpv
     protonvpn-gui
@@ -23,8 +27,6 @@ in {
     # Tools
     pyright
     neovim
-    # wineWowPackages.stable
-    # wineWowPackages.waylandFull
     geteduroam-cli
     black
     gnumake
