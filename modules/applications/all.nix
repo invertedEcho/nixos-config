@@ -2,6 +2,7 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    songrec
     cmake-language-server
     glsl_analyzer
     clang-tools

@@ -16,6 +16,7 @@
     gnomeExtensions.dash-to-panel
   ];
   environment.gnome.excludePackages = with pkgs; [
+    gnome-connections
     gnome-contacts
     gnome-weather
     gnome-maps

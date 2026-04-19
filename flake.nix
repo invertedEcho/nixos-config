@@ -4,12 +4,14 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nix-flatpak,
     ...
   }: {
     nixosConfigurations = {
@@ -20,6 +22,7 @@
           hostId = "home-pc";
         };
         modules = [
+          nix-flatpak.nixosModules.nix-flatpak
           ./hosts/home-pc.nix
           ./modules/configuration.nix
           ./modules/applications/all.nix
@@ -36,6 +39,7 @@
           ./modules/audio.nix
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
+          ./modules/flatpak.nix
 
           {
             nixpkgs.overlays = [
