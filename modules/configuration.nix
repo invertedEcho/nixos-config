@@ -18,6 +18,7 @@
   };
 
   environment.sessionVariables = {
+    XDG_CONFIG_HOME = "$HOME/.config";
     XCURSOR_THEME = "volantes_cursors";
     XCURSOR_SIZE = 30;
   };
