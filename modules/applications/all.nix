@@ -2,6 +2,12 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    tree-sitter # required for nvim-treesitter to work
+    google-java-format
+    vivify
+    eclipses.eclipse-java
+    java-language-server
+    geteduroam
     songrec
     cmake-language-server
     glsl_analyzer
@@ -27,7 +33,7 @@ in {
     unstable.proton-pass
     # Tools
     pyright
-    neovim
+    unstable.neovim # for nvim 0.12
     geteduroam-cli
     black
     gnumake
@@ -47,7 +53,6 @@ in {
     stylua
     fzf
     ripgrep
-    rustup
     nodejs
     go
     nodePackages_latest.typescript-language-server
