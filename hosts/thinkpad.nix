@@ -31,10 +31,11 @@
       };
       efi.canTouchEfiVariables = true;
     };
+    initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/5d120828-2747-4cbc-b0e0-88032aa3bd48";
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-label/NIXROOT";
+    device = "/dev/mapper/cryptroot";
     fsType = "ext4";
   };
 
@@ -70,5 +71,5 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }
