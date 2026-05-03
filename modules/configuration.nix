@@ -32,6 +32,8 @@
   security.polkit.enable = true;
   security.pam.services.hyprlock = {};
 
+  hardware.logitech.wireless.enable = true;
+
   boot = {
     kernelParams = ["quiet" "loglevel=3"];
     binfmt =

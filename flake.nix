@@ -33,7 +33,7 @@
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/virtualisation.nix
-          ./modules/desktop-environments/gnome.nix
+          ./modules/desktop-environments/plasma.nix
           ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
           ./modules/audio.nix

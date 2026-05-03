@@ -2,12 +2,14 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    ffmpeg
     tree-sitter # required for nvim-treesitter to work
     google-java-format
     vivify
     eclipses.eclipse-java
     java-language-server
     geteduroam
+    woeusb-ng
     songrec
     cmake-language-server
     glsl_analyzer
