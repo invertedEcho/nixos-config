@@ -6,6 +6,11 @@
       autosuggestions.enable = true;
     };
 
+    ausweisapp = {
+      enable = true;
+      openFirewall = true;
+    };
+
     adb.enable = true;
 
     direnv = {

@@ -3,7 +3,6 @@
 in {
   environment.systemPackages = with pkgs; [
     libreoffice-qt
-    ausweisapp
     oversteer
     f3d
     jellyfin-media-player
@@ -13,7 +12,6 @@ in {
     blender
     unstable.feishin
     pinta
-    obsidian
     vlc
     ldtk
     gnome-disk-utility

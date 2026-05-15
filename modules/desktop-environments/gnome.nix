@@ -16,6 +16,9 @@
     {
       lockAll = false;
       settings = {
+        "org/gnome/desktop/wm/keybindings" = {
+          close = ["<Super>q"];
+        };
         "org/gnome/desktop/input-sources" = {
           xkb-options = ["compose:caps"];
         };
@@ -63,14 +66,35 @@
   systemd.services.applyUserMonitorSettings = let
     username = "echo";
     gdmConfigDir = "/var/lib/gdm/seat0/config";
+    monitorFile = "/home/${username}/.config/monitors.xml";
+    script = pkgs.writeShellScript "apply-monitor-settings" ''
+      echo "Applying user monitor settings to GDM login screen"
+
+      if [ ! -f "${monitorFile}" ]; then
+        echo "No monitors.xml found, skipping"
+        exit 0
+      fi
+
+      mkdir -p "${gdmConfigDir}"
+
+      if [ ! "${monitorFile}" -ef "${gdmConfigDir}/monitors.xml" ]; then
+        cp "${monitorFile}" "${gdmConfigDir}/monitors.xml"
+        chown gdm:gdm "${gdmConfigDir}/monitors.xml"
+        echo "Copied monitors.xml to GDM config"
+      else
+        echo "monitors.xml already up to date"
+      fi
+    '';
   in {
     description = "Apply user monitor settings to GDM login screen";
-    after = ["network.target" "systemd-user-sessions.service" "display-manager.service"];
+    after = [
+      "network.target"
+      "systemd-user-sessions.service"
+      "display-manager.service"
+    ];
     wantedBy = ["multi-user.target"];
-
     serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.bash}/bin/bash -c 'echo \"Applying user monitor settings to GDM login screen\" && mkdir -p ${gdmConfigDir} && echo \"Created ${gdmConfigDir} directory\" && [ \"/home/${username}/.config/monitors.xml\" -ef \"${gdmConfigDir}/monitors.xml\" ] || cp /home/${username}/.config/monitors.xml ${gdmConfigDir}/monitors.xml && echo \"Copied monitors.xml to ${gdmConfigDir}/monitors.xml\" && chown gdm:gdm ${gdmConfigDir}/monitors.xml && echo \"Changed ownership of monitors.xml to gdm\"'";
+      ExecStart = script;
     };
   };
 }

@@ -9,31 +9,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
-
-  systemd.services.fprintd = {
-    wantedBy = ["multi-user.target"];
-    serviceConfig.Type = "simple";
-  };
-
-  services.fprintd.enable = true;
-  networking.firewall.enable = true;
-
-  boot = {
-    loader = {
-      grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-      };
-      efi.canTouchEfiVariables = true;
-    };
-    initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/5d120828-2747-4cbc-b0e0-88032aa3bd48";
-  };
-
+  # File systems
   fileSystems."/" = {
     device = "/dev/mapper/cryptroot";
     fsType = "ext4";
@@ -45,6 +21,46 @@
     options = ["fmask=0022" "dmask=0022"];
   };
 
+  # Boot loader
+  boot = {
+    loader = {
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+      };
+      efi.canTouchEfiVariables = true;
+    };
+    initrd = {
+      availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod"];
+      kernelModules = [];
+    };
+    kernelParams = ["resume_offset=110086144" "mem_sleep_default=deep"];
+    kernelModules = ["kvm-intel"];
+    extraModulePackages = [];
+  };
+
+  # Encryption and yubikey support
+  boot.initrd.luks = {
+    devices."cryptroot" = {
+      device = "/dev/disk/by-uuid/5d120828-2747-4cbc-b0e0-88032aa3bd48";
+      crypttabExtraOpts = ["fido2-device=auto"];
+    };
+  };
+  environment.systemPackages = with pkgs; [
+    yubikey-manager
+    cryptsetup
+  ];
+
+  # Fingerprint support
+  systemd.services.fprintd = {
+    wantedBy = ["multi-user.target"];
+    serviceConfig.Type = "simple";
+  };
+  services = {
+    fprintd.enable = true;
+  };
+
   # Swap and suspend-then-hibernate
   swapDevices = [
     {
@@ -52,23 +68,21 @@
       size = 32 * 1024;
     }
   ];
-  boot.kernelParams = ["resume_offset=102739968" "mem_sleep_default=s2idle"];
   boot.resumeDevice = "/dev/disk/by-label/NIXROOT";
   powerManagement.enable = true;
-  services.logind = {
-    lidSwitch = "suspend-then-hibernate";
-    powerKey = "hibernate";
-    powerKeyLongPress = "poweroff";
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandlePowerKey = "hibernate";
+    HandlePowerKeyLongPress = "poweroff";
   };
   services.power-profiles-daemon.enable = true;
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=2h
     SuspendState=mem
   '';
+
+  # Other misc stuff
   hardware.bluetooth.powerOnBoot = false;
-
-  networking.useDHCP = lib.mkDefault true;
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   system.stateVersion = "25.11";

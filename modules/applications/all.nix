@@ -2,7 +2,9 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
-    ffmpeg
+    godot
+    ffmpeg # convert audio/video to other formats
+    obsidian
     tree-sitter # required for nvim-treesitter to work
     google-java-format
     vivify
