@@ -23,7 +23,7 @@
           xkb-options = ["compose:caps"];
         };
         "org/gnome/shell" = {
-          enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com" "dash-to-panel@jderose9.github.com" "blur-my-shell@aunetx"];
+          enabled-extensions = ["display-brightness-ddcutil@themightydeity.github.com" "appindicatorsupport@rgcjonas.gmail.com" "dash-to-dock@micxgx.gmail.com"];
         };
         "org/gnome/shell/extensions/dash-to-panel" = {
           group-apps = false;
@@ -41,9 +41,8 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
-    gnomeExtensions.blur-my-shell
     gnomeExtensions.brightness-control-using-ddcutil
-    gnomeExtensions.dash-to-panel
+    gnomeExtensions.dash-to-dock
   ];
 
   environment.gnome.excludePackages = with pkgs; [

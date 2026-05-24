@@ -11,6 +11,7 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
+      protontricks.enable = true;
     };
     gamemode = {
       enable = true;
@@ -34,6 +35,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    umu-launcher
     cemu
     ryubing
     steamtinkerlaunch

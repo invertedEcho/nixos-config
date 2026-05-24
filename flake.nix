@@ -33,12 +33,15 @@
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/virtualisation.nix
-          ./modules/desktop-environments/plasma.nix
+          # ./modules/desktop-environments/gnome.nix
+          # ./modules/desktop-environments/cosmic.nix
+          ./modules/desktop-environments/cinnamon.nix
           ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
           ./modules/audio.nix
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
+          ./modules/razer.nix
           ./modules/flatpak.nix
 
           {

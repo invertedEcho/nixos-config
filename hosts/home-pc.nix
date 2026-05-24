@@ -2,7 +2,6 @@
   config,
   lib,
   modulesPath,
-  pkgs,
   ...
 }: {
   imports = [
@@ -10,6 +9,15 @@
     ../modules/nvidia.nix
     ../modules/bluetooth.nix
   ];
+  # Still required for android camera?
+  # programs.obs-studio.enableVirtualCamera = true;
+
+  # hopefully fixes bluetooth audio buffering
+  boot.extraModprobeConfig = ''
+    options btusb enable_autosuspend=n
+  '';
+
+  hardware.opentabletdriver.enable = true;
 
   # wake up doesnt work with nvidia
   systemd.targets.sleep.enable = false;
@@ -19,9 +27,9 @@
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-amd" "i2c-dev"];
+  boot.kernelModules = ["kvm-amd" "i2c-dev" "v4l2loopback"];
   hardware.i2c.enable = true;
-  boot.extraModulePackages = [];
+  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -39,7 +47,7 @@
     "/mnt/512GB_NVME" = {
       device = "/dev/disk/by-label/5125GB_NVME";
       fsType = "ntfs3";
-      options = ["uid=1000" "nofail"];
+      options = ["uid=1000" "gid=1000" "umask=0022" "nofail"];
     };
   };
 
