@@ -27,13 +27,28 @@
             }
           ];
         };
-        "92-low-latency" = {
-          "context.properties" = {
-            "default.clock.rate" = 48000;
-            "default.clock.quantum" = 1024;
-            "default.clock.min-quantum" = 512;
-            "default.clock.max-quantum" = 2048;
+        "10-low-latency" = {
+          context.properties = {
+            # Set default quantum (buffer size)
+            # Lower values = lower latency but higher CPU load
+            default.clock.quantum = 256;
+
+            # Minimum and maximum allowed quantum
+            default.clock.min-quantum = 32;
+            default.clock.max-quantum = 8192;
+
+            # Sample rate
+            default.clock.rate = 48000;
+
+            # Allowed rates (PipeWire will auto-select based on content)
+            default.clock.allowed-rates = [44100 48000 88200 96000];
           };
+          # "context.properties" = {
+          #   "default.clock.rate" = 48000;
+          #   "default.clock.quantum" = 1024;
+          #   "default.clock.min-quantum" = 512;
+          #   "default.clock.max-quantum" = 2048;
+          # };
         };
       };
     };

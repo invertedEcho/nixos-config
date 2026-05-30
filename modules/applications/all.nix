@@ -2,6 +2,7 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    vicinae
     polychromatic
     godot
     ffmpeg # convert audio/video to other formats

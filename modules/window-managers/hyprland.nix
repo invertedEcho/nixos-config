@@ -2,6 +2,7 @@
   pkgs,
   lib,
   hostId,
+  inputs,
   ...
 }: {
   programs = {
@@ -12,12 +13,14 @@
     # enabling hyprlock also enables hypridle
     hyprlock.enable = true;
   };
+
   # Disable hypridle for home-pc because the wake up doesnt seem to work
   services.hypridle.enable =
     if hostId == "home-pc"
     then lib.mkForce false
     else true;
   environment.systemPackages = with pkgs; [
+    inputs.caelestia-shell.packages.${pkgs.stdenv.hostPlatform.system}.with-cli
     waybar
     rofi
     libnotify
