@@ -35,7 +35,7 @@
   hardware.logitech.wireless.enable = true;
 
   boot = {
-    kernelParams = ["quiet" "loglevel=3"];
+    kernelParams = ["loglevel=4"];
     binfmt =
       if (pkgs.stdenv.hostPlatform.system != "aarch64-linux")
       then {
@@ -43,9 +43,6 @@
         emulatedSystems = ["aarch64-linux"];
       }
       else {};
-    loader.grub = {
-      theme = pkgs.sleek-grub-theme.override {withStyle = "dark";};
-    };
   };
 
   time.hardwareClockInLocalTime = true;

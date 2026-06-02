@@ -5,7 +5,6 @@ in {
     libreoffice-qt
     oversteer
     f3d
-    jellyfin-media-player
     onlyoffice-desktopeditors
     discord
     gimp3

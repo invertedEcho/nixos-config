@@ -2,7 +2,7 @@
   description = "invertedEcho's NixOS Configuration flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     caelestia-shell = {
@@ -30,7 +30,7 @@
           ./hosts/home-pc.nix
           ./modules/configuration.nix
           ./modules/applications/all.nix
-          ./modules/applications/desktop-apps.nix
+          ./modules/applications/by-host/home-pc.nix
           ./modules/applications/programs.nix
           ./modules/applications/firefox.nix
           ./modules/game.nix
@@ -79,11 +79,12 @@
           ./hosts/thinkpad.nix
           ./modules/configuration.nix
           ./modules/applications/all.nix
+          ./modules/applications/by-host/thinkpad.nix
           ./modules/applications/programs.nix
           ./modules/applications/firefox.nix
           ./modules/services.nix
           ./modules/docker.nix
-          ./modules/desktop-environments/gnome.nix
+          ./modules/desktop-environments/cinnamon.nix
           ./modules/window-managers/hyprland.nix
           ./modules/audio.nix
           ./modules/networking.nix

@@ -2,7 +2,8 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
-    vicinae
+    jellyfin-media-player
+    localsend
     polychromatic
     godot
     ffmpeg # convert audio/video to other formats
@@ -24,7 +25,7 @@ in {
     cmake
     appimage-run
     mpv
-    protonvpn-gui
+    proton-vpn
     volantes-cursors
     gedit
     zoxide
@@ -64,9 +65,9 @@ in {
     ripgrep
     nodejs
     go
-    nodePackages_latest.typescript-language-server
-    nodePackages.bash-language-server
-    nodePackages.eslint
+    typescript-language-server
+    bash-language-server
+    eslint
     tailwindcss-language-server
     prettierd
     lua-language-server
@@ -95,7 +96,7 @@ in {
     solaar
     polkit
     polkit_gnome
-    nixfmt-classic
+    nixfmt
     inetutils
     unrar
     unzip

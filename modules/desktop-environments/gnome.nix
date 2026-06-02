@@ -46,6 +46,7 @@
   ];
 
   environment.gnome.excludePackages = with pkgs; [
+    seahorse
     gnome-connections
     gnome-contacts
     gnome-weather

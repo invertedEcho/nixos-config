@@ -40,17 +40,12 @@
     extraModulePackages = [];
   };
 
-  # Encryption and yubikey support
+  # Encryption
   boot.initrd.luks = {
-    devices."cryptroot" = {
-      device = "/dev/disk/by-uuid/5d120828-2747-4cbc-b0e0-88032aa3bd48";
-      crypttabExtraOpts = ["fido2-device=auto"];
+    devices.cryptroot = {
+      device = "/dev/nvme0n1p2";
     };
   };
-  environment.systemPackages = with pkgs; [
-    yubikey-manager
-    cryptsetup
-  ];
 
   # Fingerprint support
   systemd.services.fprintd = {
@@ -76,10 +71,10 @@
     HandlePowerKeyLongPress = "poweroff";
   };
   services.power-profiles-daemon.enable = true;
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=2h
-    SuspendState=mem
-  '';
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "2h";
+    SuspendState = "mem";
+  };
 
   # Other misc stuff
   hardware.bluetooth.powerOnBoot = false;

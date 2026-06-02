@@ -20,6 +20,7 @@
     then lib.mkForce false
     else true;
   environment.systemPackages = with pkgs; [
+    vicinae # raycast like search thing
     inputs.caelestia-shell.packages.${pkgs.stdenv.hostPlatform.system}.with-cli
     waybar
     rofi

@@ -23,19 +23,19 @@
       xz
       systemd
 
-      xorg.libXcomposite
-      xorg.libXtst
-      xorg.libXrandr
-      xorg.libXext
-      xorg.libX11
-      xorg.libXfixes
+      libXcomposite
+      libXtst
+      libXrandr
+      libXext
+      libX11
+      libXfixes
       libGL
       libva
       pipewire
-      xorg.libxcb
-      xorg.libXdamage
-      xorg.libxshmfence
-      xorg.libXxf86vm
+      libxcb
+      libXdamage
+      libxshmfence
+      libXxf86vm
       libelf
 
       glib
@@ -54,13 +54,13 @@
       # glibc_multi.bin # Seems to cause issue in ARM
 
       # Without these it silently fails
-      xorg.libXinerama
-      xorg.libXcursor
-      xorg.libXrender
-      xorg.libXScrnSaver
-      xorg.libXi
-      xorg.libSM
-      xorg.libICE
+      libXinerama
+      libXcursor
+      libXrender
+      libXScrnSaver
+      libXi
+      libSM
+      libICE
       gnome2.GConf
       nspr
       nss
@@ -86,13 +86,13 @@
       # other issue: (Unity:377230): GLib-GIO-CRITICAL **: 21:09:04.706: g_dbus_proxy_call_sync_internal: assertion 'G_IS_DBUS_PROXY (proxy)' failed
 
       # Verified games requirements
-      xorg.libXt
-      xorg.libXmu
+      libXt
+      libXmu
       libogg
       libvorbis
       SDL
       SDL2_image
-      glew110
+      glew_1_10
       libidn
       tbb
 
@@ -121,7 +121,7 @@
       libgcrypt
       libvpx
       librsvg
-      xorg.libXft
+      libXft
       libvdpau
       # ...
       # Some more libraries that I needed to run programs

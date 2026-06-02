@@ -11,7 +11,10 @@
       openFirewall = true;
     };
 
-    adb.enable = true;
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
 
     direnv = {
       enable = true;
