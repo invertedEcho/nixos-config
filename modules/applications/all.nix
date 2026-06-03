@@ -102,7 +102,6 @@ in {
     unzip
     squashfsTools
     fzf
-    pamixer
     dmg2img
     usbutils
     pciutils
