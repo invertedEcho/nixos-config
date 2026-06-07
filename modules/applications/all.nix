@@ -16,7 +16,6 @@ in {
     vivify
     eclipses.eclipse-java
     java-language-server
-    geteduroam
     woeusb-ng
     songrec
     cmake-language-server
@@ -44,7 +43,6 @@ in {
     # Tools
     pyright
     unstable.neovim # for nvim 0.12
-    geteduroam-cli
     black
     gnumake
     python3
