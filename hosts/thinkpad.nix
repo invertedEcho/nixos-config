@@ -35,7 +35,12 @@
       availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod"];
       kernelModules = [];
     };
-    kernelParams = ["resume_offset=110086144" "mem_sleep_default=deep"];
+    kernelParams = [
+      "resume_offset=110086144"
+      "mem_sleep_default=deep"
+      # input such as touchpad often doesnt work after resuming from hibernation. this forces a reset after resume
+      "i2c_hid_acpi.reset=1"
+    ];
     kernelModules = ["kvm-intel"];
     extraModulePackages = [];
   };
