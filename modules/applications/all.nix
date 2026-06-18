@@ -7,7 +7,6 @@ in {
     unstable.feishin
     jellyfin-media-player
     localsend
-    polychromatic
     godot
     godot-mono
     ffmpeg # convert audio/video to other formats
