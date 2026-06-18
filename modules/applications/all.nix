@@ -26,7 +26,6 @@ in {
     glsl_analyzer
     clang-tools
     cmake
-    appimage-run
     mpv
     proton-vpn
     volantes-cursors
