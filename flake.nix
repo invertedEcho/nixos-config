@@ -5,6 +5,7 @@
     nixpkgs.url = "nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs = inputs @ {
@@ -80,7 +81,7 @@
           ./modules/applications/firefox.nix
           ./modules/services.nix
           ./modules/docker.nix
-          ./modules/desktop-environments/cinnamon.nix
+          ./modules/desktop-environments/plasma.nix
           ./modules/window-managers/hyprland.nix
           ./modules/audio.nix
           ./modules/networking.nix
