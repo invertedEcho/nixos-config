@@ -4,7 +4,7 @@ in {
   environment.systemPackages = with pkgs; [
     onlyoffice-desktopeditors
     spek
-    unstable.feishin
+    feishin
     jellyfin-media-player
     localsend
     godot
