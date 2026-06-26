@@ -9,6 +9,8 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  networking.hostName = "jakob-thinkpad";
+
   # File systems
   fileSystems."/" = {
     device = "/dev/mapper/cryptroot";
