@@ -1,15 +1,17 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    ../modules/bluetooth.nix
   ];
 
   networking.hostName = "jakob-thinkpad";
+
+  boot.blacklistedKernelModules = ["mhi" "mhi_pci_generic"];
 
   # File systems
   fileSystems."/" = {
@@ -40,12 +42,15 @@
     kernelParams = [
       "resume_offset=110086144"
       "mem_sleep_default=deep"
-      # input such as touchpad often doesnt work after resuming from hibernation. this forces a reset after resume
-      "i2c_hid_acpi.reset=1"
     ];
     kernelModules = ["kvm-intel"];
     extraModulePackages = [];
   };
+
+  # input such as touchpad often doesnt work after resuming from hibernation. this forces a reset after resume
+  powerManagement.resumeCommands = ''
+    modprobe -r i2c_hid_acpi && modprobe i2c_hid_acpi
+  '';
 
   # Encryption
   boot.initrd.luks = {
