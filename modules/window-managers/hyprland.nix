@@ -2,7 +2,6 @@
   pkgs,
   lib,
   hostId,
-  inputs,
   ...
 }: {
   programs = {
@@ -19,11 +18,13 @@
     if hostId == "home-pc"
     then lib.mkForce false
     else true;
+
   environment.systemPackages = with pkgs; [
+    # not using the waybar option as that forces systemd service which i dont want
+    waybar
+    wdisplays
     hyprpicker # color picker
     vicinae # raycast like search thing
-    inputs.caelestia-shell.packages.${pkgs.stdenv.hostPlatform.system}.with-cli
-    waybar
     rofi
     libnotify
     wl-clipboard
