@@ -18,12 +18,34 @@
       settings = {
         "org/gnome/desktop/wm/keybindings" = {
           close = ["<Super>q"];
+          minimize = ["@as []"];
+          # move window to monitor
+          move-to-monitor-left = ["<Shift><Super>h"];
+          move-to-monitor-right = ["<Shift><Super>l"];
         };
         "org/gnome/desktop/input-sources" = {
           xkb-options = ["compose:caps"];
         };
+        "org/gnome/desktop/peripherals/mouse" = {
+          "accel-profile" = ["flat"];
+        };
         "org/gnome/shell" = {
-          enabled-extensions = ["display-brightness-ddcutil@themightydeity.github.com" "appindicatorsupport@rgcjonas.gmail.com" "dash-to-dock@micxgx.gmail.com"];
+          enabled-extensions = [
+            "display-brightness-ddcutil@themightydeity.github.com"
+            "appindicatorsupport@rgcjonas.gmail.com"
+            "focus-changer@heartmire"
+            "dash-to-dock@micxgx.gmail.com"
+            "user-theme@gnome-shell-extensions.gcampax.github.com"
+            "blur-my-shell@aunetx"
+          ];
+        };
+        "org/gnome/shell/extensions/user-theme" = {
+          name = "Marble-blue-dark";
+        };
+        "org/gnome/shell/extensions/dash-to-dock" = {
+          dash-max-icon-size = lib.gvariant.mkInt32 48;
+          # Shrink the dock
+          custom-theme-shrink = true;
         };
         "org/gnome/shell/extensions/dash-to-panel" = {
           group-apps = false;
@@ -40,9 +62,13 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.user-themes
     gnomeExtensions.appindicator
     gnomeExtensions.brightness-control-using-ddcutil
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.focus-changer
+    gnome-tweaks
   ];
 
   environment.gnome.excludePackages = with pkgs; [
@@ -65,7 +91,7 @@
 
   systemd.services.applyUserMonitorSettings = let
     username = "echo";
-    gdmConfigDir = "/var/lib/gdm/seat0/config";
+    gdmConfigDir = "/etc/xdg/";
     monitorFile = "/home/${username}/.config/monitors.xml";
     script = pkgs.writeShellScript "apply-monitor-settings" ''
       echo "Applying user monitor settings to GDM login screen"
