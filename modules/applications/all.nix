@@ -2,9 +2,16 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    colloid-gtk-theme
+    colloid-icon-theme
+    calibre
+    discover-overlay
     onlyoffice-desktopeditors
     spek
     feishin
+    vscode
+    lldb
+    tmuxinator
     jellyfin-media-player
     localsend
     godot
