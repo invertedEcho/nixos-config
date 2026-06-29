@@ -34,7 +34,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   security.polkit.enable = true;
-  security.pam.services.hyprlock = {};
 
   hardware.logitech.wireless.enable = true;
 
