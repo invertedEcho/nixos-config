@@ -69,6 +69,16 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.focus-changer
     gnome-tweaks
+    marble-shell-theme
+  ];
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      marble-shell-theme = prev.marble-shell-theme.override {
+        # https://github.com/imarkoff/Marble-shell-theme#-installation-tweaks
+        additionalInstallationTweaks = ["--filled" "--launchpad"];
+      };
+    })
   ];
 
   environment.gnome.excludePackages = with pkgs; [
