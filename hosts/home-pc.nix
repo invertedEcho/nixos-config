@@ -10,7 +10,7 @@
     ../modules/bluetooth.nix
   ];
 
-  networking.hostName = "jakob-home_pc";
+  networking.hostName = "jakob-homepc";
 
   # Still required for android camera?
   # programs.obs-studio.enableVirtualCamera = true;
