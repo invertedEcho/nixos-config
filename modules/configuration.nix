@@ -1,6 +1,8 @@
 {pkgs, ...}: {
+  # Modules that are used by all hosts
   imports = [
     ./agenix.nix
+    ./theme.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -23,8 +25,6 @@
 
   environment.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";
-    XCURSOR_THEME = "volantes_cursors";
-    XCURSOR_SIZE = 16;
   };
 
   fonts.packages = with pkgs; [
