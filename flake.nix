@@ -79,7 +79,7 @@
           ./modules/applications/firefox.nix
           ./modules/services.nix
           ./modules/docker.nix
-          ./modules/desktop-environments/plasma.nix
+          ./modules/desktop-environments/gnome.nix
           ./modules/window-managers/hyprland.nix
           ./modules/audio.nix
           ./modules/networking.nix

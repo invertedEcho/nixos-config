@@ -39,6 +39,9 @@
             "blur-my-shell@aunetx"
           ];
         };
+        "org/gnome/shell/app-switcher" = {
+          current-workspace-only = true;
+        };
         "org/gnome/shell/extensions/user-theme" = {
           name = "Marble-blue-dark";
         };
