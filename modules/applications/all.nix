@@ -2,6 +2,9 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    git-lfs
+    roslyn-ls
+    dotnet-sdk
     colloid-gtk-theme
     colloid-icon-theme
     calibre

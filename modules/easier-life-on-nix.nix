@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # adds a virtual filesystem at /bin and /usr/bin so scripts and programs that expect stuff to exist there works.
   # for example very useful for third party scripts with shebang /usr/bin/bash
-  services.envfs.enable = true;
+  services.envfs.enable = false;
 
   # Pin envfs to 1.2.0 until nixpkgs PR #500707 lands. 1.1.0 exits its mount
   # helper before the FUSE mount is visible in /proc/self/mountinfo, so systemd
