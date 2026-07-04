@@ -14,7 +14,7 @@
 
   programs.dconf.profiles.user.databases = [
     {
-      lockAll = false;
+      lockAll = true;
       settings = {
         "org/gnome/desktop/wm/keybindings" = {
           close = ["<Super>q"];
@@ -22,6 +22,11 @@
           # move window to monitor
           move-to-monitor-left = ["<Shift><Super>h"];
           move-to-monitor-right = ["<Shift><Super>l"];
+          switch-to-application-1 = ["@as []"];
+        };
+        "org/gnome/settings-daemon/plugins/media-keys" = {
+          # very weird, this is keybind for lockscreen, which i unset because i need Super + L for focus changer extension
+          screensaver = ["@as []"];
         };
         "org/gnome/desktop/input-sources" = {
           xkb-options = ["compose:caps"];
@@ -49,6 +54,8 @@
           dash-max-icon-size = lib.gvariant.mkInt32 48;
           # Shrink the dock
           custom-theme-shrink = true;
+          # Dont launch applications with Super+[0-9], need that for switching workspaces.
+          hot-keys = false;
         };
         "org/gnome/shell/extensions/dash-to-panel" = {
           group-apps = false;
