@@ -3,6 +3,7 @@
   imports = [
     ./agenix.nix
     ./theme.nix
+    ./xdg.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
