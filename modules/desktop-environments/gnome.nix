@@ -39,7 +39,7 @@
             "display-brightness-ddcutil@themightydeity.github.com"
             "appindicatorsupport@rgcjonas.gmail.com"
             "focus-changer@heartmire"
-            "dash-to-dock@micxgx.gmail.com"
+            # "dash-to-dock@micxgx.gmail.com"
             "user-theme@gnome-shell-extensions.gcampax.github.com"
             "blur-my-shell@aunetx"
           ];
@@ -50,13 +50,13 @@
         "org/gnome/shell/extensions/user-theme" = {
           name = "Marble-blue-dark";
         };
-        "org/gnome/shell/extensions/dash-to-dock" = {
-          dash-max-icon-size = lib.gvariant.mkInt32 48;
-          # Shrink the dock
-          custom-theme-shrink = true;
-          # Dont launch applications with Super+[0-9], need that for switching workspaces.
-          hot-keys = false;
-        };
+        # "org/gnome/shell/extensions/dash-to-dock" = {
+        #   dash-max-icon-size = lib.gvariant.mkInt32 48;
+        #   # Shrink the dock
+        #   custom-theme-shrink = true;
+        #   # Dont launch applications with Super+[0-9], need that for switching workspaces.
+        #   hot-keys = false;
+        # };
         "org/gnome/shell/extensions/dash-to-panel" = {
           group-apps = false;
           intellihide = true;
@@ -76,7 +76,7 @@
     gnomeExtensions.user-themes
     gnomeExtensions.appindicator
     gnomeExtensions.brightness-control-using-ddcutil
-    gnomeExtensions.dash-to-dock
+    # gnomeExtensions.dash-to-dock
     gnomeExtensions.focus-changer
     gnome-tweaks
     marble-shell-theme
