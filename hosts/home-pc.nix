@@ -49,7 +49,7 @@
     };
     "/mnt/512GB_NVME" = {
       device = "/dev/disk/by-label/5125GB_NVME";
-      fsType = "ntfs3";
+      fsType = "ntfs-3g";
       options = ["uid=1000" "gid=1000" "umask=0022" "nofail"];
     };
   };

@@ -28,6 +28,14 @@
           # very weird, this is keybind for lockscreen, which i unset because i need Super + L for focus changer extension
           screensaver = ["@as []"];
         };
+        "org/gnome/settings-daemon/plugins/media-keys" = {
+          custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+          binding = "<Super>d";
+          command = "vicinae open";
+          name = "Open vicinae";
+        };
         "org/gnome/desktop/input-sources" = {
           xkb-options = ["compose:caps"];
         };
