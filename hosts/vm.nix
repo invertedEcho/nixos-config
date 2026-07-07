@@ -1,7 +1,5 @@
 {
-  config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -18,12 +16,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/5db502af-90f7-4222-b09d-1bd8fa4102c9";
+    device = "/dev/disk/by-label/NIXROOT";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/4A95-AEFE";
+    device = "/dev/disk/by-label/NIXBOOT";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
   };

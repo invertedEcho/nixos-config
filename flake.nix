@@ -112,6 +112,7 @@
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/window-managers/hyprland.nix
+          ./modules/desktop-environments/gnome.nix
           ./modules/hamachi.nix
           ./modules/audio.nix
           ./modules/networking.nix
