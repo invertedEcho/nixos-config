@@ -26,7 +26,7 @@
           nix-flatpak.nixosModules.nix-flatpak
           ./hosts/home-pc.nix
           ./modules/configuration.nix
-          ./modules/applications/all.nix
+          ./modules/applications/full.nix
           ./modules/applications/by-host/home-pc.nix
           ./modules/applications/programs.nix
           ./modules/applications/firefox.nix
@@ -73,7 +73,7 @@
         modules = [
           ./hosts/thinkpad.nix
           ./modules/configuration.nix
-          ./modules/applications/all.nix
+          ./modules/applications/full.nix
           ./modules/applications/by-host/thinkpad.nix
           ./modules/applications/programs.nix
           ./modules/applications/firefox.nix
@@ -106,7 +106,7 @@
         modules = [
           ./hosts/vm.nix
           ./modules/configuration.nix
-          ./modules/applications/all.nix
+          ./modules/applications/base.nix
           ./modules/applications/programs.nix
           ./modules/applications/firefox.nix
           ./modules/services.nix

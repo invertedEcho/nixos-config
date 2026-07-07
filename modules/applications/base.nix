@@ -4,13 +4,11 @@ in {
   environment.systemPackages = with pkgs; [
     git-lfs
     roslyn-ls
-    dotnet-sdk
     calibre
     discover-overlay
     lldb
     tmuxinator
     ffmpeg # convert audio/video to other formats
-    easyeffects
     multitail
     ffmpeg
     tree-sitter # required for nvim-treesitter to work
@@ -18,7 +16,6 @@ in {
     vivify
     java-language-server
     woeusb-ng
-    songrec
     cmake-language-server
     glsl_analyzer
     clang-tools
@@ -38,6 +35,7 @@ in {
     tombi
     git
     waypaper
+    unstable.proton-pass
     # Tools
     pyright
     unstable.neovim # for nvim 0.12
