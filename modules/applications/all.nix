@@ -5,8 +5,6 @@ in {
     git-lfs
     roslyn-ls
     dotnet-sdk
-    colloid-gtk-theme
-    colloid-icon-theme
     calibre
     discover-overlay
     onlyoffice-desktopeditors
@@ -17,8 +15,7 @@ in {
     tmuxinator
     jellyfin-media-player
     localsend
-    godot
-    godot-mono
+    unstable.godot-mono
     ffmpeg # convert audio/video to other formats
     obsidian
     easyeffects
@@ -67,7 +64,7 @@ in {
     ngrok
     gcc13
     nixd
-    kitty
+    unstable.kitty
     lua-language-server
     stylua
     fzf
