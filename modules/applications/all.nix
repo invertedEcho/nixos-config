@@ -67,7 +67,6 @@ in {
     ngrok
     gcc13
     nixd
-    lazygit
     kitty
     lua-language-server
     stylua
@@ -92,7 +91,6 @@ in {
     loupe
     pavucontrol
     nautilus
-    lazygit
     ripgrep
     file
     playerctl
