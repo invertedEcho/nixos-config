@@ -32,6 +32,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd" "i2c-dev" "v4l2loopback"];
   hardware.i2c.enable = true;
+  services.ddccontrol.enable = true;
   boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
 
   boot.loader.systemd-boot.enable = true;

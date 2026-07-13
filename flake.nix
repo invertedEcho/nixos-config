@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
+    # nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     agenix.url = "github:ryantm/agenix";
   };
 
@@ -12,7 +12,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
-    nix-flatpak,
+    # nix-flatpak,
     ...
   }: {
     nixosConfigurations = {
@@ -23,7 +23,6 @@
           hostId = "home-pc";
         };
         modules = [
-          nix-flatpak.nixosModules.nix-flatpak
           ./hosts/home-pc.nix
           ./modules/configuration.nix
           ./modules/applications/full.nix
@@ -41,7 +40,8 @@
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
           ./modules/razer.nix
-          ./modules/flatpak.nix
+          # nix-flatpak.nixosModules.nix-flatpak
+          # ./modules/flatpak.nix
 
           {
             nixpkgs.overlays = [

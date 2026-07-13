@@ -35,6 +35,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    protonup-qt
     umu-launcher
     cemu
     ryubing

@@ -21,7 +21,6 @@ in {
     clang-tools
     cmake
     mpv
-    volantes-cursors
     gedit
     zoxide
     pure-prompt
@@ -51,7 +50,7 @@ in {
     ngrok
     gcc13
     nixd
-    unstable.kitty
+    wezterm
     lua-language-server
     stylua
     fzf

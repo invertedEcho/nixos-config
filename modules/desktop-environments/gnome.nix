@@ -16,6 +16,9 @@
     {
       lockAll = true;
       settings = {
+        "org/gnome/shell/keybindings" = {
+          switch-to-application-1 = [""];
+        };
         "org/gnome/desktop/wm/keybindings" = {
           close = ["<Super>q"];
           minimize = ["@as []"];
@@ -50,6 +53,8 @@
             # "dash-to-dock@micxgx.gmail.com"
             "user-theme@gnome-shell-extensions.gcampax.github.com"
             "blur-my-shell@aunetx"
+            "current-monitor-window-app-switcher@thmatosbr"
+            "rounded-window-corners@fxgn"
           ];
         };
         "org/gnome/shell/app-switcher" = {

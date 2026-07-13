@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   # pulseaudio and pipewire use this to acquirie realtime priority
   security.rtkit.enable = true;
 

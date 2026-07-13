@@ -20,6 +20,7 @@
     else true;
 
   environment.systemPackages = with pkgs; [
+    rofi-bluetooth
     # not using the waybar option as that forces systemd service which i dont want
     waybar
     wdisplays

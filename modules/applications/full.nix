@@ -3,6 +3,7 @@
     ./base.nix
   ];
   environment.systemPackages = with pkgs; [
+    chromium
     onlyoffice-desktopeditors
     spek
     feishin
