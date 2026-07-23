@@ -26,6 +26,7 @@
 
   environment.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";
+    DOTNET_ROOT = "${pkgs.dotnet-sdk_10}/share/dotnet";
   };
 
   fonts.packages = with pkgs; [

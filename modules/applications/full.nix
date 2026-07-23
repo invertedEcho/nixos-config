@@ -3,6 +3,7 @@
     ./base.nix
   ];
   environment.systemPackages = with pkgs; [
+    audacity
     chromium
     onlyoffice-desktopeditors
     spek
@@ -11,7 +12,8 @@
     jellyfin-media-player
     localsend
     unstable.godot-mono
-    dotnet-sdk
+    dotnet-sdk_10
+    dotnet-runtime_10
     obsidian
     eclipses.eclipse-java
     proton-vpn

@@ -2,6 +2,7 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    neovide
     git-lfs
     roslyn-ls
     calibre

@@ -12,9 +12,6 @@
 
   networking.hostName = "jakob-homepc";
 
-  # Still required for android camera?
-  # programs.obs-studio.enableVirtualCamera = true;
-
   # hopefully fixes bluetooth audio buffering
   boot.extraModprobeConfig = ''
     options btusb enable_autosuspend=n
@@ -22,7 +19,7 @@
 
   hardware.opentabletdriver.enable = true;
 
-  # wake up doesnt work with nvidia
+  # wake up on nvidia causes graphical corruption and unresponsive system
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;
