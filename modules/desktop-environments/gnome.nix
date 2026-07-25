@@ -55,6 +55,7 @@
             "blur-my-shell@aunetx"
             "current-monitor-window-app-switcher@thmatosbr"
             "rounded-window-corners@fxgn"
+            "mousefollowsfocus@invertedecho"
           ];
         };
         "org/gnome/shell/app-switcher" = {
@@ -80,6 +81,9 @@
           animate-appicon-hover = false;
           group-apps-label-max-width = lib.gvariant.mkInt32 0;
         };
+        "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
+          blacklist = ["arena-shooter" "neovide"];
+        };
       };
     }
   ];
@@ -93,6 +97,8 @@
     gnomeExtensions.focus-changer
     gnome-tweaks
     marble-shell-theme
+    # comes from my overlay
+    mousefollowsfocus
   ];
 
   nixpkgs.overlays = [

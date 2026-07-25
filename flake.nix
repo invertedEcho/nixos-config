@@ -11,13 +11,10 @@
   outputs = inputs @ {
     self,
     nixpkgs,
-    nixpkgs-unstable,
-    # nix-flatpak,
     ...
   }: {
     nixosConfigurations = {
       home-pc = nixpkgs.lib.nixosSystem {
-        system = "x86-64-linux";
         specialArgs = {
           inherit inputs;
           hostId = "home-pc";
@@ -42,30 +39,10 @@
           ./modules/razer.nix
           # nix-flatpak.nixosModules.nix-flatpak
           # ./modules/flatpak.nix
-
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = import nixpkgs-unstable {
-                  system = "x86_64-linux";
-                  config = {allowUnfree = true;};
-                };
-
-                ddcutil = prev.ddcutil.overrideAttrs (old: {
-                  version = "2.2.5";
-
-                  src = prev.fetchurl {
-                    url = "https://www.ddcutil.com/tarballs/ddcutil-2.2.5.tar.gz";
-                    hash = "sha256-eV6uVI1JYR6YnNSQRq/1jZLheSwNq7Zz7Su9Ab1PH48=";
-                  };
-                });
-              })
-            ];
-          }
+          (import ./overlays)
         ];
       };
       thinkpad = nixpkgs.lib.nixosSystem {
-        system = "x86-64-linux";
         specialArgs = {
           inherit inputs;
           hostId = "thinkpad";
@@ -84,21 +61,10 @@
           ./modules/audio.nix
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
-
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = import nixpkgs-unstable {
-                  system = "x86_64-linux";
-                  config = {allowUnfree = true;};
-                };
-              })
-            ];
-          }
+          (import ./overlays)
         ];
       };
       vm = nixpkgs.lib.nixosSystem {
-        system = "x86-64-linux";
         specialArgs = {
           inherit inputs;
           hostId = "vm";
@@ -117,17 +83,7 @@
           ./modules/audio.nix
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
-
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = import nixpkgs-unstable {
-                  system = "x86_64-linux";
-                  config = {allowUnfree = true;};
-                };
-              })
-            ];
-          }
+          (import ./overlays)
         ];
       };
     };
