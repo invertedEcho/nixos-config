@@ -19,6 +19,7 @@
           # The cursor theme name is the directory name of the cursor theme.
           # They are most likely located at /run/current-system/sw/share/icons/
           "cursor-theme" = "Bibata-Modern-Ice";
+          "icon-theme" = "Colloid-Dark";
           "gtk-theme" = "Orchis-Dark";
         };
       };

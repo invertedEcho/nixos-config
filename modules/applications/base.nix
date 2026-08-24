@@ -2,6 +2,9 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    cargo
+    mediainfo
+    killall
     neovide
     git-lfs
     roslyn-ls

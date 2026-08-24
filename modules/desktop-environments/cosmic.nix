@@ -1,5 +1,6 @@
 {
-  services.displayManager.cosmic-greeter.enable = true;
+  # cosmic greeter doesnt seem to work currently.
+  services.displayManager.gdm.enable = true;
   services.desktopManager.cosmic.enable = true;
   # https://github.com/pop-os/system76-scheduler
   services.system76-scheduler.enable = true;

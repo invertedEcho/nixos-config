@@ -14,10 +14,13 @@
 
   programs.dconf.profiles.user.databases = [
     {
-      lockAll = true;
+      lockAll = false;
       settings = {
         "org/gnome/shell/keybindings" = {
           switch-to-application-1 = [""];
+        };
+        "org/gnome/mutter/keybindings" = {
+          switch-monitors = [""]; # need Super+p for custom keybind previous track
         };
         "org/gnome/desktop/wm/keybindings" = {
           close = ["<Super>q"];
@@ -32,12 +35,32 @@
           screensaver = ["@as []"];
         };
         "org/gnome/settings-daemon/plugins/media-keys" = {
-          custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
+          custom-keybindings = [
+            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+          ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           binding = "<Super>d";
           command = "vicinae open";
           name = "Open vicinae";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+          binding = "<Super>n";
+          command = "playerctl next";
+          name = "next track";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+          binding = "<Super>p";
+          command = "playerctl previous";
+          name = "previous track";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+          binding = "<Super>Space";
+          command = "playerctl play-pause";
+          name = "playerctl toggle";
         };
         "org/gnome/desktop/input-sources" = {
           xkb-options = ["compose:caps"];
@@ -55,7 +78,7 @@
             "blur-my-shell@aunetx"
             "current-monitor-window-app-switcher@thmatosbr"
             "rounded-window-corners@fxgn"
-            "mousefollowsfocus@invertedecho"
+            # "mousefollowsfocus@matthes.biz"
           ];
         };
         "org/gnome/shell/app-switcher" = {
@@ -98,7 +121,7 @@
     gnome-tweaks
     marble-shell-theme
     # comes from my overlay
-    mousefollowsfocus
+    # mousefollowsfocus
   ];
 
   nixpkgs.overlays = [

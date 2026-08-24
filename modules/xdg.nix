@@ -6,6 +6,7 @@
         "image/png" = "org.gnome.Loupe.desktop";
         "image/jpeg" = "org.gnome.Loupe.desktop";
         "application/json" = "org.gnome.gedit.desktop";
+        "audio/flac" = "mpv.desktop";
       };
     };
   };

@@ -2,10 +2,10 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    kdiskmark
     libreoffice-qt
     oversteer
     f3d
-    discord
     gimp3
     blender
     pinta

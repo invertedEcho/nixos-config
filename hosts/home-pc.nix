@@ -12,11 +12,6 @@
 
   networking.hostName = "jakob-homepc";
 
-  # hopefully fixes bluetooth audio buffering
-  boot.extraModprobeConfig = ''
-    options btusb enable_autosuspend=n
-  '';
-
   hardware.opentabletdriver.enable = true;
 
   # wake up on nvidia causes graphical corruption and unresponsive system
@@ -46,9 +41,8 @@
       options = ["fmask=0022" "dmask=0022"];
     };
     "/mnt/512GB_NVME" = {
-      device = "/dev/disk/by-label/5125GB_NVME";
-      fsType = "ntfs-3g";
-      options = ["uid=1000" "gid=1000" "umask=0022" "nofail"];
+      device = "/dev/disk/by-label/512GB_NVME";
+      fsType = "ext4";
     };
   };
 

@@ -3,6 +3,9 @@
     ./base.nix
   ];
   environment.systemPackages = with pkgs; [
+    easyeffects
+    discord
+    plezy
     audacity
     chromium
     onlyoffice-desktopeditors
