@@ -4,13 +4,14 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    # nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     agenix.url = "github:ryantm/agenix";
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
+    nix-flatpak,
     ...
   }: {
     nixosConfigurations = {
@@ -37,9 +38,10 @@
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
           ./modules/razer.nix
-          # nix-flatpak.nixosModules.nix-flatpak
-          # ./modules/flatpak.nix
+          nix-flatpak.nixosModules.nix-flatpak
+          ./modules/flatpak.nix
           (import ./overlays)
+          ./modules/teamviewer.nix
         ];
       };
       thinkpad = nixpkgs.lib.nixosSystem {

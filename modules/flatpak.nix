@@ -4,7 +4,7 @@
     packages = [
       "com.usebottles.bottles"
       "com.github.tchx84.Flatseal"
-      "dev.edfloreshz.CosmicTweaks"
+      # "dev.edfloreshz.CosmicTweaks"
     ];
   };
 }
