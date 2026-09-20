@@ -3,6 +3,8 @@
     ./base.nix
   ];
   environment.systemPackages = with pkgs; [
+    karere
+    signal-desktop
     easyeffects
     discord
     plezy
@@ -20,7 +22,7 @@
     obsidian
     eclipses.eclipse-java
     proton-vpn
-    unstable.proton-pass
+    proton-pass-new
     songrec
   ];
 }

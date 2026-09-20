@@ -2,11 +2,14 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    smartmontools
+    nvme-cli
+    btop
+    sysstat
     just
     cargo
     mediainfo
     killall
-    neovide
     git-lfs
     roslyn-ls
     calibre
@@ -39,7 +42,6 @@ in {
     tombi
     git
     waypaper
-    unstable.proton-pass
     # Tools
     pyright
     unstable.neovim # for nvim 0.12

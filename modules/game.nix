@@ -35,6 +35,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    r2modman
     protonup-qt
     umu-launcher
     cemu
