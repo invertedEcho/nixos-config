@@ -22,7 +22,10 @@
       nix-direnv.enable = true;
     };
 
-    tmux.enable = true;
+    tmux = {
+      enable = true;
+      package = pkgs.unstable.tmux;
+    };
     command-not-found.enable = false;
     nix-index.enable = true;
 

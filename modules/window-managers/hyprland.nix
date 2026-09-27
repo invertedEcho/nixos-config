@@ -28,7 +28,6 @@
     vicinae # raycast like search thing
     rofi
     libnotify
-    wl-clipboard
     swaynotificationcenter
     swaybg
     wlogout

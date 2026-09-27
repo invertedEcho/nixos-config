@@ -16,6 +16,7 @@
         Fingerprinting = true;
       };
       DisableFirefoxScreenshots = true;
+      # Get these values via about:support and scrolling down to "Add-ons"
       ExtensionSettings = {
         "langpack-de@firefox.mozilla.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/file/4510149/deutsch_de_language_pack-139.0.20250609.112858.xpi";
@@ -39,6 +40,10 @@
         };
         "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/file/4686427/proton_pass-1.34.2.xpi";
+          installation_mode = "force_installed";
+        };
+        "{9ed7d361-ccd9-4cad-9846-977da2651fb5}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/file/4947744/automatic_dark-1.4.3.xpi";
           installation_mode = "force_installed";
         };
       };

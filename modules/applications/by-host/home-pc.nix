@@ -2,6 +2,7 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    scrcpy
     kdiskmark
     libreoffice-qt
     oversteer

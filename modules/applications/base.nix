@@ -2,6 +2,9 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    wl-clipboard
+    rustup
+    progress
     smartmontools
     nvme-cli
     btop
