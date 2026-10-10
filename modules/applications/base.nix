@@ -9,6 +9,7 @@ in {
     nvme-cli
     btop
     sysstat
+    imagemagick # work with images cli
     just
     cargo
     mediainfo

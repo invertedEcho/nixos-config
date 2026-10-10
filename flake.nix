@@ -42,6 +42,8 @@
           ./modules/flatpak.nix
           (import ./overlays)
           ./modules/teamviewer.nix
+          ./modules/tailscale.nix
+          ./modules/syncthing.nix
         ];
       };
       thinkpad = nixpkgs.lib.nixosSystem {
@@ -64,6 +66,8 @@
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
           (import ./overlays)
+          ./modules/tailscale.nix
+          ./modules/syncthing.nix
         ];
       };
       vm = nixpkgs.lib.nixosSystem {

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
+  programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
-    # right now not needed bcs configuring through nix config
-    # geteduroam-cli
+    zoom-us
   ];
 }

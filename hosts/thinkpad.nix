@@ -47,10 +47,14 @@
     extraModulePackages = [];
   };
 
-  # input such as touchpad often doesnt work after resuming from hibernation. this forces a reset after resume
-  powerManagement.resumeCommands = ''
-    modprobe -r i2c_hid_acpi && modprobe i2c_hid_acpi
-  '';
+  # input from touchpad often doesnt work after resuming from suspend-then-hibernate. this forces a reset after resume
+  systemd.services.fix-input = {
+    description = "Fix touchpad input after resuming from suspend-then-hibernate";
+    after = ["suspend-then-hibernate.target"];
+    wantedBy = ["suspend-then-hibernate.target"];
+    serviceConfig.Type = "simple";
+    serviceConfig.ExecStart = "modprobe -r i2c_hid_acpi && modprobe i2c_hid_acpi";
+  };
 
   # Encryption
   boot.initrd.luks = {
