@@ -32,6 +32,7 @@
           ./modules/docker.nix
           ./modules/virtualisation.nix
           ./modules/desktop-environments/gnome.nix
+          # ./modules/desktop-environments/cinnamon.nix
           # ./modules/window-managers/hyprland.nix
           ./modules/hamachi.nix
           ./modules/audio.nix

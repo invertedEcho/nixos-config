@@ -35,6 +35,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    lutris
+    dolphin-emu
     r2modman
     protonup-qt
     umu-launcher

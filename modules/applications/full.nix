@@ -7,6 +7,7 @@
     libresprite
     filezilla
     thunderbird
+    libresprite
     karere
     signal-desktop
     easyeffects

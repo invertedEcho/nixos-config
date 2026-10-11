@@ -2,6 +2,7 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    dmidecode # find more sys information like motherboard model
     wl-clipboard
     rustup
     progress

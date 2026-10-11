@@ -75,7 +75,6 @@
             "focus-changer@heartmire"
             # "dash-to-dock@micxgx.gmail.com"
             "user-theme@gnome-shell-extensions.gcampax.github.com"
-            "blur-my-shell@aunetx"
             "current-monitor-window-app-switcher@thmatosbr"
             "rounded-window-corners@fxgn"
             # "mousefollowsfocus@matthes.biz"
@@ -120,8 +119,10 @@
     gnomeExtensions.focus-changer
     gnome-tweaks
     marble-shell-theme
+    gnomeExtensions.applications-menu
     # comes from my overlay
     # mousefollowsfocus
+    mutter # contains gdctl
   ];
 
   nixpkgs.overlays = [
