@@ -3,6 +3,7 @@
 in {
   environment.systemPackages = with pkgs; [
     dmidecode # find more sys information like motherboard model
+    R
     wl-clipboard
     rustup
     progress
