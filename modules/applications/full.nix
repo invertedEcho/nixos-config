@@ -3,6 +3,8 @@
     ./base.nix
   ];
   environment.systemPackages = with pkgs; [
+    vesktop # works better than vanilla discord
+    gelly
     chromium
     protonmail-bridge-gui
     libresprite
@@ -12,16 +14,14 @@
     karere
     signal-desktop
     easyeffects
-    discord
     plezy
     audacity
     onlyoffice-desktopeditors
     spek
-    feishin
     localsend
     obsidian
     proton-vpn
-    unstable.proton-pass
+    proton-pass # comes from my overlay
     songrec
   ];
 }

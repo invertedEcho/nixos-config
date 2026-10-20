@@ -5,7 +5,12 @@
     # the relationship between the new and the old
     (final: prev: {
       mousefollowsfocus = final.callPackage ../packages/mousefollowsfocus {};
-      proton-pass-new = final.callPackage ../packages/proton-pass {};
+      proton-pass = final.callPackage ../packages/proton-pass {
+        proton-pass = prev.proton-pass;
+      };
+      gelly = final.callPackage ../packages/gelly {
+        gelly = prev.gelly;
+      };
       ddcutil = prev.ddcutil.overrideAttrs (old: {
         version = "2.2.5";
 

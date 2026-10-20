@@ -111,7 +111,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.blur-my-shell
     gnomeExtensions.user-themes
     gnomeExtensions.appindicator
     gnomeExtensions.brightness-control-using-ddcutil

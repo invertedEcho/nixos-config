@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   # Modules that are used by all hosts
   imports = [
     ./agenix.nix
@@ -28,6 +32,18 @@
     XDG_CONFIG_HOME = "$HOME/.config";
     DOTNET_ROOT = "${pkgs.dotnet-sdk_10}/share/dotnet";
   };
+
+  # fix issue nautilus show audio/video information on file in nautilus "gstreamer missing plugins" https://github.com/NixOS/nixpkgs/issues/195936
+  environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 = with pkgs.gst_all_1;
+    lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0" [
+      gst-plugins-good
+      gst-plugins-bad
+      gst-plugins-ugly
+      gst-libav
+    ];
+
+  # i use it to map thumb button on mx master 3s mouse in gnome
+  services.input-remapper.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
