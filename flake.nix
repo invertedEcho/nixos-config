@@ -23,18 +23,15 @@
         modules = [
           ./hosts/home-pc.nix
           ./modules/configuration.nix
-          ./modules/applications/full.nix
-          ./modules/applications/by-host/home-pc.nix
-          ./modules/applications/programs.nix
-          ./modules/applications/firefox.nix
+          ./modules/programs/full.nix
+          ./modules/programs/by-host/home-pc.nix
+          ./modules/programs/programs.nix
+          ./modules/programs/firefox.nix
           ./modules/game.nix
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/virtualisation.nix
           ./modules/desktop-environments/gnome.nix
-          # ./modules/desktop-environments/cinnamon.nix
-          # ./modules/window-managers/hyprland.nix
-          ./modules/hamachi.nix
           ./modules/audio.nix
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
@@ -55,10 +52,10 @@
         modules = [
           ./hosts/thinkpad.nix
           ./modules/configuration.nix
-          ./modules/applications/full.nix
-          ./modules/applications/by-host/thinkpad.nix
-          ./modules/applications/programs.nix
-          ./modules/applications/firefox.nix
+          ./modules/programs/full.nix
+          ./modules/programs/by-host/thinkpad.nix
+          ./modules/programs/programs.nix
+          ./modules/programs/firefox.nix
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/desktop-environments/gnome.nix
@@ -80,14 +77,13 @@
         modules = [
           ./hosts/vm.nix
           ./modules/configuration.nix
-          ./modules/applications/base.nix
-          ./modules/applications/programs.nix
-          ./modules/applications/firefox.nix
+          ./modules/programs/base.nix
+          ./modules/programs/programs.nix
+          ./modules/programs/firefox.nix
           ./modules/services.nix
           ./modules/docker.nix
           ./modules/window-managers/hyprland.nix
           ./modules/desktop-environments/gnome.nix
-          ./modules/hamachi.nix
           ./modules/audio.nix
           ./modules/networking.nix
           ./modules/easier-life-on-nix.nix
