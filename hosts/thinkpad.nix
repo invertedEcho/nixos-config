@@ -42,19 +42,25 @@
     kernelParams = [
       "resume_offset=110086144"
       "mem_sleep_default=deep"
+      # input from touchpad often doesnt work after resuming from suspend-then-hibernate. https://wiki.archlinux.org/title/Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate/suspend
+      "psmouse.synaptics_intertouch=0"
     ];
     kernelModules = ["kvm-intel"];
     extraModulePackages = [];
   };
 
-  # input from touchpad often doesnt work after resuming from suspend-then-hibernate. this forces a reset after resume
-  systemd.services.fix-input = {
-    description = "Fix touchpad input after resuming from suspend-then-hibernate";
-    after = ["suspend-then-hibernate.target"];
-    wantedBy = ["suspend-then-hibernate.target"];
-    serviceConfig.Type = "simple";
-    serviceConfig.ExecStart = "modprobe -r i2c_hid_acpi && modprobe i2c_hid_acpi";
-  };
+  # wakeup laptop with keyboard input. i dont know why i have to explicitly enable it. i remember tinkering around with it so i guess its my bad. but then that permament config must be somewhere else?
+  services.udev.extraRules = ''
+    ACTION=="add|change", SUBSYSTEM=="serio", KERNEL=="serio0", ATTR{power/wakeup}="enabled"
+  '';
+
+  # systemd.services.fix-input = {
+  #   description = "Fix touchpad input after resuming from suspend-then-hibernate";
+  #   after = ["suspend-then-hibernate.target"];
+  #   wantedBy = ["suspend-then-hibernate.target"];
+  #   serviceConfig.Type = "simple";
+  #   serviceConfig.ExecStart = "modprobe -r i2c_hid_acpi && modprobe i2c_hid_acpi";
+  # };
 
   # Encryption
   boot.initrd.luks = {

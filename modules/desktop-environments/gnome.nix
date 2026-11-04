@@ -14,7 +14,7 @@
 
   programs.dconf.profiles.user.databases = [
     {
-      lockAll = false;
+      lockAll = true;
       settings = {
         "org/gnome/shell/keybindings" = {
           switch-to-application-1 = [""];
@@ -31,7 +31,7 @@
           switch-to-application-1 = ["@as []"];
         };
         "org/gnome/settings-daemon/plugins/media-keys" = {
-          # very weird, this is keybind for lockscreen, which i unset because i need Super + L for focus changer extension
+          # this is keybind for lockscreen, which i unset because i need Super + L for focus changer extension
           screensaver = ["@as []"];
         };
         "org/gnome/settings-daemon/plugins/media-keys" = {

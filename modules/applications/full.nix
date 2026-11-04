@@ -6,12 +6,13 @@
     feishin
     vscodium-fhs
     vesktop # works better than vanilla discord
+    # unstable.rstudio
+    libreoffice-qt
     chromium
     protonmail-bridge-gui
     filezilla
     thunderbird
     libresprite
-    karere
     signal-desktop
     easyeffects
     plezy

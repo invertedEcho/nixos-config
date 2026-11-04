@@ -4,7 +4,6 @@ in {
   environment.systemPackages = with pkgs; [
     scrcpy
     kdiskmark
-    libreoffice-qt
     oversteer
     f3d
     gimp3
