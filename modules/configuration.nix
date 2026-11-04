@@ -42,9 +42,6 @@
       gst-libav
     ];
 
-  # i use it to map thumb button on mx master 3s mouse in gnome
-  services.input-remapper.enable = true;
-
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];

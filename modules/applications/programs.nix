@@ -29,11 +29,6 @@
     command-not-found.enable = false;
     nix-index.enable = true;
 
-    appimage = {
-      enable = true;
-      package = pkgs.appimage-run.override {
-        extraPkgs = pkgs: [pkgs.webkitgtk_4_1];
-      };
-    };
+    appimage.enable = true;
   };
 }
