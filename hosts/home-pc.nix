@@ -10,7 +10,10 @@
     ../modules/bluetooth.nix
   ];
 
-  networking.hostName = "jakob-homepc";
+  networking = {
+    hostName = "jakob-homepc";
+    interfaces.enp6s0.wakeOnLan.enable = true;
+  };
 
   hardware.opentabletdriver.enable = true;
 

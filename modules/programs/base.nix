@@ -2,6 +2,7 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    ethtool
     yt-dlp
     dmidecode # find more sys information like motherboard model
     R
