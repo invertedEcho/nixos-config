@@ -18,9 +18,10 @@
       settings = {
         "org/gnome/shell/keybindings" = {
           switch-to-application-1 = [""];
+          focus-active-notification = ["@as []"];
         };
         "org/gnome/mutter/keybindings" = {
-          switch-monitors = [""]; # need Super+p for custom keybind previous track
+          switch-monitor = ["@as []"];
         };
         "org/gnome/desktop/wm/keybindings" = {
           close = ["<Super>q"];
@@ -33,34 +34,10 @@
         "org/gnome/settings-daemon/plugins/media-keys" = {
           # this is keybind for lockscreen, which i unset because i need Super + L for focus changer extension
           screensaver = ["@as []"];
-        };
-        "org/gnome/settings-daemon/plugins/media-keys" = {
-          custom-keybindings = [
-            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
-            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
-          ];
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-          binding = "<Super>d";
-          command = "vicinae open";
-          name = "Open vicinae";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-          binding = "<Super>n";
-          command = "playerctl next";
-          name = "next track";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-          binding = "<Super>p";
-          command = "playerctl previous";
-          name = "previous track";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-          binding = "<Super>Space";
-          command = "playerctl play-pause";
-          name = "playerctl toggle";
+          play = ["<Super>space"];
+          pause = ["@as []"];
+          next = ["<Super>n"];
+          previous = ["<Super>p"];
         };
         "org/gnome/desktop/input-sources" = {
           xkb-options = ["compose:caps"];

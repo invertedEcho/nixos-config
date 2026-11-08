@@ -3,6 +3,7 @@
 in {
   environment.systemPackages = with pkgs; [
     ethtool
+    tree
     yt-dlp
     dmidecode # find more sys information like motherboard model
     R
