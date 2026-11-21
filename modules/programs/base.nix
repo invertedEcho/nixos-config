@@ -2,6 +2,8 @@
   inherit (pkgs.unstable);
 in {
   environment.systemPackages = with pkgs; [
+    lshw
+    powertop
     ethtool
     tree
     yt-dlp

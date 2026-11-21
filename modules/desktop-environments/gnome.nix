@@ -30,6 +30,10 @@
           move-to-monitor-left = ["<Shift><Super>h"];
           move-to-monitor-right = ["<Shift><Super>l"];
           switch-to-application-1 = ["@as []"];
+          move-to-workspace-1 = ["<Shift><Super>1"];
+          move-to-workspace-2 = ["<Shift><Super>2"];
+          move-to-workspace-3 = ["<Shift><Super>3"];
+          move-to-workspace-4 = ["<Shift><Super>4"];
         };
         "org/gnome/settings-daemon/plugins/media-keys" = {
           # this is keybind for lockscreen, which i unset because i need Super + L for focus changer extension
